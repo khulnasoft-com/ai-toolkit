@@ -1,5 +1,14 @@
 # @ai-toolkit/azure
 
+## 1.3.12
+
+### Patch Changes
+
+- Updated dependencies [a611690]
+  - @ai-toolkit/provider@1.1.3
+  - @ai-toolkit/openai@1.3.11
+  - @ai-toolkit/provider-utils@2.2.7
+
 ## 1.3.11
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ai-toolkit/google
 
+## 1.2.11
+
+### Patch Changes
+
+- Updated dependencies [a611690]
+  - @ai-toolkit/provider@1.1.3
+  - @ai-toolkit/provider-utils@2.2.7
+
 ## 1.2.10
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ai-toolkit/google-vertex
 
+## 2.2.15
+
+### Patch Changes
+
+- Updated dependencies [a611690]
+  - @ai-toolkit/provider@1.1.3
+  - @ai-toolkit/anthropic@1.2.10
+  - @ai-toolkit/google@1.2.11
+  - @ai-toolkit/provider-utils@2.2.7
+
 ## 2.2.14
 
 ### Patch Changes

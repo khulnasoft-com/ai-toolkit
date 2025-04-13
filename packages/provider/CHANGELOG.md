@@ -1,5 +1,11 @@
 # @ai-toolkit/provider
 
+## 1.1.3
+
+### Patch Changes
+
+- a611690: feat: add speech with experimental_generateSpeech
+
 ## 1.1.2
 
 ### Patch Changes

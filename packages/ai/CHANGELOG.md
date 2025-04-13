@@ -1,5 +1,16 @@
 # ai
 
+## 4.3.6
+
+### Patch Changes
+
+- a611690: feat: add speech with experimental_generateSpeech
+- Updated dependencies [a611690]
+  - @ai-toolkit/provider@1.1.3
+  - @ai-toolkit/provider-utils@2.2.7
+  - @ai-toolkit/ui-utils@1.2.8
+  - @ai-toolkit/react@1.2.9
+
 ## 4.3.5
 
 ### Patch Changes

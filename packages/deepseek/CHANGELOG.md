@@ -1,5 +1,14 @@
 # @ai-toolkit/deepseek
 
+## 0.2.10
+
+### Patch Changes
+
+- Updated dependencies [a611690]
+  - @ai-toolkit/provider@1.1.3
+  - @ai-toolkit/openai-compatible@0.2.10
+  - @ai-toolkit/provider-utils@2.2.7
+
 ## 0.2.9
 
 ### Patch Changes

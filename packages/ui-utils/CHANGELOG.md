@@ -1,5 +1,13 @@
 # @ai-toolkit/ui-utils
 
+## 1.2.8
+
+### Patch Changes
+
+- Updated dependencies [a611690]
+  - @ai-toolkit/provider@1.1.3
+  - @ai-toolkit/provider-utils@2.2.7
+
 ## 1.2.7
 
 ### Patch Changes
