@@ -1,14 +1,14 @@
-import type { LanguageModelV1FunctionToolCall } from '@ai-toolkit/provider';
+import { LanguageModelV1FunctionToolCall } from '@ai-toolkit/provider';
 import { safeParseJSON, safeValidateTypes } from '@ai-toolkit/provider-utils';
-import { type Schema, asSchema } from '@ai-toolkit/ui-utils';
+import { Schema, asSchema } from '@ai-toolkit/ui-utils';
 import { InvalidToolArgumentsError } from '../../errors/invalid-tool-arguments-error';
 import { NoSuchToolError } from '../../errors/no-such-tool-error';
 import { ToolCallRepairError } from '../../errors/tool-call-repair-error';
-import type { CoreMessage } from '../prompt';
-import type { inferParameters } from '../tool/tool';
-import type { ToolCallUnion } from './tool-call';
-import type { ToolCallRepairFunction } from './tool-call-repair';
-import type { ToolSet } from './tool-set';
+import { CoreMessage } from '../prompt';
+import { inferParameters } from '../tool/tool';
+import { ToolCallUnion } from './tool-call';
+import { ToolCallRepairFunction } from './tool-call-repair';
+import { ToolSet } from './tool-set';
 
 export async function parseToolCall<TOOLS extends ToolSet>({
   toolCall,

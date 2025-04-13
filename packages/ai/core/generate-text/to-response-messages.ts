@@ -1,10 +1,10 @@
-import type { ToolResultPart } from '../prompt';
-import type { GeneratedFile } from './generated-file';
-import type { ReasoningDetail } from './reasoning-detail';
-import type { ResponseMessage } from './step-result';
-import type { ToolCallArray } from './tool-call';
-import type { ToolResultArray } from './tool-result';
-import type { ToolSet } from './tool-set';
+import { ToolResultPart } from '../prompt';
+import { GeneratedFile } from './generated-file';
+import { ReasoningDetail } from './reasoning-detail';
+import { ResponseMessage } from './step-result';
+import { ToolCallArray } from './tool-call';
+import { ToolResultArray } from './tool-result';
+import { ToolSet } from './tool-set';
 
 /**
 Converts the result of a `generateText` or `streamText` call to a list of response messages.

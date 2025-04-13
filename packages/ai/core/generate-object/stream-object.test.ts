@@ -13,9 +13,9 @@ import {
 import { MockLanguageModelV1 } from '../test/mock-language-model-v1';
 import { createMockServerResponse } from '../test/mock-server-response';
 import { MockTracer } from '../test/mock-tracer';
-import type { AsyncIterableStream } from '../util/async-iterable-stream';
+import { AsyncIterableStream } from '../util/async-iterable-stream';
 import { streamObject } from './stream-object';
-import type { StreamObjectResult } from './stream-object-result';
+import { StreamObjectResult } from './stream-object-result';
 
 describe('streamObject', () => {
   describe('output = "object"', () => {

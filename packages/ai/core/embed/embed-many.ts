@@ -4,10 +4,10 @@ import { getBaseTelemetryAttributes } from '../telemetry/get-base-telemetry-attr
 import { getTracer } from '../telemetry/get-tracer';
 import { recordSpan } from '../telemetry/record-span';
 import { selectTelemetryAttributes } from '../telemetry/select-telemetry-attributes';
-import type { TelemetrySettings } from '../telemetry/telemetry-settings';
-import type { Embedding, EmbeddingModel } from '../types';
+import { TelemetrySettings } from '../telemetry/telemetry-settings';
+import { Embedding, EmbeddingModel } from '../types';
 import { splitArray } from '../util/split-array';
-import type { EmbedManyResult } from './embed-many-result';
+import { EmbedManyResult } from './embed-many-result';
 
 /**
 Embed several values using an embedding model. The type of the value is defined
@@ -124,7 +124,7 @@ Only applicable for HTTP-based providers.
               });
 
               const embeddings = modelResponse.embeddings;
-              const usage = modelResponse.usage ?? { tokens: Number.NaN };
+              const usage = modelResponse.usage ?? { tokens: NaN };
 
               doEmbedSpan.setAttributes(
                 selectTelemetryAttributes({
@@ -195,7 +195,7 @@ Only applicable for HTTP-based providers.
               });
 
               const embeddings = modelResponse.embeddings;
-              const usage = modelResponse.usage ?? { tokens: Number.NaN };
+              const usage = modelResponse.usage ?? { tokens: NaN };
 
               doEmbedSpan.setAttributes(
                 selectTelemetryAttributes({

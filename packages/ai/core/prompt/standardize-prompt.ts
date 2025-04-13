@@ -1,12 +1,12 @@
 import { InvalidPromptError } from '@ai-toolkit/provider';
 import { safeValidateTypes } from '@ai-toolkit/provider-utils';
-import type { Message } from '@ai-toolkit/ui-utils';
+import { Message } from '@ai-toolkit/ui-utils';
 import { z } from 'zod';
-import type { ToolSet } from '../generate-text/tool-set';
+import { ToolSet } from '../generate-text/tool-set';
 import { convertToCoreMessages } from './convert-to-core-messages';
 import { detectPromptType } from './detect-prompt-type';
-import { type CoreMessage, coreMessageSchema } from './message';
-import type { Prompt } from './prompt';
+import { CoreMessage, coreMessageSchema } from './message';
+import { Prompt } from './prompt';
 
 export type StandardizedPrompt = {
   /**

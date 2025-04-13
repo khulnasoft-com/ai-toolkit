@@ -1,12 +1,12 @@
 import { formatDataStreamPart } from '@ai-toolkit/ui-utils';
-import type { DataStreamWriter } from '../core/data-stream/data-stream-writer';
+import { DataStreamWriter } from '../core/data-stream/data-stream-writer';
 import { mergeStreams } from '../core/util/merge-streams';
 import { prepareResponseHeaders } from '../core/util/prepare-response-headers';
 import {
   createCallbacksTransformer,
-  type StreamCallbacks,
+  StreamCallbacks,
 } from './stream-callbacks';
-import type { StreamData } from './stream-data';
+import { StreamData } from './stream-data';
 
 type LangChainImageDetail = 'auto' | 'low' | 'high';
 

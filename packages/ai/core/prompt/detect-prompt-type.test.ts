@@ -1,4 +1,4 @@
-import type { Message } from '@ai-toolkit/ui-utils';
+import { Message } from '@ai-toolkit/ui-utils';
 import { detectPromptType } from './detect-prompt-type';
 import type { CoreMessage } from './message';
 

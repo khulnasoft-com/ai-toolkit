@@ -1,29 +1,26 @@
-import type { LanguageModelV1StreamPart } from '@ai-toolkit/provider';
+import { LanguageModelV1StreamPart } from '@ai-toolkit/provider';
 import { generateId } from '@ai-toolkit/ui-utils';
-import type { Tracer } from '@opentelemetry/api';
+import { Tracer } from '@opentelemetry/api';
 import { ToolExecutionError } from '../../errors';
-import type { CoreMessage } from '../prompt/message';
+import { CoreMessage } from '../prompt/message';
 import { assembleOperationName } from '../telemetry/assemble-operation-name';
 import { recordSpan } from '../telemetry/record-span';
 import { selectTelemetryAttributes } from '../telemetry/select-telemetry-attributes';
-import type { TelemetrySettings } from '../telemetry/telemetry-settings';
-import type {
+import { TelemetrySettings } from '../telemetry/telemetry-settings';
+import {
   FinishReason,
   LanguageModelUsage,
   LogProbs,
   ProviderMetadata,
 } from '../types';
-import type { Source } from '../types/language-model';
+import { Source } from '../types/language-model';
 import { calculateLanguageModelUsage } from '../types/usage';
-import {
-  DefaultGeneratedFileWithType,
-  type GeneratedFile,
-} from './generated-file';
+import { DefaultGeneratedFileWithType, GeneratedFile } from './generated-file';
 import { parseToolCall } from './parse-tool-call';
-import type { ToolCallUnion } from './tool-call';
-import type { ToolCallRepairFunction } from './tool-call-repair';
-import type { ToolResultUnion } from './tool-result';
-import type { ToolSet } from './tool-set';
+import { ToolCallUnion } from './tool-call';
+import { ToolCallRepairFunction } from './tool-call-repair';
+import { ToolResultUnion } from './tool-result';
+import { ToolSet } from './tool-set';
 
 export type SingleRequestTextStreamPart<TOOLS extends ToolSet> =
   | {

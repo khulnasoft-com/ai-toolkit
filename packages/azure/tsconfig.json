@@ -1,5 +1,9 @@
 {
   "extends": "./node_modules/@khulnasoft/ai-tsconfig/ts-library.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "module": "esnext"
+  },
   "include": ["."],
   "exclude": ["*/dist", "dist", "build", "node_modules"]
 }

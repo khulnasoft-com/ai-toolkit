@@ -1,7 +1,4 @@
-import type {
-  ImageModelV1,
-  ImageModelV1CallWarning,
-} from '@ai-toolkit/provider';
+import { ImageModelV1, ImageModelV1CallWarning } from '@ai-toolkit/provider';
 import { MockImageModelV1 } from '../test/mock-image-model-v1';
 import { generateImage } from './generate-image';
 import {

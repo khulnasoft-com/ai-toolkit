@@ -1,7 +1,4 @@
-import type {
-  ImageModelV1,
-  ImageModelV1CallWarning,
-} from '@ai-toolkit/provider';
+import { ImageModelV1, ImageModelV1CallWarning } from '@ai-toolkit/provider';
 
 /**
 Image model that is used by the AI TOOLKIT Core functions.

@@ -1,7 +1,4 @@
-import type {
-  LanguageModelV1,
-  LanguageModelV1CallOptions,
-} from '@ai-toolkit/provider';
+import { LanguageModelV1, LanguageModelV1CallOptions } from '@ai-toolkit/provider';
 import { wrapLanguageModel } from '../middleware/wrap-language-model';
 import { MockLanguageModelV1 } from '../test/mock-language-model-v1';
 

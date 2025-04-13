@@ -1,7 +1,4 @@
-import type {
-  EmbeddingModelV1,
-  EmbeddingModelV1Embedding,
-} from '@ai-toolkit/provider';
+import { EmbeddingModelV1, EmbeddingModelV1Embedding } from '@ai-toolkit/provider';
 
 /**
 Embedding model that is used by the AI TOOLKIT Core functions.

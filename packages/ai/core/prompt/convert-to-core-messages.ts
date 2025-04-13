@@ -1,12 +1,12 @@
-import type {
+import {
   FileUIPart,
   Message,
   ReasoningUIPart,
   TextUIPart,
   ToolInvocationUIPart,
 } from '@ai-toolkit/ui-utils';
-import type { ToolSet } from '../generate-text/tool-set';
-import type {
+import { ToolSet } from '../generate-text/tool-set';
+import {
   AssistantContent,
   CoreMessage,
   ToolCallPart,

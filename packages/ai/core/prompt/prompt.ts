@@ -1,5 +1,5 @@
-import type { Message } from '@ai-toolkit/ui-utils';
-import type { CoreMessage } from './message';
+import { Message } from '@ai-toolkit/ui-utils';
+import { CoreMessage } from './message';
 
 /**
 Prompt part of the AI function options.

@@ -1,7 +1,4 @@
-import type {
-  LanguageModelV1,
-  LanguageModelV1CallOptions,
-} from '@ai-toolkit/provider';
+import { LanguageModelV1, LanguageModelV1CallOptions } from '@ai-toolkit/provider';
 
 /**
  * Experimental middleware for LanguageModelV1.

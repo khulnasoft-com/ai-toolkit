@@ -1,12 +1,12 @@
 import { z } from 'zod';
 import {
-  type ProviderMetadata,
+  ProviderMetadata,
   providerMetadataSchema,
-  type ProviderOptions,
+  ProviderOptions,
 } from '../types/provider-metadata';
-import { type DataContent, dataContentSchema } from './data-content';
+import { DataContent, dataContentSchema } from './data-content';
 import {
-  type ToolResultContent,
+  ToolResultContent,
   toolResultContentSchema,
 } from './tool-result-content';
 

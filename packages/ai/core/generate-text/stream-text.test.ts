@@ -1,4 +1,4 @@
-import type {
+import {
   LanguageModelV1,
   LanguageModelV1CallOptions,
   LanguageModelV1CallWarning,
@@ -24,10 +24,10 @@ import { MockTracer } from '../test/mock-tracer';
 import { mockValues } from '../test/mock-values';
 import { tool } from '../tool/tool';
 import { object, text } from './output';
-import type { StepResult } from './step-result';
+import { StepResult } from './step-result';
 import { streamText } from './stream-text';
-import type { StreamTextResult, TextStreamPart } from './stream-text-result';
-import type { ToolSet } from './tool-set';
+import { StreamTextResult, TextStreamPart } from './stream-text-result';
+import { ToolSet } from './tool-set';
 
 const defaultSettings = () =>
   ({
@@ -1373,7 +1373,7 @@ describe('streamText', () => {
       expect(response.status).toStrictEqual(200);
       expect(Object.fromEntries(response.headers.entries())).toStrictEqual({
         'content-type': 'text/plain; charset=utf-8',
-        'x-khulnasoft-ai-data-stream': 'v1',
+        'x-vercel-ai-data-stream': 'v1',
       });
       expect(response.headers.get('Content-Type')).toStrictEqual(
         'text/plain; charset=utf-8',
@@ -1400,7 +1400,7 @@ describe('streamText', () => {
       expect(response.statusText).toStrictEqual('foo');
       expect(Object.fromEntries(response.headers.entries())).toStrictEqual({
         'content-type': 'text/plain; charset=utf-8',
-        'x-khulnasoft-ai-data-stream': 'v1',
+        'x-vercel-ai-data-stream': 'v1',
         'custom-header': 'custom-value',
       });
       expect(await convertResponseStreamToArray(response)).toMatchSnapshot();
@@ -4220,9 +4220,9 @@ describe('streamText', () => {
                   logprobs: undefined,
                   providerMetadata: undefined,
                   usage: {
-                    completionTokens: Number.NaN,
-                    promptTokens: Number.NaN,
-                    totalTokens: Number.NaN,
+                    completionTokens: NaN,
+                    promptTokens: NaN,
+                    totalTokens: NaN,
                   },
                   request: {},
                   response: {
@@ -4240,9 +4240,9 @@ describe('streamText', () => {
                   logprobs: undefined,
                   providerMetadata: undefined,
                   usage: {
-                    completionTokens: Number.NaN,
-                    promptTokens: Number.NaN,
-                    totalTokens: Number.NaN,
+                    completionTokens: NaN,
+                    promptTokens: NaN,
+                    totalTokens: NaN,
                   },
                   response: {
                     id: 'response-id',
@@ -4270,9 +4270,9 @@ describe('streamText', () => {
                 finishReason: 'stop',
                 logprobs: undefined,
                 usage: {
-                  completionTokens: Number.NaN,
-                  promptTokens: Number.NaN,
-                  totalTokens: Number.NaN,
+                  completionTokens: NaN,
+                  promptTokens: NaN,
+                  totalTokens: NaN,
                 },
               },
             ]),
@@ -4299,9 +4299,9 @@ describe('streamText', () => {
             finishReason: 'stop',
             logprobs: undefined,
             usage: {
-              completionTokens: Number.NaN,
-              promptTokens: Number.NaN,
-              totalTokens: Number.NaN,
+              completionTokens: NaN,
+              promptTokens: NaN,
+              totalTokens: NaN,
             },
             request: {},
             response: {
@@ -4318,9 +4318,9 @@ describe('streamText', () => {
             finishReason: 'stop',
             logprobs: undefined,
             usage: {
-              completionTokens: Number.NaN,
-              promptTokens: Number.NaN,
-              totalTokens: Number.NaN,
+              completionTokens: NaN,
+              promptTokens: NaN,
+              totalTokens: NaN,
             },
             response: {
               id: 'response-id',

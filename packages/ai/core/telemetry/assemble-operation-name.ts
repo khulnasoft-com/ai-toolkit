@@ -1,4 +1,4 @@
-import type { TelemetrySettings } from './telemetry-settings';
+import { TelemetrySettings } from './telemetry-settings';
 
 export function assembleOperationName({
   operationId,

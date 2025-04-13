@@ -1,23 +1,23 @@
 import { z } from 'zod';
-import type { ProviderMetadata } from '../types';
+import { ProviderMetadata } from '../types';
 import {
   providerMetadataSchema,
-  type ProviderOptions,
+  ProviderOptions,
 } from '../types/provider-metadata';
 import {
-  type FilePart,
+  FilePart,
   filePartSchema,
-  type ImagePart,
+  ImagePart,
   imagePartSchema,
-  type ReasoningPart,
+  ReasoningPart,
   reasoningPartSchema,
-  type RedactedReasoningPart,
+  RedactedReasoningPart,
   redactedReasoningPartSchema,
-  type TextPart,
+  TextPart,
   textPartSchema,
-  type ToolCallPart,
+  ToolCallPart,
   toolCallPartSchema,
-  type ToolResultPart,
+  ToolResultPart,
   toolResultPartSchema,
 } from './content-part';
 

@@ -1,4 +1,4 @@
-import type { LanguageModelV1StreamPart } from '@ai-toolkit/provider';
+import { LanguageModelV1StreamPart } from '@ai-toolkit/provider';
 import { delay } from '@ai-toolkit/provider-utils';
 import {
   convertArrayToReadableStream,

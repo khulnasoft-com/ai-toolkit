@@ -1,4 +1,4 @@
-import type { ServerResponse } from 'node:http';
+import { ServerResponse } from 'node:http';
 
 class MockServerResponse {
   writtenChunks: any[] = [];

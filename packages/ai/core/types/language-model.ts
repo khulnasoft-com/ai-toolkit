@@ -1,4 +1,4 @@
-import type {
+import {
   LanguageModelV1,
   LanguageModelV1CallWarning,
   LanguageModelV1FinishReason,

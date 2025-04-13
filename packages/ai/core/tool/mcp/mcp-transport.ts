@@ -1,5 +1,5 @@
 import { MCPClientError } from '../../../errors';
-import type { JSONRPCMessage } from './json-rpc-message';
+import { JSONRPCMessage } from './json-rpc-message';
 import { SseMCPTransport } from './mcp-sse-transport';
 
 /**

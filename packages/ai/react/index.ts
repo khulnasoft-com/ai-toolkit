@@ -30,14 +30,17 @@ export type {
    * @deprecated Use `@ai-toolkit/react` instead.
    */
   CreateMessage,
+
   /**
    * @deprecated Use `@ai-toolkit/react` instead.
    */
   Message,
+
   /**
    * @deprecated Use `@ai-toolkit/react` instead.
    */
   UseChatOptions,
+
   /**
    * @deprecated Use `@ai-toolkit/react` instead.
    */

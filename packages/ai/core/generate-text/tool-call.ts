@@ -1,6 +1,6 @@
-import type { inferParameters } from '../tool/tool';
-import type { ValueOf } from '../util/value-of';
-import type { ToolSet } from './tool-set';
+import { inferParameters } from '../tool/tool';
+import { ValueOf } from '../util/value-of';
+import { ToolSet } from './tool-set';
 
 export type { CoreToolCall, ToolCall } from '@ai-toolkit/provider-utils';
 

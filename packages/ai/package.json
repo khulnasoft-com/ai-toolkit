@@ -66,27 +66,27 @@
     }
   },
   "dependencies": {
-    "@ai-toolkit/provider": "workspace:*",
-    "@ai-toolkit/provider-utils": "workspace:*",
-    "@ai-toolkit/react": "workspace:*",
-    "@ai-toolkit/ui-utils": "workspace:*",
-    "@opentelemetry/api": "^1.9.0",
-    "jsondiffpatch": "^0.6.0"
+    "@ai-toolkit/provider": "1.1.2",
+    "@ai-toolkit/provider-utils": "2.2.6",
+    "@ai-toolkit/react": "1.2.8",
+    "@ai-toolkit/ui-utils": "1.2.7",
+    "@opentelemetry/api": "1.9.0",
+    "jsondiffpatch": "0.6.0"
   },
   "devDependencies": {
     "@edge-runtime/vm": "^5.0.0",
-    "@types/node": "^20.17.24",
-    "@types/react": "^18.3.3",
+    "@types/node": "20.17.24",
+    "@types/react": "^18",
     "@types/react-dom": "^18",
     "@khulnasoft/ai-tsconfig": "workspace:*",
-    "@vitejs/plugin-react": "^4.3.3",
-    "eslint": "^9.18.0",
+    "@vitejs/plugin-react": "4.3.3",
+    "eslint": "8.57.1",
     "eslint-config-khulnasoft-ai": "workspace:*",
     "react-dom": "^18",
     "react-server-dom-webpack": "18.3.0-canary-eb33bd747-20240312",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3",
-    "zod": "^3.23.8"
+    "tsup": "^7.2.0",
+    "typescript": "5.6.3",
+    "zod": "3.23.8"
   },
   "peerDependencies": {
     "react": "^18 || ^19 || ^19.0.0-rc",
@@ -106,10 +106,10 @@
   "homepage": "https://sdk.khulnasoft.com/docs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khulnasoft/ai.git"
+    "url": "git+https://github.com/khulnasoft/ai-toolkit.git"
   },
   "bugs": {
-    "url": "https://github.com/khulnasoft/ai/issues"
+    "url": "https://github.com/khulnasoft/ai-toolkit/issues"
   },
   "keywords": [
     "ai",

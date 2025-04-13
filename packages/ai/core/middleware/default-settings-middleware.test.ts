@@ -1,4 +1,4 @@
-import type { LanguageModelV1CallOptions } from '@ai-toolkit/provider';
+import { LanguageModelV1CallOptions } from '@ai-toolkit/provider';
 import { defaultSettingsMiddleware } from './default-settings-middleware';
 
 const BASE_PARAMS: LanguageModelV1CallOptions = {

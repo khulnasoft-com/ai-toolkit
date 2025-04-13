@@ -1,4 +1,4 @@
-import type { LanguageModelV1CallOptions } from '@ai-toolkit/provider';
+import { LanguageModelV1CallOptions } from '@ai-toolkit/provider';
 import { mockId } from '@ai-toolkit/provider-utils/test';
 import { jsonSchema } from '@ai-toolkit/ui-utils';
 import assert from 'node:assert';
@@ -9,8 +9,8 @@ import { MockLanguageModelV1 } from '../test/mock-language-model-v1';
 import { MockTracer } from '../test/mock-tracer';
 import { tool } from '../tool/tool';
 import { generateText } from './generate-text';
-import type { GenerateTextResult } from './generate-text-result';
-import type { StepResult } from './step-result';
+import { GenerateTextResult } from './generate-text-result';
+import { StepResult } from './step-result';
 
 const dummyResponseValues = {
   rawCall: { rawPrompt: 'prompt', rawSettings: {} },

@@ -1,8 +1,8 @@
-import type { Attachment, Message } from '@ai-toolkit/ui-utils';
+import { Attachment, Message } from '@ai-toolkit/ui-utils';
 import { convertToCoreMessages } from './convert-to-core-messages';
 import { tool } from '../tool/tool';
 import { z } from 'zod';
-import type { CoreMessage } from './message';
+import { CoreMessage } from './message';
 
 describe('convertToCoreMessages', () => {
   describe('system message', () => {

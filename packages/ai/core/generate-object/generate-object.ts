@@ -1,37 +1,37 @@
 import {
   JSONParseError,
-  type JSONValue,
+  JSONValue,
   TypeValidationError,
 } from '@ai-toolkit/provider';
 import { createIdGenerator, safeParseJSON } from '@ai-toolkit/provider-utils';
-import type { Schema } from '@ai-toolkit/ui-utils';
-import type { z } from 'zod';
+import { Schema } from '@ai-toolkit/ui-utils';
+import { z } from 'zod';
 import { NoObjectGeneratedError } from '../../errors/no-object-generated-error';
-import type { CallSettings } from '../prompt/call-settings';
+import { CallSettings } from '../prompt/call-settings';
 import { convertToLanguageModelPrompt } from '../prompt/convert-to-language-model-prompt';
 import { prepareCallSettings } from '../prompt/prepare-call-settings';
 import { prepareRetries } from '../prompt/prepare-retries';
-import type { Prompt } from '../prompt/prompt';
+import { Prompt } from '../prompt/prompt';
 import { standardizePrompt } from '../prompt/standardize-prompt';
 import { assembleOperationName } from '../telemetry/assemble-operation-name';
 import { getBaseTelemetryAttributes } from '../telemetry/get-base-telemetry-attributes';
 import { getTracer } from '../telemetry/get-tracer';
 import { recordSpan } from '../telemetry/record-span';
 import { selectTelemetryAttributes } from '../telemetry/select-telemetry-attributes';
-import type { TelemetrySettings } from '../telemetry/telemetry-settings';
-import type {
+import { TelemetrySettings } from '../telemetry/telemetry-settings';
+import {
   CallWarning,
   FinishReason,
   LanguageModel,
   LogProbs,
   ProviderMetadata,
 } from '../types';
-import type { LanguageModelRequestMetadata } from '../types/language-model-request-metadata';
-import type { LanguageModelResponseMetadata } from '../types/language-model-response-metadata';
-import type { ProviderOptions } from '../types/provider-metadata';
+import { LanguageModelRequestMetadata } from '../types/language-model-request-metadata';
+import { LanguageModelResponseMetadata } from '../types/language-model-response-metadata';
+import { ProviderOptions } from '../types/provider-metadata';
 import { calculateLanguageModelUsage } from '../types/usage';
 import { prepareResponseHeaders } from '../util/prepare-response-headers';
-import type { GenerateObjectResult } from './generate-object-result';
+import { GenerateObjectResult } from './generate-object-result';
 import { injectJsonInstruction } from './inject-json-instruction';
 import { getOutputStrategy } from './output-strategy';
 import { validateObjectGenerationInput } from './validate-object-generation-input';

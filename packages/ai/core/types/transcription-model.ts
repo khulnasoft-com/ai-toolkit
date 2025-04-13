@@ -1,4 +1,4 @@
-import type {
+import {
   TranscriptionModelV1,
   TranscriptionModelV1CallWarning,
 } from '@ai-toolkit/provider';

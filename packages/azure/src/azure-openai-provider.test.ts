@@ -1,4 +1,4 @@
-import type {
+import {
   EmbeddingModelV1Embedding,
   LanguageModelV1Prompt,
 } from '@ai-toolkit/provider';

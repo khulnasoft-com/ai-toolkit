@@ -3,12 +3,13 @@
   import type { HTMLTextareaAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
 
+  let value: string | undefined = undefined; // Declare value as writable
   const {
-    ref = $bindable(null),
-    value = $bindable(),
     class: className,
     ...restProps
   }: WithoutChildren<WithElementRef<HTMLTextareaAttributes>> = $props();
+
+  let ref: HTMLTextAreaElement | null = null; // Declare ref as writable
 </script>
 
 <textarea

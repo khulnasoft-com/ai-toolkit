@@ -4,9 +4,9 @@ import { getBaseTelemetryAttributes } from '../telemetry/get-base-telemetry-attr
 import { getTracer } from '../telemetry/get-tracer';
 import { recordSpan } from '../telemetry/record-span';
 import { selectTelemetryAttributes } from '../telemetry/select-telemetry-attributes';
-import type { TelemetrySettings } from '../telemetry/telemetry-settings';
-import type { EmbeddingModel } from '../types';
-import type { EmbedResult } from './embed-result';
+import { TelemetrySettings } from '../telemetry/telemetry-settings';
+import { EmbeddingModel } from '../types';
+import { EmbedResult } from './embed-result';
 
 /**
 Embed a value using an embedding model. The type of the value is defined by the embedding model.
@@ -109,7 +109,7 @@ Only applicable for HTTP-based providers.
             });
 
             const embedding = modelResponse.embeddings[0];
-            const usage = modelResponse.usage ?? { tokens: Number.NaN };
+            const usage = modelResponse.usage ?? { tokens: NaN };
 
             doEmbedSpan.setAttributes(
               selectTelemetryAttributes({

@@ -1,6 +1,6 @@
 import {
-  type AssistantMessage,
-  type DataMessage,
+  AssistantMessage,
+  DataMessage,
   formatAssistantStreamPart,
 } from '@ai-toolkit/ui-utils';
 

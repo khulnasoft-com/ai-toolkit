@@ -1,4 +1,4 @@
-import type {
+import {
   LanguageModelV1CallOptions,
   LanguageModelV1ProviderMetadata,
 } from '@ai-toolkit/provider';

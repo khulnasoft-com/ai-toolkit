@@ -1,8 +1,5 @@
-import {
-  type DataStreamString,
-  formatDataStreamPart,
-} from '@ai-toolkit/ui-utils';
-import type { DataStreamWriter } from './data-stream-writer';
+import { DataStreamString, formatDataStreamPart } from '@ai-toolkit/ui-utils';
+import { DataStreamWriter } from './data-stream-writer';
 
 export function createDataStream({
   execute,

@@ -1,6 +1,6 @@
 import { AITOOLKITError, getErrorMessage } from '@ai-toolkit/provider';
-import type { InvalidToolArgumentsError } from './invalid-tool-arguments-error';
-import type { NoSuchToolError } from './no-such-tool-error';
+import { InvalidToolArgumentsError } from './invalid-tool-arguments-error';
+import { NoSuchToolError } from './no-such-tool-error';
 
 const name = 'AI_ToolCallRepairError';
 const marker = `khulnasoft.com.error.${name}`;

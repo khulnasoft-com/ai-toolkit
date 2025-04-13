@@ -1,4 +1,4 @@
-import type {
+import {
   LanguageModelV1FilePart,
   LanguageModelV1ImagePart,
   LanguageModelV1Message,
@@ -6,20 +6,20 @@ import type {
   LanguageModelV1TextPart,
 } from '@ai-toolkit/provider';
 import { download } from '../../util/download';
-import type { CoreMessage } from '../prompt/message';
+import { CoreMessage } from '../prompt/message';
 import {
   detectMimeType,
   imageMimeTypeSignatures,
 } from '../util/detect-mimetype';
-import type { FilePart, ImagePart, TextPart } from './content-part';
+import { FilePart, ImagePart, TextPart } from './content-part';
 import {
   convertDataContentToBase64String,
   convertDataContentToUint8Array,
-  type DataContent,
+  DataContent,
 } from './data-content';
 import { InvalidMessageRoleError } from './invalid-message-role-error';
 import { splitDataUrl } from './split-data-url';
-import type { StandardizedPrompt } from './standardize-prompt';
+import { StandardizedPrompt } from './standardize-prompt';
 
 export async function convertToLanguageModelPrompt({
   prompt,

@@ -1,4 +1,4 @@
-import type {
+import {
   JSONValue,
   LanguageModelV1CallOptions,
   LanguageModelV1FinishReason,
@@ -6,45 +6,42 @@ import type {
 } from '@ai-toolkit/provider';
 import { createIdGenerator } from '@ai-toolkit/provider-utils';
 import {
-  type DeepPartial,
-  type Schema,
+  DeepPartial,
+  Schema,
   isDeepEqualData,
   parsePartialJson,
 } from '@ai-toolkit/ui-utils';
-import type { ServerResponse } from 'http';
-import type { z } from 'zod';
+import { ServerResponse } from 'http';
+import { z } from 'zod';
 import { NoObjectGeneratedError } from '../../errors/no-object-generated-error';
 import { DelayedPromise } from '../../util/delayed-promise';
-import type { CallSettings } from '../prompt/call-settings';
+import { CallSettings } from '../prompt/call-settings';
 import { convertToLanguageModelPrompt } from '../prompt/convert-to-language-model-prompt';
 import { prepareCallSettings } from '../prompt/prepare-call-settings';
 import { prepareRetries } from '../prompt/prepare-retries';
-import type { Prompt } from '../prompt/prompt';
+import { Prompt } from '../prompt/prompt';
 import { standardizePrompt } from '../prompt/standardize-prompt';
 import { assembleOperationName } from '../telemetry/assemble-operation-name';
 import { getBaseTelemetryAttributes } from '../telemetry/get-base-telemetry-attributes';
 import { getTracer } from '../telemetry/get-tracer';
 import { recordSpan } from '../telemetry/record-span';
 import { selectTelemetryAttributes } from '../telemetry/select-telemetry-attributes';
-import type { TelemetrySettings } from '../telemetry/telemetry-settings';
-import type {
+import { TelemetrySettings } from '../telemetry/telemetry-settings';
+import {
   CallWarning,
   FinishReason,
   LanguageModel,
   LogProbs,
 } from '../types/language-model';
-import type { LanguageModelRequestMetadata } from '../types/language-model-request-metadata';
-import type { LanguageModelResponseMetadata } from '../types/language-model-response-metadata';
-import type {
-  ProviderMetadata,
-  ProviderOptions,
-} from '../types/provider-metadata';
+import { LanguageModelRequestMetadata } from '../types/language-model-request-metadata';
+import { LanguageModelResponseMetadata } from '../types/language-model-response-metadata';
+import { ProviderMetadata, ProviderOptions } from '../types/provider-metadata';
 import {
-  type LanguageModelUsage,
+  LanguageModelUsage,
   calculateLanguageModelUsage,
 } from '../types/usage';
 import {
-  type AsyncIterableStream,
+  AsyncIterableStream,
   createAsyncIterableStream,
 } from '../util/async-iterable-stream';
 import { createStitchableStream } from '../util/create-stitchable-stream';
@@ -53,11 +50,8 @@ import { prepareOutgoingHttpHeaders } from '../util/prepare-outgoing-http-header
 import { prepareResponseHeaders } from '../util/prepare-response-headers';
 import { writeToServerResponse } from '../util/write-to-server-response';
 import { injectJsonInstruction } from './inject-json-instruction';
-import { type OutputStrategy, getOutputStrategy } from './output-strategy';
-import type {
-  ObjectStreamPart,
-  StreamObjectResult,
-} from './stream-object-result';
+import { OutputStrategy, getOutputStrategy } from './output-strategy';
+import { ObjectStreamPart, StreamObjectResult } from './stream-object-result';
 import { validateObjectGenerationInput } from './validate-object-generation-input';
 
 const originalGenerateId = createIdGenerator({ prefix: 'aiobj', size: 24 });
@@ -923,9 +917,9 @@ class DefaultStreamObjectResult<PARTIAL, RESULT, ELEMENT_STREAM>
               async flush(controller) {
                 try {
                   const finalUsage = usage ?? {
-                    promptTokens: Number.NaN,
-                    completionTokens: Number.NaN,
-                    totalTokens: Number.NaN,
+                    promptTokens: NaN,
+                    completionTokens: NaN,
+                    totalTokens: NaN,
                   };
 
                   doStreamSpan.setAttributes(

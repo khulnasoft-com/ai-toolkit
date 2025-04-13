@@ -1,11 +1,11 @@
-import type {
+import {
   LanguageModelV1FunctionTool,
   LanguageModelV1ProviderDefinedTool,
   LanguageModelV1ToolChoice,
 } from '@ai-toolkit/provider';
 import { asSchema } from '@ai-toolkit/ui-utils';
-import type { ToolSet } from '../generate-text';
-import type { ToolChoice } from '../types/language-model';
+import { ToolSet } from '../generate-text';
+import { ToolChoice } from '../types/language-model';
 import { isNonEmptyObject } from '../util/is-non-empty-object';
 
 export function prepareToolsAndToolChoice<TOOLS extends ToolSet>({

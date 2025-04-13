@@ -1,6 +1,6 @@
-import { type ChildProcess, spawn } from 'node:child_process';
+import { ChildProcess, spawn } from 'node:child_process';
 import { getEnvironment } from './get-environment';
-import type { StdioConfig } from './mcp-stdio-transport';
+import { StdioConfig } from './mcp-stdio-transport';
 
 export async function createChildProcess(
   config: StdioConfig,

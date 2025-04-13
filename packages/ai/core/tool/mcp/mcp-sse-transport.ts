@@ -1,7 +1,7 @@
 import { createEventSourceParserStream } from '@ai-toolkit/provider-utils';
 import { MCPClientError } from '../../../errors';
-import { type JSONRPCMessage, JSONRPCMessageSchema } from './json-rpc-message';
-import type { MCPTransport } from './mcp-transport';
+import { JSONRPCMessage, JSONRPCMessageSchema } from './json-rpc-message';
+import { MCPTransport } from './mcp-transport';
 
 export class SseMCPTransport implements MCPTransport {
   private endpoint?: URL;
