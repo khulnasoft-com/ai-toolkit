@@ -216,7 +216,7 @@ describe('doGenerate', () => {
             "text": "Hello from the Khulnasoft AI TOOLKIT!",
           },
           "headers": {
-            "content-length": "85",
+            "content-length": "93",
             "content-type": "application/json",
           },
           "modelId": "whisper-1",
