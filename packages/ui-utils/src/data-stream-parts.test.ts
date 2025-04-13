@@ -1,4 +1,4 @@
-import { ToolCall, ToolResult } from '@ai-toolkit/provider-utils';
+import type { ToolCall, ToolResult } from '@ai-toolkit/provider-utils';
 import { formatDataStreamPart, parseDataStreamPart } from './data-stream-parts';
 
 describe('data-stream-parts', () => {
@@ -193,7 +193,7 @@ describe('finish_message stream part', () => {
       type: 'finish_message',
       value: {
         finishReason: 'stop',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     });
   });
@@ -249,7 +249,7 @@ describe('finish_step stream part', () => {
       type: 'finish_step',
       value: {
         finishReason: 'stop',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
         isContinued: false,
       },
     });

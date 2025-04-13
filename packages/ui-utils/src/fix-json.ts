@@ -30,7 +30,6 @@ export function fixJson(input: string): string {
   let literalStart: number | null = null;
 
   function processValueStart(char: string, i: number, swapState: State) {
-    {
       switch (char) {
         case '"': {
           lastValidIndex = i;
@@ -90,7 +89,6 @@ export function fixJson(input: string): string {
           break;
         }
       }
-    }
   }
 
   function processAfterObjectValue(char: string, i: number) {

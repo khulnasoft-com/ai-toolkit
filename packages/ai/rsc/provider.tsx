@@ -121,7 +121,7 @@ export function createAI<
     }
 
     let uiState = props.initialUIState ?? initialUIState;
-    let aiState = props.initialAIState ?? initialAIState;
+    const aiState = props.initialAIState ?? initialAIState;
     let aiStateDelta = undefined;
 
     if (wrappedSyncUIState) {

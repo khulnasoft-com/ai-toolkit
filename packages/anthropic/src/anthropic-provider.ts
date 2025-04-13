@@ -1,15 +1,15 @@
 import {
-  LanguageModelV1,
+  type LanguageModelV1,
   NoSuchModelError,
-  ProviderV1,
+  type ProviderV1,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
+  type FetchFunction,
   loadApiKey,
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
 import { AnthropicMessagesLanguageModel } from './anthropic-messages-language-model';
-import {
+import type {
   AnthropicMessagesModelId,
   AnthropicMessagesSettings,
 } from './anthropic-messages-settings';

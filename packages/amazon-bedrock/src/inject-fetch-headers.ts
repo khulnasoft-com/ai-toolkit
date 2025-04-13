@@ -1,6 +1,6 @@
 import { extractHeaders } from './headers-utils';
 import {
-  FetchFunction,
+  type FetchFunction,
   removeUndefinedEntries,
 } from '@ai-toolkit/provider-utils';
 

@@ -1,7 +1,7 @@
 import {
-  JSONValue,
-  RequestOptions,
-  UseCompletionOptions,
+  type JSONValue,
+  type RequestOptions,
+  type UseCompletionOptions,
   callCompletionApi,
 } from '@ai-toolkit/ui-utils';
 import { useCallback, useEffect, useId, useRef, useState } from 'react';

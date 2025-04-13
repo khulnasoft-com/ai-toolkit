@@ -1,15 +1,15 @@
 import { OpenAICompatibleChatLanguageModel } from '@ai-toolkit/openai-compatible';
 import {
-  LanguageModelV1,
+  type LanguageModelV1,
   NoSuchModelError,
-  ProviderV1,
+  type ProviderV1,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
+  type FetchFunction,
   loadApiKey,
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
-import {
+import type {
   DeepSeekChatModelId,
   DeepSeekChatSettings,
 } from './deepseek-chat-settings';

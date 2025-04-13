@@ -1,5 +1,5 @@
-import { Attachment } from '@ai-toolkit/ui-utils';
-import { FilePart, ImagePart, TextPart } from './content-part';
+import type { Attachment } from '@ai-toolkit/ui-utils';
+import type { FilePart, ImagePart, TextPart } from './content-part';
 import {
   convertDataContentToUint8Array,
   convertUint8ArrayToText,

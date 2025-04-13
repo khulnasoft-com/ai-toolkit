@@ -1,14 +1,14 @@
 import { isAbortError } from '@ai-toolkit/provider-utils';
 import {
-  AssistantStatus,
-  CreateMessage,
+  type AssistantStatus,
+  type CreateMessage,
   generateId,
-  Message,
+  type Message,
   processAssistantStream,
-  UseAssistantOptions,
+  type UseAssistantOptions,
 } from '@ai-toolkit/ui-utils';
-import { Accessor, createMemo, createSignal, JSX, Setter } from 'solid-js';
-import { createStore, SetStoreFunction, Store } from 'solid-js/store';
+import { type Accessor, createMemo, createSignal, type JSX, type Setter } from 'solid-js';
+import { createStore, type SetStoreFunction, type Store } from 'solid-js/store';
 import { convertToAccessorOptions } from './utils/convert-to-accessor-options';
 
 // use function to allow for mocking in tests:

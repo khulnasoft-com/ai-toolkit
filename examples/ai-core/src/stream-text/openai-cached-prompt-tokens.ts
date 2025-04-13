@@ -154,9 +154,9 @@ function createCompletion() {
 }
 
 async function main() {
-  let start = performance.now();
-  let result = await createCompletion();
-  let end = performance.now();
+  const start = performance.now();
+  const result = await createCompletion();
+  const end = performance.now();
   console.log(`duration: ${Math.floor(end - start)} ms`);
 
   let fullResponse = '';

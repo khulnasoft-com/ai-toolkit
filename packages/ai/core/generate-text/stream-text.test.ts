@@ -1,4 +1,4 @@
-import {
+import type {
   LanguageModelV1,
   LanguageModelV1CallOptions,
   LanguageModelV1CallWarning,
@@ -24,10 +24,10 @@ import { MockTracer } from '../test/mock-tracer';
 import { mockValues } from '../test/mock-values';
 import { tool } from '../tool/tool';
 import { object, text } from './output';
-import { StepResult } from './step-result';
+import type { StepResult } from './step-result';
 import { streamText } from './stream-text';
-import { StreamTextResult, TextStreamPart } from './stream-text-result';
-import { ToolSet } from './tool-set';
+import type { StreamTextResult, TextStreamPart } from './stream-text-result';
+import type { ToolSet } from './tool-set';
 
 const defaultSettings = () =>
   ({
@@ -4220,9 +4220,9 @@ describe('streamText', () => {
                   logprobs: undefined,
                   providerMetadata: undefined,
                   usage: {
-                    completionTokens: NaN,
-                    promptTokens: NaN,
-                    totalTokens: NaN,
+                    completionTokens: Number.NaN,
+                    promptTokens: Number.NaN,
+                    totalTokens: Number.NaN,
                   },
                   request: {},
                   response: {
@@ -4240,9 +4240,9 @@ describe('streamText', () => {
                   logprobs: undefined,
                   providerMetadata: undefined,
                   usage: {
-                    completionTokens: NaN,
-                    promptTokens: NaN,
-                    totalTokens: NaN,
+                    completionTokens: Number.NaN,
+                    promptTokens: Number.NaN,
+                    totalTokens: Number.NaN,
                   },
                   response: {
                     id: 'response-id',
@@ -4270,9 +4270,9 @@ describe('streamText', () => {
                 finishReason: 'stop',
                 logprobs: undefined,
                 usage: {
-                  completionTokens: NaN,
-                  promptTokens: NaN,
-                  totalTokens: NaN,
+                  completionTokens: Number.NaN,
+                  promptTokens: Number.NaN,
+                  totalTokens: Number.NaN,
                 },
               },
             ]),
@@ -4299,9 +4299,9 @@ describe('streamText', () => {
             finishReason: 'stop',
             logprobs: undefined,
             usage: {
-              completionTokens: NaN,
-              promptTokens: NaN,
-              totalTokens: NaN,
+              completionTokens: Number.NaN,
+              promptTokens: Number.NaN,
+              totalTokens: Number.NaN,
             },
             request: {},
             response: {
@@ -4318,9 +4318,9 @@ describe('streamText', () => {
             finishReason: 'stop',
             logprobs: undefined,
             usage: {
-              completionTokens: NaN,
-              promptTokens: NaN,
-              totalTokens: NaN,
+              completionTokens: Number.NaN,
+              promptTokens: Number.NaN,
+              totalTokens: Number.NaN,
             },
             response: {
               id: 'response-id',

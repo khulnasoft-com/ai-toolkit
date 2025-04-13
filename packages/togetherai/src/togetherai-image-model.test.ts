@@ -1,8 +1,8 @@
-import { FetchFunction } from '@ai-toolkit/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { createTestServer } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import { TogetherAIImageModel } from './togetherai-image-model';
-import { TogetherAIImageSettings } from './togetherai-image-settings';
+import type { TogetherAIImageSettings } from './togetherai-image-settings';
 
 const prompt = 'A cute baby sea otter';
 

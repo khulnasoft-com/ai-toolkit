@@ -1,15 +1,15 @@
 import {
-  LanguageModelV1,
+  type LanguageModelV1,
   NoSuchModelError,
-  ProviderV1,
+  type ProviderV1,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
+  type FetchFunction,
   loadApiKey,
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
 import { GroqChatLanguageModel } from './groq-chat-language-model';
-import { GroqChatModelId, GroqChatSettings } from './groq-chat-settings';
+import type { GroqChatModelId, GroqChatSettings } from './groq-chat-settings';
 
 export interface GroqProvider extends ProviderV1 {
   /**
@@ -89,12 +89,10 @@ export function createGroq(options: GroqProviderSettings = {}): GroqProvider {
     return createChatModel(modelId, settings);
   };
 
-  const provider = function (
+  const provider = (
     modelId: GroqChatModelId,
     settings?: GroqChatSettings,
-  ) {
-    return createLanguageModel(modelId, settings);
-  };
+  ) => createLanguageModel(modelId, settings);
 
   provider.languageModel = createLanguageModel;
   provider.chat = createChatModel;

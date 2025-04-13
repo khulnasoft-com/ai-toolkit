@@ -347,9 +347,9 @@ describe('text stream', () => {
       {
         finishReason: 'unknown',
         usage: {
-          completionTokens: NaN,
-          promptTokens: NaN,
-          totalTokens: NaN,
+          completionTokens: Number.NaN,
+          promptTokens: Number.NaN,
+          totalTokens: Number.NaN,
         },
       },
     );

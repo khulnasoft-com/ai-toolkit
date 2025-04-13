@@ -1,6 +1,6 @@
 import {
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 

@@ -51,7 +51,7 @@ function parseWeeklyDownloads(html: string): number {
   }
 
   const downloadsStr = match[1].replace(/[^\d]/g, ''); // remove commas
-  return parseInt(downloadsStr, 10) || 0;
+  return Number.parseInt(downloadsStr, 10) || 0;
 }
 
 /**

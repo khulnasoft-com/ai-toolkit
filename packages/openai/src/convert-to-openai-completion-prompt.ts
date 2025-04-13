@@ -1,6 +1,6 @@
 import {
   InvalidPromptError,
-  LanguageModelV1Prompt,
+  type LanguageModelV1Prompt,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 

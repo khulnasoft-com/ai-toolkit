@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { MCPClientError } from '../../../errors';
 import { createMCPClient } from './mcp-client';
 import { MockMCPTransport } from './mock-mcp-transport';
-import { CallToolResult } from './types';
+import type { CallToolResult } from './types';
 
 const createMockTransport = vi.fn(config => new MockMCPTransport(config));
 

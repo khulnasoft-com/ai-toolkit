@@ -1,18 +1,18 @@
 import {
-  FetchFunction,
+  type FetchFunction,
   isAbortError,
   safeValidateTypes,
 } from '@ai-toolkit/provider-utils';
 import {
   asSchema,
-  DeepPartial,
+  type DeepPartial,
   isDeepEqualData,
   parsePartialJson,
-  Schema,
+  type Schema,
 } from '@ai-toolkit/ui-utils';
 import { useCallback, useId, useRef, useState } from 'react';
 import useSWR from 'swr';
-import z from 'zod';
+import type z from 'zod';
 
 // use function to allow for mocking in tests:
 const getOriginalFetch = () => fetch;

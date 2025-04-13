@@ -1,4 +1,4 @@
-import {
+import type {
   LanguageModelV1FunctionTool,
   LanguageModelV1Prompt,
 } from '@ai-toolkit/provider';

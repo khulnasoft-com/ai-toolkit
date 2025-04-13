@@ -1,14 +1,14 @@
 import {
   extractMaxToolInvocationStep,
-  FileUIPart,
-  Message,
-  ReasoningUIPart,
-  StepStartUIPart,
-  TextUIPart,
-  ToolInvocation,
-  ToolInvocationUIPart,
+  type FileUIPart,
+  type Message,
+  type ReasoningUIPart,
+  type StepStartUIPart,
+  type TextUIPart,
+  type ToolInvocation,
+  type ToolInvocationUIPart,
 } from '@ai-toolkit/ui-utils';
-import { ResponseMessage } from '../generate-text/step-result';
+import type { ResponseMessage } from '../generate-text/step-result';
 import { convertDataContentToBase64String } from './data-content';
 import { AITOOLKITError } from '@ai-toolkit/provider';
 

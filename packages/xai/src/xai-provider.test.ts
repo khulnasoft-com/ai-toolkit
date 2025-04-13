@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, Mock } from 'vitest';
+import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
 import { createXai } from './xai-provider';
 import { loadApiKey } from '@ai-toolkit/provider-utils';
 import { OpenAICompatibleChatLanguageModel } from '@ai-toolkit/openai-compatible';

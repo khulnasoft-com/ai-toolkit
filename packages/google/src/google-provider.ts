@@ -1,20 +1,20 @@
 import {
-  FetchFunction,
+  type FetchFunction,
   generateId,
   loadApiKey,
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
 import { GoogleGenerativeAILanguageModel } from './google-generative-ai-language-model';
-import {
+import type {
   GoogleGenerativeAIModelId,
   GoogleGenerativeAISettings,
 } from './google-generative-ai-settings';
 import { GoogleGenerativeAIEmbeddingModel } from './google-generative-ai-embedding-model';
-import {
+import type {
   GoogleGenerativeAIEmbeddingModelId,
   GoogleGenerativeAIEmbeddingSettings,
 } from './google-generative-ai-embedding-settings';
-import {
+import type {
   EmbeddingModelV1,
   LanguageModelV1,
   ProviderV1,

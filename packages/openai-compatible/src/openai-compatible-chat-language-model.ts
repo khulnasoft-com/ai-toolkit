@@ -1,39 +1,39 @@
 import {
-  APICallError,
+  type APICallError,
   InvalidResponseDataError,
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
-  LanguageModelV1FinishReason,
-  LanguageModelV1ObjectGenerationMode,
-  LanguageModelV1ProviderMetadata,
-  LanguageModelV1StreamPart,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1FinishReason,
+  type LanguageModelV1ObjectGenerationMode,
+  type LanguageModelV1ProviderMetadata,
+  type LanguageModelV1StreamPart,
 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonErrorResponseHandler,
   createJsonResponseHandler,
-  FetchFunction,
+  type FetchFunction,
   generateId,
   isParsableJson,
-  ParseResult,
+  type ParseResult,
   postJsonToApi,
-  ResponseHandler,
+  type ResponseHandler,
 } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 import { convertToOpenAICompatibleChatMessages } from './convert-to-openai-compatible-chat-messages';
 import { getResponseMetadata } from './get-response-metadata';
 import { mapOpenAICompatibleFinishReason } from './map-openai-compatible-finish-reason';
-import {
+import type {
   OpenAICompatibleChatModelId,
   OpenAICompatibleChatSettings,
 } from './openai-compatible-chat-settings';
 import {
   defaultOpenAICompatibleErrorStructure,
-  ProviderErrorStructure,
+  type ProviderErrorStructure,
 } from './openai-compatible-error';
 import { prepareTools } from './openai-compatible-prepare-tools';
-import { MetadataExtractor } from './openai-compatible-metadata-extractor';
+import type { MetadataExtractor } from './openai-compatible-metadata-extractor';
 
 export type OpenAICompatibleChatConfig = {
   provider: string;
@@ -304,8 +304,8 @@ export class OpenAICompatibleChatLanguageModel implements LanguageModelV1 {
       })),
       finishReason: mapOpenAICompatibleFinishReason(choice.finish_reason),
       usage: {
-        promptTokens: responseBody.usage?.prompt_tokens ?? NaN,
-        completionTokens: responseBody.usage?.completion_tokens ?? NaN,
+        promptTokens: responseBody.usage?.prompt_tokens ?? Number.NaN,
+        completionTokens: responseBody.usage?.completion_tokens ?? Number.NaN,
       },
       providerMetadata,
       rawCall: { rawPrompt, rawSettings },
@@ -410,7 +410,7 @@ export class OpenAICompatibleChatLanguageModel implements LanguageModelV1 {
     }> = [];
 
     let finishReason: LanguageModelV1FinishReason = 'unknown';
-    let usage: {
+    const usage: {
       completionTokens: number | undefined;
       completionTokensDetails: {
         reasoningTokens: number | undefined;
@@ -434,7 +434,7 @@ export class OpenAICompatibleChatLanguageModel implements LanguageModelV1 {
       },
     };
     let isFirstChunk = true;
-    let providerOptionsName = this.providerOptionsName;
+    const providerOptionsName = this.providerOptionsName;
 
     return {
       stream: response.pipeThrough(
@@ -672,8 +672,8 @@ export class OpenAICompatibleChatLanguageModel implements LanguageModelV1 {
               type: 'finish',
               finishReason,
               usage: {
-                promptTokens: usage.promptTokens ?? NaN,
-                completionTokens: usage.completionTokens ?? NaN,
+                promptTokens: usage.promptTokens ?? Number.NaN,
+                completionTokens: usage.completionTokens ?? Number.NaN,
               },
               providerMetadata,
             });

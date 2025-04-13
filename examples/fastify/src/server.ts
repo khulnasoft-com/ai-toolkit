@@ -5,7 +5,7 @@ import Fastify from 'fastify';
 
 const fastify = Fastify({ logger: true });
 
-fastify.post('/', async function (request, reply) {
+fastify.post('/', async (request, reply) => {
   const result = streamText({
     model: openai('gpt-4o'),
     prompt: 'Invent a new holiday and describe its traditions.',
@@ -18,7 +18,7 @@ fastify.post('/', async function (request, reply) {
   return reply.send(result.toDataStream());
 });
 
-fastify.post('/stream-data', async function (request, reply) {
+fastify.post('/stream-data', async (request, reply) => {
   // immediately start streaming the response
   const dataStream = createDataStream({
     execute: async dataStreamWriter => {

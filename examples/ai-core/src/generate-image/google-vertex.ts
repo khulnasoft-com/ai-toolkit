@@ -1,5 +1,5 @@
 import {
-  GoogleVertexImageProviderOptions,
+  type GoogleVertexImageProviderOptions,
   vertex,
 } from '@ai-toolkit/google-vertex';
 import { experimental_generateImage as generateImage } from 'ai';

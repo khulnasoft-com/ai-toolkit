@@ -1,8 +1,8 @@
-import {
+import type {
   groundingMetadataSchema,
   safetyRatingSchema,
 } from './google-generative-ai-language-model';
-import { z } from 'zod';
+import type { z } from 'zod';
 
 export type GoogleGenerativeAIPrompt = {
   systemInstruction?: GoogleGenerativeAISystemInstruction;

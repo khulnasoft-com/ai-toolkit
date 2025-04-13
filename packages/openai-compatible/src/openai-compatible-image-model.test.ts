@@ -1,9 +1,9 @@
-import { FetchFunction } from '@ai-toolkit/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { createTestServer } from '@ai-toolkit/provider-utils/test';
 import { OpenAICompatibleImageModel } from './openai-compatible-image-model';
 import { z } from 'zod';
-import { ProviderErrorStructure } from './openai-compatible-error';
-import { ImageModelV1CallOptions } from '@ai-toolkit/provider';
+import type { ProviderErrorStructure } from './openai-compatible-error';
+import type { ImageModelV1CallOptions } from '@ai-toolkit/provider';
 
 const prompt = 'A photorealistic astronaut riding a horse';
 

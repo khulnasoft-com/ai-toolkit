@@ -1,4 +1,4 @@
-import { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
+import type { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
 
 export function mapCohereFinishReason(
   finishReason: string | null | undefined,

@@ -1,41 +1,41 @@
-import { AITOOLKITError, LanguageModelV1Source } from '@ai-toolkit/provider';
-import { createIdGenerator, IDGenerator } from '@ai-toolkit/provider-utils';
-import { DataStreamString, formatDataStreamPart } from '@ai-toolkit/ui-utils';
-import { Span } from '@opentelemetry/api';
-import { ServerResponse } from 'node:http';
+import { AITOOLKITError, type LanguageModelV1Source } from '@ai-toolkit/provider';
+import { createIdGenerator, type IDGenerator } from '@ai-toolkit/provider-utils';
+import { type DataStreamString, formatDataStreamPart } from '@ai-toolkit/ui-utils';
+import type { Span } from '@opentelemetry/api';
+import type { ServerResponse } from 'node:http';
 import { InvalidArgumentError } from '../../errors/invalid-argument-error';
 import { InvalidStreamPartError } from '../../errors/invalid-stream-part-error';
 import { NoOutputSpecifiedError } from '../../errors/no-output-specified-error';
-import { StreamData } from '../../streams/stream-data';
+import type { StreamData } from '../../streams/stream-data';
 import { asArray } from '../../util/as-array';
 import { consumeStream } from '../../util/consume-stream';
 import { DelayedPromise } from '../../util/delayed-promise';
-import { DataStreamWriter } from '../data-stream/data-stream-writer';
-import { CallSettings } from '../prompt/call-settings';
+import type { DataStreamWriter } from '../data-stream/data-stream-writer';
+import type { CallSettings } from '../prompt/call-settings';
 import { convertToLanguageModelPrompt } from '../prompt/convert-to-language-model-prompt';
-import { CoreAssistantMessage } from '../prompt/message';
+import type { CoreAssistantMessage } from '../prompt/message';
 import { prepareCallSettings } from '../prompt/prepare-call-settings';
 import { prepareRetries } from '../prompt/prepare-retries';
 import { prepareToolsAndToolChoice } from '../prompt/prepare-tools-and-tool-choice';
-import { Prompt } from '../prompt/prompt';
+import type { Prompt } from '../prompt/prompt';
 import { standardizePrompt } from '../prompt/standardize-prompt';
 import { assembleOperationName } from '../telemetry/assemble-operation-name';
 import { getBaseTelemetryAttributes } from '../telemetry/get-base-telemetry-attributes';
 import { getTracer } from '../telemetry/get-tracer';
 import { recordSpan } from '../telemetry/record-span';
 import { selectTelemetryAttributes } from '../telemetry/select-telemetry-attributes';
-import { TelemetrySettings } from '../telemetry/telemetry-settings';
-import {
+import type { TelemetrySettings } from '../telemetry/telemetry-settings';
+import type {
   FinishReason,
   LanguageModel,
   LogProbs,
   ToolChoice,
 } from '../types/language-model';
-import { LanguageModelResponseMetadata } from '../types/language-model-response-metadata';
-import { ProviderMetadata, ProviderOptions } from '../types/provider-metadata';
-import { addLanguageModelUsage, LanguageModelUsage } from '../types/usage';
+import type { LanguageModelResponseMetadata } from '../types/language-model-response-metadata';
+import type { ProviderMetadata, ProviderOptions } from '../types/provider-metadata';
+import { addLanguageModelUsage, type LanguageModelUsage } from '../types/usage';
 import {
-  AsyncIterableStream,
+  type AsyncIterableStream,
   createAsyncIterableStream,
 } from '../util/async-iterable-stream';
 import { createStitchableStream } from '../util/create-stitchable-stream';
@@ -45,25 +45,25 @@ import { prepareOutgoingHttpHeaders } from '../util/prepare-outgoing-http-header
 import { prepareResponseHeaders } from '../util/prepare-response-headers';
 import { splitOnLastWhitespace } from '../util/split-on-last-whitespace';
 import { writeToServerResponse } from '../util/write-to-server-response';
-import { GeneratedFile } from './generated-file';
-import { Output } from './output';
-import { asReasoningText, ReasoningDetail } from './reasoning-detail';
+import type { GeneratedFile } from './generated-file';
+import type { Output } from './output';
+import { asReasoningText, type ReasoningDetail } from './reasoning-detail';
 import {
   runToolsTransformation,
-  SingleRequestTextStreamPart,
+  type SingleRequestTextStreamPart,
 } from './run-tools-transformation';
-import { ResponseMessage, StepResult } from './step-result';
-import {
+import type { ResponseMessage, StepResult } from './step-result';
+import type {
   ConsumeStreamOptions,
   DataStreamOptions,
   StreamTextResult,
   TextStreamPart,
 } from './stream-text-result';
 import { toResponseMessages } from './to-response-messages';
-import { ToolCallUnion } from './tool-call';
-import { ToolCallRepairFunction } from './tool-call-repair';
-import { ToolResultUnion } from './tool-result';
-import { ToolSet } from './tool-set';
+import type { ToolCallUnion } from './tool-call';
+import type { ToolCallRepairFunction } from './tool-call-repair';
+import type { ToolResultUnion } from './tool-result';
+import type { ToolSet } from './tool-set';
 
 const originalGenerateId = createIdGenerator({
   prefix: 'aitxt',
@@ -808,9 +808,9 @@ class DefaultStreamTextResult<TOOLS extends ToolSet, OUTPUT, PARTIAL_OUTPUT>
           // derived:
           const finishReason = recordedFinishReason ?? 'unknown';
           const usage = recordedUsage ?? {
-            completionTokens: NaN,
-            promptTokens: NaN,
-            totalTokens: NaN,
+            completionTokens: Number.NaN,
+            promptTokens: Number.NaN,
+            totalTokens: Number.NaN,
           };
 
           // from finish:

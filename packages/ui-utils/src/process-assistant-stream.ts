@@ -1,5 +1,5 @@
 import {
-  AssistantStreamPartType,
+  type AssistantStreamPartType,
   parseAssistantStreamPart,
 } from './assistant-stream-parts';
 

@@ -1,5 +1,5 @@
 import { useCompletion } from '@ai-toolkit/solid';
-import { JSX } from 'solid-js';
+import type { JSX } from 'solid-js';
 
 export default function Chat() {
   const { completion, input, setInput, handleSubmit, error, data } =

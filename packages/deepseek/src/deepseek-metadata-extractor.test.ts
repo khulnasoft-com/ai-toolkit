@@ -141,7 +141,7 @@ describe('streaming metadata extractor', () => {
 
     expect(finalMetadata).toEqual({
       deepseek: {
-        promptCacheHitTokens: NaN,
+        promptCacheHitTokens: Number.NaN,
         promptCacheMissTokens: 50,
       },
     });

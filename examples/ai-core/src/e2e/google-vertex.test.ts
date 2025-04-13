@@ -3,8 +3,8 @@ import { describe, expect, it, vi } from 'vitest';
 import { vertex as vertexEdge } from '@ai-toolkit/google-vertex/edge';
 import { vertex as vertexNode } from '@ai-toolkit/google-vertex';
 import {
-  APICallError,
-  LanguageModelV1,
+  type APICallError,
+  type LanguageModelV1,
   experimental_generateImage as generateImage,
 } from 'ai';
 import {
@@ -13,9 +13,9 @@ import {
   createImageModelWithCapabilities,
   createLanguageModelWithCapabilities,
   defaultChatModelCapabilities,
-  ModelWithCapabilities,
+  type ModelWithCapabilities,
 } from './feature-test-suite';
-import { ImageModelV1 } from '@ai-toolkit/provider';
+import type { ImageModelV1 } from '@ai-toolkit/provider';
 
 const RUNTIME_VARIANTS = {
   edge: {

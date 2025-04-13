@@ -1,7 +1,7 @@
-import { TranscriptionModelV1, ProviderV1 } from '@ai-toolkit/provider';
-import { FetchFunction, loadApiKey } from '@ai-toolkit/provider-utils';
+import type { TranscriptionModelV1, ProviderV1 } from '@ai-toolkit/provider';
+import { type FetchFunction, loadApiKey } from '@ai-toolkit/provider-utils';
 import { ElevenLabsTranscriptionModel } from './elevenlabs-transcription-model';
-import { ElevenLabsTranscriptionModelId } from './elevenlabs-transcription-settings';
+import type { ElevenLabsTranscriptionModelId } from './elevenlabs-transcription-settings';
 
 export interface ElevenLabsProvider
   extends Pick<ProviderV1, 'transcriptionModel'> {
@@ -59,11 +59,9 @@ export function createElevenLabs(
       fetch: options.fetch,
     });
 
-  const provider = function (modelId: ElevenLabsTranscriptionModelId) {
-    return {
+  const provider = (modelId: ElevenLabsTranscriptionModelId) => ({
       transcription: createTranscriptionModel(modelId),
-    };
-  };
+    });
 
   provider.transcription = createTranscriptionModel;
   provider.transcriptionModel = createTranscriptionModel;

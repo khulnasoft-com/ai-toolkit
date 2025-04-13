@@ -20,10 +20,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - name: Build
+        uses: ./.github/actions/build
         with:
-          version: 9.12.3
+          node-version: ${{ matrix.node-version }}
+
+      - name: Save Turborepo cache
+          uses: actions/cache/save@5a3ec84eff668545956fd18022155c47e93e2684
+          with:
+            path: .turbo
+            key: turbo-${{ runner.os }}-node-${{ matrix.node-version }}-${{ github.sha }}-v2
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4

@@ -1,9 +1,9 @@
 import {
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
-import { OpenAIResponsesTool } from './openai-responses-api-types';
+import type { OpenAIResponsesTool } from './openai-responses-api-types';
 
 export function prepareResponsesTools({
   mode,

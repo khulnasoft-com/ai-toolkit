@@ -19,7 +19,7 @@
 // CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import { z } from 'zod';
+import type { z } from 'zod';
 
 /**
 Create a type from an object with all keys and nested keys set to optional.

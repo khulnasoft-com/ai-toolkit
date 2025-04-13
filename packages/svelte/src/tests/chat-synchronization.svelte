@@ -2,7 +2,7 @@
   import { Chat } from '../chat.svelte.js';
   import { createAIContext } from '../context-provider.js';
 
-  let { id }: { id?: string } = $props();
+  const { id }: { id?: string } = $props();
 
   createAIContext();
   const chat1 = new Chat({ id });

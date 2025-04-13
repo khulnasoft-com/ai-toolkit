@@ -1,10 +1,10 @@
-import { LanguageModelV1Prompt } from '@ai-toolkit/provider';
+import type { LanguageModelV1Prompt } from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   createTestServer,
 } from '@ai-toolkit/provider-utils/test';
 import { createAnthropic } from './anthropic-provider';
-import { AnthropicProviderOptions } from './anthropic-messages-language-model';
+import type { AnthropicProviderOptions } from './anthropic-messages-language-model';
 
 const TEST_PROMPT: LanguageModelV1Prompt = [
   { role: 'user', content: [{ type: 'text', text: 'Hello' }] },

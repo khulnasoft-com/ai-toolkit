@@ -1,5 +1,5 @@
 import { appendClientMessage } from './append-client-message';
-import { Message } from '@ai-toolkit/ui-utils';
+import type { Message } from '@ai-toolkit/ui-utils';
 
 describe('appendClientMessage', () => {
   it('should append a new message to an empty array', () => {

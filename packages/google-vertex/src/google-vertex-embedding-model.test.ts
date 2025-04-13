@@ -1,5 +1,5 @@
 import {
-  EmbeddingModelV1Embedding,
+  type EmbeddingModelV1Embedding,
   TooManyEmbeddingValuesForCallError,
 } from '@ai-toolkit/provider';
 import { createTestServer } from '@ai-toolkit/provider-utils/test';

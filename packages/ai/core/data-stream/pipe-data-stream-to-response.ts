@@ -1,8 +1,8 @@
-import { ServerResponse } from 'node:http';
+import type { ServerResponse } from 'node:http';
 import { prepareOutgoingHttpHeaders } from '../util/prepare-outgoing-http-headers';
 import { writeToServerResponse } from '../util/write-to-server-response';
 import { createDataStream } from './create-data-stream';
-import { DataStreamWriter } from './data-stream-writer';
+import type { DataStreamWriter } from './data-stream-writer';
 
 export function pipeDataStreamToResponse(
   response: ServerResponse,

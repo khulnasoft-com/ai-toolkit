@@ -1,4 +1,4 @@
-import {
+import type {
   JSONValue,
   SpeechModelV1,
   SpeechModelV1CallWarning,
@@ -6,7 +6,7 @@ import {
 import { MockSpeechModelV1 } from '../test/mock-speech-model-v1';
 import { generateSpeech } from './generate-speech';
 import {
-  GeneratedAudioFile,
+  type GeneratedAudioFile,
   DefaultGeneratedAudioFile,
 } from './generated-audio-file';
 

@@ -1,4 +1,5 @@
-import React, { Suspense } from 'react';
+import type React from 'react';
+import { Suspense } from 'react';
 import { createResolvablePromise } from '../../util/create-resolvable-promise';
 
 // Recursive type for the chunk.

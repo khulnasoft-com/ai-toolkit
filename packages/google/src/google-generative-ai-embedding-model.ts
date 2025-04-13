@@ -1,17 +1,17 @@
 import {
-  EmbeddingModelV1,
+  type EmbeddingModelV1,
   TooManyEmbeddingValuesForCallError,
 } from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
-  FetchFunction,
+  type FetchFunction,
   postJsonToApi,
   resolve,
 } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 import { googleFailedResponseHandler } from './google-error';
-import {
+import type {
   GoogleGenerativeAIEmbeddingModelId,
   GoogleGenerativeAIEmbeddingSettings,
 } from './google-generative-ai-embedding-settings';

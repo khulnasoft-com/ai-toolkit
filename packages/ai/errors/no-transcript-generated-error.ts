@@ -1,5 +1,5 @@
 import { AITOOLKITError } from '@ai-toolkit/provider';
-import { TranscriptionModelResponseMetadata } from '../core/types/transcription-model-response-metadata';
+import type { TranscriptionModelResponseMetadata } from '../core/types/transcription-model-response-metadata';
 
 /**
 Error that is thrown when no transcript was generated.

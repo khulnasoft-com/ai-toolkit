@@ -1,11 +1,11 @@
 import { APICallError, EmptyResponseBodyError } from '@ai-toolkit/provider';
-import { ZodSchema } from 'zod';
+import type { ZodSchema } from 'zod';
 import {
   createEventSourceParserStream,
-  EventSourceChunk,
+  type EventSourceChunk,
 } from './event-source-parser-stream';
 import { extractResponseHeaders } from './extract-response-headers';
-import { parseJSON, ParseResult, safeParseJSON } from './parse-json';
+import { parseJSON, type ParseResult, safeParseJSON } from './parse-json';
 
 export type ResponseHandler<RETURN_TYPE> = (options: {
   url: string;

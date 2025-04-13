@@ -8,11 +8,18 @@ const isLoading = computed(() => status.value !== 'ready');
 
 <template>
   <div>
-    <div v-for="(m, idx) in messages" :key="m.id" :data-testid="`message-${idx}`">
+    <div
+      v-for="(m, idx) in messages"
+      :key="m.id"
+      :data-testid="`message-${idx}`"
+    >
       {{ m.role === 'user' ? 'User: ' : 'AI: ' }}
       {{ m.content }}
       <template v-if="m.experimental_attachments">
-        <template v-for="attachment in m.experimental_attachments" :key="attachment.name">
+        <template
+          v-for="attachment in m.experimental_attachments"
+          :key="attachment.name"
+        >
           <img
             v-if="attachment.contentType?.startsWith('image/')"
             :src="attachment.url"
@@ -25,7 +32,7 @@ const isLoading = computed(() => status.value !== 'ready');
 
     <form
       @submit="
-        (event) => {
+        event => {
           handleSubmit(event, {
             experimental_attachments: [
               {

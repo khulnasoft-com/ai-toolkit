@@ -1,7 +1,7 @@
 import {
   AITOOLKITError,
   getErrorMessage,
-  JSONValue,
+  type JSONValue,
 } from '@ai-toolkit/provider';
 
 const name = 'AI_ToolExecutionError';

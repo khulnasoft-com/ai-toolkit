@@ -1,17 +1,17 @@
-import {
+import type {
   EmbeddingModelV1,
   EmbeddingModelV1Embedding,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  Resolvable,
+  type FetchFunction,
+  type Resolvable,
   combineHeaders,
   createJsonErrorResponseHandler,
   createJsonResponseHandler,
   postJsonToApi,
   resolve,
 } from '@ai-toolkit/provider-utils';
-import {
+import type {
   BedrockEmbeddingModelId,
   BedrockEmbeddingSettings,
 } from './bedrock-embedding-settings';

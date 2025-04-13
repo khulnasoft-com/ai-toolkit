@@ -7,7 +7,7 @@ import {
   formatDataStreamPart,
   generateId,
   getTextFromDataUrl,
-  Message,
+  type Message,
 } from '@ai-toolkit/ui-utils';
 import '@testing-library/jest-dom/vitest';
 import { screen, waitFor } from '@testing-library/react';
@@ -428,9 +428,9 @@ describe('text stream', () => {
         options: {
           finishReason: 'unknown',
           usage: {
-            completionTokens: NaN,
-            promptTokens: NaN,
-            totalTokens: NaN,
+            completionTokens: Number.NaN,
+            promptTokens: Number.NaN,
+            totalTokens: Number.NaN,
           },
         },
       },
@@ -1794,7 +1794,7 @@ describe('initialMessages', () => {
         );
       });
 
-      const renderCount = parseInt(
+      const renderCount = Number.parseInt(
         screen.getByTestId('render-count').textContent!,
       );
 

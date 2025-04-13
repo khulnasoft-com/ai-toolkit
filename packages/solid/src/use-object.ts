@@ -1,17 +1,17 @@
 import {
-  FetchFunction,
+  type FetchFunction,
   isAbortError,
   safeValidateTypes,
 } from '@ai-toolkit/provider-utils';
 import {
   asSchema,
-  DeepPartial,
+  type DeepPartial,
   isDeepEqualData,
   parsePartialJson,
-  Schema,
+  type Schema,
 } from '@ai-toolkit/ui-utils';
-import { Accessor, createMemo, createSignal, createUniqueId } from 'solid-js';
-import z from 'zod';
+import { type Accessor, createMemo, createSignal, createUniqueId } from 'solid-js';
+import type z from 'zod';
 import { convertToAccessorOptions } from './utils/convert-to-accessor-options';
 import { ReactiveLRU } from './utils/reactive-lru';
 

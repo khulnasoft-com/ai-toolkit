@@ -1,12 +1,12 @@
-import {
+import type {
   LanguageModelV1,
   LanguageModelV1CallWarning,
   LanguageModelV1FinishReason,
   LanguageModelV1StreamPart,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
+  type FetchFunction,
+  type ParseResult,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
@@ -15,7 +15,7 @@ import {
 import { z } from 'zod';
 import { convertToMistralChatMessages } from './convert-to-mistral-chat-messages';
 import { mapMistralFinishReason } from './map-mistral-finish-reason';
-import {
+import type {
   MistralChatModelId,
   MistralChatSettings,
 } from './mistral-chat-settings';

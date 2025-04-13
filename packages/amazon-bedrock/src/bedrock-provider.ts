@@ -1,33 +1,33 @@
-import {
+import type {
   EmbeddingModelV1,
   ImageModelV1,
   LanguageModelV1,
   ProviderV1,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
+  type FetchFunction,
   generateId,
   loadOptionalSetting,
   loadSetting,
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
 import { BedrockChatLanguageModel } from './bedrock-chat-language-model';
-import {
+import type {
   BedrockChatModelId,
   BedrockChatSettings,
 } from './bedrock-chat-settings';
 import { BedrockEmbeddingModel } from './bedrock-embedding-model';
-import {
+import type {
   BedrockEmbeddingModelId,
   BedrockEmbeddingSettings,
 } from './bedrock-embedding-settings';
 import { BedrockImageModel } from './bedrock-image-model';
-import {
+import type {
   BedrockImageModelId,
   BedrockImageSettings,
 } from './bedrock-image-settings';
 import {
-  BedrockCredentials,
+  type BedrockCredentials,
   createSigV4FetchFunction,
 } from './bedrock-sigv4-fetch';
 

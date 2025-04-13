@@ -1,7 +1,7 @@
-import { JSONValue } from '@ai-toolkit/provider';
+import type { JSONValue } from '@ai-toolkit/provider';
 import { generateId as generateIdFunction } from '@ai-toolkit/provider-utils';
 import { processTextStream } from './process-text-stream';
-import { TextUIPart, UIMessage, UseChatOptions } from './types';
+import type { TextUIPart, UIMessage, UseChatOptions } from './types';
 
 export async function processChatTextResponse({
   stream,
@@ -47,7 +47,7 @@ export async function processChatTextResponse({
 
   // in text mode, we don't have usage information or finish reason:
   onFinish?.(resultMessage, {
-    usage: { completionTokens: NaN, promptTokens: NaN, totalTokens: NaN },
+    usage: { completionTokens: Number.NaN, promptTokens: Number.NaN, totalTokens: Number.NaN },
     finishReason: 'unknown',
   });
 }

@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import type { z } from 'zod';
 
 /**
  * Used to mark validator functions so we can support both Zod and custom schemas.

@@ -21,7 +21,7 @@
     delay: number,
   ): (...args: Parameters<T>) => void {
     let timeoutId: NodeJS.Timeout;
-    return function (...args: Parameters<T>): void {
+    return (...args: Parameters<T>): void => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => fn(...args), delay);
     };

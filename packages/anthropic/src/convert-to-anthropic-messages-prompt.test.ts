@@ -1,4 +1,4 @@
-import { LanguageModelV1CallWarning } from '@ai-toolkit/provider';
+import type { LanguageModelV1CallWarning } from '@ai-toolkit/provider';
 import { convertToAnthropicMessagesPrompt } from './convert-to-anthropic-messages-prompt';
 
 describe('system messages', () => {

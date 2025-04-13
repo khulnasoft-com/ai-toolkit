@@ -1,4 +1,4 @@
-import {
+import type {
   LanguageModelV1,
   LanguageModelV1CallWarning,
   LanguageModelV1FinishReason,
@@ -7,9 +7,9 @@ import {
   LanguageModelV1StreamPart,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
-  Resolvable,
+  type FetchFunction,
+  type ParseResult,
+  type Resolvable,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
@@ -22,8 +22,8 @@ import { convertJSONSchemaToOpenAPISchema } from './convert-json-schema-to-opena
 import { convertToGoogleGenerativeAIMessages } from './convert-to-google-generative-ai-messages';
 import { getModelPath } from './get-model-path';
 import { googleFailedResponseHandler } from './google-error';
-import { GoogleGenerativeAIContentPart } from './google-generative-ai-prompt';
-import {
+import type { GoogleGenerativeAIContentPart } from './google-generative-ai-prompt';
+import type {
   GoogleGenerativeAIModelId,
   InternalGoogleGenerativeAISettings,
 } from './google-generative-ai-settings';
@@ -261,8 +261,8 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
         hasToolCalls: toolCalls != null && toolCalls.length > 0,
       }),
       usage: {
-        promptTokens: usageMetadata?.promptTokenCount ?? NaN,
-        completionTokens: usageMetadata?.candidatesTokenCount ?? NaN,
+        promptTokens: usageMetadata?.promptTokenCount ?? Number.NaN,
+        completionTokens: usageMetadata?.candidatesTokenCount ?? Number.NaN,
       },
       rawCall: { rawPrompt, rawSettings },
       rawResponse: { headers: responseHeaders, body: rawResponse },
@@ -335,8 +335,8 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
 
             if (usageMetadata != null) {
               usage = {
-                promptTokens: usageMetadata.promptTokenCount ?? NaN,
-                completionTokens: usageMetadata.candidatesTokenCount ?? NaN,
+                promptTokens: usageMetadata.promptTokenCount ?? Number.NaN,
+                completionTokens: usageMetadata.candidatesTokenCount ?? Number.NaN,
               };
             }
 

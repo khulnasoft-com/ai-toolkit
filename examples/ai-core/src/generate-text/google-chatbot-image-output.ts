@@ -1,5 +1,5 @@
 import { google } from '@ai-toolkit/google';
-import { CoreMessage, generateText } from 'ai';
+import { type CoreMessage, generateText } from 'ai';
 import 'dotenv/config';
 import * as readline from 'node:readline/promises';
 import { presentImages } from '../lib/present-image';

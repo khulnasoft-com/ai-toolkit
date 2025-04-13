@@ -1,5 +1,5 @@
 import {
-  LanguageModelV1Prompt,
+  type LanguageModelV1Prompt,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import {
@@ -8,10 +8,10 @@ import {
   mockId,
 } from '@ai-toolkit/provider-utils/test';
 import {
-  perplexityImageSchema,
+  type perplexityImageSchema,
   PerplexityLanguageModel,
 } from './perplexity-language-model';
-import { z } from 'zod';
+import type { z } from 'zod';
 
 const TEST_PROMPT: LanguageModelV1Prompt = [
   { role: 'user', content: [{ type: 'text', text: 'Hello' }] },

@@ -57,7 +57,7 @@ function parseVersions(
     }
 
     const downloadsStr = match[2].replace(/[^\d]/g, ''); // remove commas, etc.
-    const downloads = parseInt(downloadsStr, 10);
+    const downloads = Number.parseInt(downloadsStr, 10);
 
     if (!isNaN(downloads)) {
       results.push({

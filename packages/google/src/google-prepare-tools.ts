@@ -1,10 +1,10 @@
 import {
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import { convertJSONSchemaToOpenAPISchema } from './convert-json-schema-to-openapi-schema';
-import {
+import type {
   DynamicRetrievalConfig,
   GoogleGenerativeAIModelId,
 } from './google-generative-ai-settings';
