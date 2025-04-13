@@ -1,6 +1,15 @@
-import { AITOOLKITError, type LanguageModelV1Source } from '@ai-toolkit/provider';
-import { createIdGenerator, type IDGenerator } from '@ai-toolkit/provider-utils';
-import { type DataStreamString, formatDataStreamPart } from '@ai-toolkit/ui-utils';
+import {
+  AITOOLKITError,
+  type LanguageModelV1Source,
+} from '@ai-toolkit/provider';
+import {
+  createIdGenerator,
+  type IDGenerator,
+} from '@ai-toolkit/provider-utils';
+import {
+  type DataStreamString,
+  formatDataStreamPart,
+} from '@ai-toolkit/ui-utils';
 import type { Span } from '@opentelemetry/api';
 import type { ServerResponse } from 'node:http';
 import { InvalidArgumentError } from '../../errors/invalid-argument-error';
@@ -32,7 +41,10 @@ import type {
   ToolChoice,
 } from '../types/language-model';
 import type { LanguageModelResponseMetadata } from '../types/language-model-response-metadata';
-import type { ProviderMetadata, ProviderOptions } from '../types/provider-metadata';
+import type {
+  ProviderMetadata,
+  ProviderOptions,
+} from '../types/provider-metadata';
 import { addLanguageModelUsage, type LanguageModelUsage } from '../types/usage';
 import {
   type AsyncIterableStream,

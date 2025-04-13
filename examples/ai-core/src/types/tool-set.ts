@@ -1,5 +1,10 @@
 import { openai } from '@ai-toolkit/openai';
-import { type ToolCallUnion, type ToolResultUnion, generateText, tool } from 'ai';
+import {
+  type ToolCallUnion,
+  type ToolResultUnion,
+  generateText,
+  tool,
+} from 'ai';
 import { z } from 'zod';
 
 const myToolSet = {

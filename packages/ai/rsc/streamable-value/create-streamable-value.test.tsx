@@ -1,7 +1,10 @@
 import { delay } from '@ai-toolkit/provider-utils';
 import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
 import { createStreamableValue } from './create-streamable-value';
-import { STREAMABLE_VALUE_TYPE, type StreamableValue } from './streamable-value';
+import {
+  STREAMABLE_VALUE_TYPE,
+  type StreamableValue,
+} from './streamable-value';
 
 async function getRawChunks(streamableValue: StreamableValue<any, any>) {
   const chunks = [];

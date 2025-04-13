@@ -1,6 +1,9 @@
 import 'dotenv/config';
 import { expect } from 'vitest';
-import { type CerebrasErrorData, cerebras as provider } from '@ai-toolkit/cerebras';
+import {
+  type CerebrasErrorData,
+  cerebras as provider,
+} from '@ai-toolkit/cerebras';
 import {
   createFeatureTestSuite,
   createLanguageModelWithCapabilities,

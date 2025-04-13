@@ -16,7 +16,6 @@ export class StreamData {
   private warningTimeout: NodeJS.Timeout | null = null;
 
   constructor() {
-
     this.stream = new ReadableStream({
       start: async controller => {
         this.controller = controller;

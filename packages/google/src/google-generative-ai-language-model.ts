@@ -336,7 +336,8 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
             if (usageMetadata != null) {
               usage = {
                 promptTokens: usageMetadata.promptTokenCount ?? Number.NaN,
-                completionTokens: usageMetadata.candidatesTokenCount ?? Number.NaN,
+                completionTokens:
+                  usageMetadata.candidatesTokenCount ?? Number.NaN,
               };
             }
 

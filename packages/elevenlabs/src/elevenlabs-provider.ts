@@ -60,8 +60,8 @@ export function createElevenLabs(
     });
 
   const provider = (modelId: ElevenLabsTranscriptionModelId) => ({
-      transcription: createTranscriptionModel(modelId),
-    });
+    transcription: createTranscriptionModel(modelId),
+  });
 
   provider.transcription = createTranscriptionModel;
   provider.transcriptionModel = createTranscriptionModel;

@@ -35,7 +35,10 @@ import type {
 } from '../types/language-model';
 import type { LanguageModelRequestMetadata } from '../types/language-model-request-metadata';
 import type { LanguageModelResponseMetadata } from '../types/language-model-response-metadata';
-import type { ProviderMetadata, ProviderOptions } from '../types/provider-metadata';
+import type {
+  ProviderMetadata,
+  ProviderOptions,
+} from '../types/provider-metadata';
 import {
   type LanguageModelUsage,
   calculateLanguageModelUsage,
@@ -51,7 +54,10 @@ import { prepareResponseHeaders } from '../util/prepare-response-headers';
 import { writeToServerResponse } from '../util/write-to-server-response';
 import { injectJsonInstruction } from './inject-json-instruction';
 import { type OutputStrategy, getOutputStrategy } from './output-strategy';
-import type { ObjectStreamPart, StreamObjectResult } from './stream-object-result';
+import type {
+  ObjectStreamPart,
+  StreamObjectResult,
+} from './stream-object-result';
 import { validateObjectGenerationInput } from './validate-object-generation-input';
 
 const originalGenerateId = createIdGenerator({ prefix: 'aiobj', size: 24 });

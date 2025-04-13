@@ -47,7 +47,11 @@ export async function processChatTextResponse({
 
   // in text mode, we don't have usage information or finish reason:
   onFinish?.(resultMessage, {
-    usage: { completionTokens: Number.NaN, promptTokens: Number.NaN, totalTokens: Number.NaN },
+    usage: {
+      completionTokens: Number.NaN,
+      promptTokens: Number.NaN,
+      totalTokens: Number.NaN,
+    },
     finishReason: 'unknown',
   });
 }

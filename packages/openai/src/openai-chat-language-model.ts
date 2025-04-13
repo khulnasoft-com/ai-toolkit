@@ -22,7 +22,10 @@ import { z } from 'zod';
 import { convertToOpenAIChatMessages } from './convert-to-openai-chat-messages';
 import { mapOpenAIChatLogProbsOutput } from './map-openai-chat-logprobs';
 import { mapOpenAIFinishReason } from './map-openai-finish-reason';
-import type { OpenAIChatModelId, OpenAIChatSettings } from './openai-chat-settings';
+import type {
+  OpenAIChatModelId,
+  OpenAIChatSettings,
+} from './openai-chat-settings';
 import {
   openaiErrorDataSchema,
   openaiFailedResponseHandler,

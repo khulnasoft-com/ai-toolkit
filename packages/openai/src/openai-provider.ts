@@ -12,7 +12,10 @@ import {
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
 import { OpenAIChatLanguageModel } from './openai-chat-language-model';
-import type { OpenAIChatModelId, OpenAIChatSettings } from './openai-chat-settings';
+import type {
+  OpenAIChatModelId,
+  OpenAIChatSettings,
+} from './openai-chat-settings';
 import { OpenAICompletionLanguageModel } from './openai-completion-language-model';
 import type {
   OpenAICompletionModelId,

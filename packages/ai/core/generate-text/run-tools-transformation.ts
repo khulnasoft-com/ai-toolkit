@@ -15,7 +15,10 @@ import type {
 } from '../types';
 import type { Source } from '../types/language-model';
 import { calculateLanguageModelUsage } from '../types/usage';
-import { DefaultGeneratedFileWithType, type GeneratedFile } from './generated-file';
+import {
+  DefaultGeneratedFileWithType,
+  type GeneratedFile,
+} from './generated-file';
 import { parseToolCall } from './parse-tool-call';
 import type { ToolCallUnion } from './tool-call';
 import type { ToolCallRepairFunction } from './tool-call-repair';

@@ -9,7 +9,10 @@ import {
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
 import { LumaImageModel } from './luma-image-model';
-import type { LumaImageModelId, LumaImageSettings } from './luma-image-settings';
+import type {
+  LumaImageModelId,
+  LumaImageSettings,
+} from './luma-image-settings';
 
 export interface LumaProviderSettings {
   /**

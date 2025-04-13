@@ -2,7 +2,12 @@ import type { JSONSchema7 } from '@ai-toolkit/provider';
 import { jsonSchema } from '@ai-toolkit/ui-utils';
 import type { z, ZodType } from 'zod';
 import { MCPClientError } from '../../../errors';
-import { type inferParameters, tool, type Tool, type ToolExecutionOptions } from '../tool';
+import {
+  type inferParameters,
+  tool,
+  type Tool,
+  type ToolExecutionOptions,
+} from '../tool';
 import type {
   JSONRPCError,
   JSONRPCNotification,

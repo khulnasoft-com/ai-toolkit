@@ -1,4 +1,7 @@
-import { anthropic, type AnthropicProviderOptions } from '@ai-toolkit/anthropic';
+import {
+  anthropic,
+  type AnthropicProviderOptions,
+} from '@ai-toolkit/anthropic';
 import { streamText } from 'ai';
 import 'dotenv/config';
 

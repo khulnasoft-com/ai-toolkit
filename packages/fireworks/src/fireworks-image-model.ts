@@ -1,4 +1,7 @@
-import type { ImageModelV1, ImageModelV1CallWarning } from '@ai-toolkit/provider';
+import type {
+  ImageModelV1,
+  ImageModelV1CallWarning,
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createBinaryResponseHandler,

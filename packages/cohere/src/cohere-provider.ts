@@ -9,7 +9,10 @@ import {
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
 import { CohereChatLanguageModel } from './cohere-chat-language-model';
-import type { CohereChatModelId, CohereChatSettings } from './cohere-chat-settings';
+import type {
+  CohereChatModelId,
+  CohereChatSettings,
+} from './cohere-chat-settings';
 import { CohereEmbeddingModel } from './cohere-embedding-model';
 import type {
   CohereEmbeddingModelId,

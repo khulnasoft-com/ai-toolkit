@@ -10,7 +10,12 @@ import {
   parsePartialJson,
   type Schema,
 } from '@ai-toolkit/ui-utils';
-import { type Accessor, createMemo, createSignal, createUniqueId } from 'solid-js';
+import {
+  type Accessor,
+  createMemo,
+  createSignal,
+  createUniqueId,
+} from 'solid-js';
 import type z from 'zod';
 import { convertToAccessorOptions } from './utils/convert-to-accessor-options';
 import { ReactiveLRU } from './utils/reactive-lru';

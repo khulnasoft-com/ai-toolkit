@@ -1,4 +1,8 @@
-import { AITOOLKITError, type ImageModelV1, type JSONValue } from '@ai-toolkit/provider';
+import {
+  AITOOLKITError,
+  type ImageModelV1,
+  type JSONValue,
+} from '@ai-toolkit/provider';
 import { NoImageGeneratedError } from '../../errors/no-image-generated-error';
 import {
   DefaultGeneratedFile,

@@ -1,4 +1,7 @@
-import type { LanguageModelV1, LanguageModelV1Prompt } from '@ai-toolkit/provider';
+import type {
+  LanguageModelV1,
+  LanguageModelV1Prompt,
+} from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   createTestServer,

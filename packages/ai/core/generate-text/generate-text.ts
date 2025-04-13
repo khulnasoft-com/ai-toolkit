@@ -1,4 +1,7 @@
-import { createIdGenerator, type IDGenerator } from '@ai-toolkit/provider-utils';
+import {
+  createIdGenerator,
+  type IDGenerator,
+} from '@ai-toolkit/provider-utils';
 import type { Tracer } from '@opentelemetry/api';
 import { InvalidArgumentError } from '../../errors/invalid-argument-error';
 import { NoOutputSpecifiedError } from '../../errors/no-output-specified-error';
@@ -18,7 +21,10 @@ import { recordSpan } from '../telemetry/record-span';
 import { selectTelemetryAttributes } from '../telemetry/select-telemetry-attributes';
 import type { TelemetrySettings } from '../telemetry/telemetry-settings';
 import type { LanguageModel, ToolChoice } from '../types';
-import type { ProviderMetadata, ProviderOptions } from '../types/provider-metadata';
+import type {
+  ProviderMetadata,
+  ProviderOptions,
+} from '../types/provider-metadata';
 import {
   addLanguageModelUsage,
   calculateLanguageModelUsage,

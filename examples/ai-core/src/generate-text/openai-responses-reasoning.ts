@@ -1,4 +1,7 @@
-import { openai, type OpenAIResponsesProviderOptions } from '@ai-toolkit/openai';
+import {
+  openai,
+  type OpenAIResponsesProviderOptions,
+} from '@ai-toolkit/openai';
 import { generateText } from 'ai';
 import 'dotenv/config';
 

@@ -1,5 +1,10 @@
 import { NoSuchModelError, type ProviderV1 } from '@ai-toolkit/provider';
-import type { EmbeddingModel, ImageModel, LanguageModel, Provider } from '../types';
+import type {
+  EmbeddingModel,
+  ImageModel,
+  LanguageModel,
+  Provider,
+} from '../types';
 
 /**
  * Creates a custom provider with specified language models, text embedding models, and an optional fallback provider.

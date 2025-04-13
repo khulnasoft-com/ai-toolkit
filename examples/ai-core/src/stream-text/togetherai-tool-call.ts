@@ -1,5 +1,10 @@
 import { togetherai } from '@ai-toolkit/togetherai';
-import { streamText, type CoreMessage, type ToolCallPart, type ToolResultPart } from 'ai';
+import {
+  streamText,
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
+} from 'ai';
 import 'dotenv/config';
 import { weatherTool } from '../tools/weather-tool';
 

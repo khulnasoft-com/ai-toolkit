@@ -89,10 +89,8 @@ export function createGroq(options: GroqProviderSettings = {}): GroqProvider {
     return createChatModel(modelId, settings);
   };
 
-  const provider = (
-    modelId: GroqChatModelId,
-    settings?: GroqChatSettings,
-  ) => createLanguageModel(modelId, settings);
+  const provider = (modelId: GroqChatModelId, settings?: GroqChatSettings) =>
+    createLanguageModel(modelId, settings);
 
   provider.languageModel = createLanguageModel;
   provider.chat = createChatModel;

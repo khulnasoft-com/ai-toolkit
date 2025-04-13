@@ -1,4 +1,7 @@
-import type { SpeechModelV1, SpeechModelV1CallWarning } from '@ai-toolkit/provider';
+import type {
+  SpeechModelV1,
+  SpeechModelV1CallWarning,
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createBinaryResponseHandler,

@@ -1,6 +1,11 @@
 import 'dotenv/config';
 import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
-import { streamText, type CoreMessage, type ToolCallPart, type ToolResultPart } from 'ai';
+import {
+  streamText,
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
+} from 'ai';
 import { weatherTool } from '../tools/weather-tool';
 
 const messages: CoreMessage[] = [];
