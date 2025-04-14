@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { LangChainAdapter } from "ai";
+import { LangChainAdapter } from "ai-toolkit";
 import { model } from "langchain";
 
 const stream = LangChainAdapter.toDataStream(model.stream(), {

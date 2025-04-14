@@ -6,7 +6,7 @@ import {
   type APICallError,
   type LanguageModelV1,
   experimental_generateImage as generateImage,
-} from 'ai';
+} from 'ai-toolkit';
 import {
   createEmbeddingModelWithCapabilities,
   createFeatureTestSuite,

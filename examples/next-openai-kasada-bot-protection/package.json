@@ -12,7 +12,7 @@
     "@ai-toolkit/openai": "workspace:*",
     "@ai-toolkit/react": "workspace:*",
     "@vercel/functions": "latest",
-    "ai": "workspace:*",
+    "ai-toolkit": "workspace:*",
     "next": "latest",
     "react": "^18",
     "react-dom": "^18",

@@ -1,5 +1,5 @@
-import { simulateReadableStream, smoothStream, streamText } from 'ai';
-import { MockLanguageModelV1 } from 'ai/test';
+import { simulateReadableStream, smoothStream, streamText } from 'ai-toolkit';
+import { MockLanguageModelV1 } from 'ai-toolkit/test';
 
 async function main() {
   const result = streamText({

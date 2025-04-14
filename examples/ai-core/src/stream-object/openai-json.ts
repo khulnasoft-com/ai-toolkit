@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { streamObject } from 'ai';
+import { streamObject } from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

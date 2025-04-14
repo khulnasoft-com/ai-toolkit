@@ -63,7 +63,7 @@ Once built, the new code is picked up by the examples.
 
 To test the package that you're working on, run `pnpm test` in the package folder.
 You do not need to rebuild your package to test it (only dependencies need to be built).
-Some packages like `ai` also have more details tests and watch mode, see their `package.json` for more information.
+Some packages like `ai-toolkit` also have more details tests and watch mode, see their `package.json` for more information.
 
 ### Submitting Pull Requests
 

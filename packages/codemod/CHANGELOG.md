@@ -58,7 +58,7 @@
 - 66373dd: fix (packages/codemod): Only mutate files when changes are needed.
 - c33e632: feat (packages/codemod): Add codemod to rm experimental_StreamData.
 - 030f327: feat (packages/codemod): Add more automated transformations for 4.0.
-- b1d9efb: fix (packages/codemod): Only rename nanoid on import from 'ai'.
+- b1d9efb: fix (packages/codemod): Only rename nanoid on import from 'ai-toolkit'.
 - 29556ed: feat (packages/codemod): Add script to scaffold new codemod.
 - 575e7da: feat (packages/codemod): Add codemod to remove ExperimentalTool.
 - 94c51ae: fix (packages/codemod): Only replace ai-toolkit provider ctors.
@@ -81,7 +81,7 @@
 
 - 7326f22: fix (packages/codemod): Remove package version check pre-upgrade.
 - a2e0f02: fix (packages/codemod): Ignore code under dot-prefixed dirs.
-- b1d9efb: fix (packages/codemod): Only rename nanoid on import from 'ai'.
+- b1d9efb: fix (packages/codemod): Only rename nanoid on import from 'ai-toolkit'.
 - b183ed0: feat (packages/codemod): Improve error handling and logging.
 - 45feb29: feat (packages/codemod): codemod to rm await from streamText/Object.
 

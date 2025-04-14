@@ -140,7 +140,7 @@ importers:
       '@opentelemetry/sdk-trace-node':
         specifier: ^1.28.0
         version: 1.30.1(@opentelemetry/api@1.9.0)
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       dotenv:
@@ -183,7 +183,7 @@ importers:
       '@ai-toolkit/openai':
         specifier: workspace:*
         version: link:../../packages/openai
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       dotenv:
@@ -211,7 +211,7 @@ importers:
       '@ai-toolkit/openai':
         specifier: workspace:*
         version: link:../../packages/openai
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       dotenv:
@@ -239,7 +239,7 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.7
         version: 1.14.1(hono@4.7.6)
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       dotenv:
@@ -267,7 +267,7 @@ importers:
       '@modelcontextprotocol/sdk':
         specifier: ^1.7.0
         version: 1.9.0
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       dotenv:
@@ -307,7 +307,7 @@ importers:
       '@nestjs/platform-express':
         specifier: ^10.4.9
         version: 10.4.15(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       reflect-metadata:
@@ -389,7 +389,7 @@ importers:
       '@ai-toolkit/ui-utils':
         specifier: workspace:*
         version: link:../../packages/ui-utils
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       geist:
@@ -441,7 +441,7 @@ importers:
       '@ai-toolkit/google-vertex':
         specifier: workspace:*
         version: link:../../packages/google-vertex
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       geist:
@@ -490,7 +490,7 @@ importers:
       '@langchain/openai':
         specifier: ^0.0.28
         version: 0.0.28(ws@8.18.1)
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       langchain:
@@ -566,7 +566,7 @@ importers:
       '@vercel/blob':
         specifier: ^0.26.0
         version: 0.26.0
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       next:
@@ -627,7 +627,7 @@ importers:
       '@vercel/functions':
         specifier: latest
         version: 2.0.0
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       next:
@@ -679,7 +679,7 @@ importers:
       '@ai-toolkit/react':
         specifier: workspace:*
         version: link:../../packages/react
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       next:
@@ -746,7 +746,7 @@ importers:
       '@vercel/otel':
         specifier: ^1.10.0
         version: 1.11.0(@opentelemetry/api-logs@0.55.0)(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.52.1(@opentelemetry/api@1.9.0))(@opentelemetry/resources@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-logs@0.55.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@1.29.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       next:
@@ -819,7 +819,7 @@ importers:
       '@vercel/otel':
         specifier: ^1.10.0
         version: 1.11.0(@opentelemetry/api-logs@0.55.0)(@opentelemetry/api@1.9.0)(@opentelemetry/instrumentation@0.52.1(@opentelemetry/api@1.9.0))(@opentelemetry/resources@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-logs@0.55.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@1.29.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       next:
@@ -880,7 +880,7 @@ importers:
       '@vercel/kv':
         specifier: ^0.2.2
         version: 0.2.4
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       next:
@@ -929,7 +929,7 @@ importers:
       '@ai-toolkit/openai':
         specifier: workspace:*
         version: link:../../packages/openai
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       dotenv:
@@ -960,7 +960,7 @@ importers:
       '@ai-toolkit/vue':
         specifier: workspace:*
         version: link:../../packages/vue
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       zod:
@@ -1027,7 +1027,7 @@ importers:
       '@solidjs/start':
         specifier: ^1.0.10
         version: 1.1.3(@testing-library/jest-dom@6.6.3)(@types/node@20.17.24)(jiti@2.4.2)(solid-js@1.9.5)(terser@5.39.0)(tsx@4.19.3)(vinxi@0.4.3(@types/node@20.17.24)(@upstash/redis@1.34.7)(aws4fetch@1.0.20)(db0@0.3.1)(ioredis@5.6.1)(terser@5.39.0))(vite@6.2.6(@types/node@20.17.24)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(yaml@2.7.1)
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       solid-js:
@@ -1079,7 +1079,7 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.3
         version: 5.0.3(svelte@5.26.2)(vite@6.2.6(@types/node@20.17.24)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../packages/ai
       autoprefixer:
@@ -1200,7 +1200,7 @@ importers:
 
   packages/ai/tests/e2e/next-server:
     dependencies:
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../../..
       next:
@@ -2079,7 +2079,7 @@ importers:
       '@valibot/to-json-schema':
         specifier: ^1.0.0-rc.0 || ^1.0.0
         version: 1.0.0(valibot@1.0.0(typescript@5.6.3))
-      ai:
+      ai-toolkit:
         specifier: workspace:*
         version: link:../ai
     devDependencies:
@@ -21220,7 +21220,7 @@ snapshots:
       eslint: 9.24.0(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint@9.24.0(jiti@2.4.2)))(eslint@9.24.0(jiti@2.4.2))
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.0)(eslint@9.24.0(jiti@2.4.2))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint@9.24.0(jiti@2.4.2)))(eslint@9.24.0(jiti@2.4.2)))(eslint@9.24.0(jiti@2.4.2))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.24.0(jiti@2.4.2))
       eslint-plugin-react: 7.37.5(eslint@9.24.0(jiti@2.4.2))
       eslint-plugin-react-hooks: 5.0.0-canary-7118f5dd7-20230705(eslint@9.24.0(jiti@2.4.2))
@@ -21280,7 +21280,7 @@ snapshots:
       tinyglobby: 0.2.12
       unrs-resolver: 1.5.0
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.0)(eslint@9.24.0(jiti@2.4.2))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint@9.24.0(jiti@2.4.2)))(eslint@9.24.0(jiti@2.4.2)))(eslint@9.24.0(jiti@2.4.2))
     transitivePeerDependencies:
       - supports-color
 
@@ -21321,7 +21321,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.0)(eslint@9.24.0(jiti@2.4.2)):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint-import-resolver-typescript@3.10.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.29.1(eslint@9.24.0(jiti@2.4.2))(typescript@5.6.3))(eslint@9.24.0(jiti@2.4.2)))(eslint@9.24.0(jiti@2.4.2)))(eslint@9.24.0(jiti@2.4.2)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8

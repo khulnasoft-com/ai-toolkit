@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { expect } from 'vitest';
 import { type GoogleErrorData, google as provider } from '@ai-toolkit/google';
-import type { APICallError, LanguageModelV1 } from 'ai';
+import type { APICallError, LanguageModelV1 } from 'ai-toolkit';
 import {
   type ModelWithCapabilities,
   createEmbeddingModelWithCapabilities,

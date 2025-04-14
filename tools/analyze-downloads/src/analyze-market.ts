@@ -59,7 +59,7 @@ function parseWeeklyDownloads(html: string): number {
  */
 async function main() {
   const packages = [
-    'ai',
+    'ai-toolkit',
     'openai',
     '@anthropic-ai/sdk',
     'langchain',

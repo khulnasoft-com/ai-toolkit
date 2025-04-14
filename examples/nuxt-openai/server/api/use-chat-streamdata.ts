@@ -1,5 +1,5 @@
 import { createOpenAI } from '@ai-toolkit/openai';
-import { createDataStreamResponse, generateId, streamText } from 'ai';
+import { createDataStreamResponse, generateId, streamText } from 'ai-toolkit';
 
 export default defineLazyEventHandler(async () => {
   const openai = createOpenAI({

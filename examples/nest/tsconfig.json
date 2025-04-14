@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "commonjs", // Keep as "commonjs" if targeting Node.js; otherwise, consider "ESNext"
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -12,11 +12,10 @@
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "unsafeParameterDecoratorsEnabled": true
+    "strictNullChecks": true, // Enable strict null checks
+    "noImplicitAny": true, // Enforce explicit typing
+    "strictBindCallApply": true, // Enable strict checking for bind/call/apply
+    "forceConsistentCasingInFileNames": true, // Enforce consistent casing in file names
+    "noFallthroughCasesInSwitch": true // Prevent fallthrough in switch statements
   }
 }

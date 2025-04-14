@@ -28,8 +28,8 @@ You can use the test helpers with the AI Core functions in your unit tests:
 ### generateText
 
 ```ts
-import { generateText } from 'ai';
-import { MockLanguageModelV1 } from 'ai/test';
+import { generateText } from 'ai-toolkit';
+import { MockLanguageModelV1 } from 'ai-toolkit/test';
 
 const result = await generateText({
   model: new MockLanguageModelV1({
@@ -47,8 +47,8 @@ const result = await generateText({
 ### streamText
 
 ```ts
-import { streamText, simulateReadableStream } from 'ai';
-import { MockLanguageModelV1 } from 'ai/test';
+import { streamText, simulateReadableStream } from 'ai-toolkit';
+import { MockLanguageModelV1 } from 'ai-toolkit/test';
 
 const result = streamText({
   model: new MockLanguageModelV1({
@@ -76,8 +76,8 @@ const result = streamText({
 ### generateObject
 
 ```ts
-import { generateObject } from 'ai';
-import { MockLanguageModelV1 } from 'ai/test';
+import { generateObject } from 'ai-toolkit';
+import { MockLanguageModelV1 } from 'ai-toolkit/test';
 import { z } from 'zod';
 
 const result = await generateObject({
@@ -98,8 +98,8 @@ const result = await generateObject({
 ### streamObject
 
 ```ts
-import { streamObject, simulateReadableStream } from 'ai';
-import { MockLanguageModelV1 } from 'ai/test';
+import { streamObject, simulateReadableStream } from 'ai-toolkit';
+import { MockLanguageModelV1 } from 'ai-toolkit/test';
 import { z } from 'zod';
 
 const result = streamObject({
@@ -138,7 +138,7 @@ debugging, or demonstration purposes.
 Here is a Next example:
 
 ```ts filename="route.ts"
-import { simulateReadableStream } from 'ai';
+import { simulateReadableStream } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   return new Response(

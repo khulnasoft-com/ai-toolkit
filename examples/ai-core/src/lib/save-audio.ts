@@ -1,4 +1,4 @@
-import type { GeneratedAudioFile } from 'ai';
+import type { GeneratedAudioFile } from 'ai-toolkit';
 import fs from 'node:fs';
 import path from 'node:path';
 

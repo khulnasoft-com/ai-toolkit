@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { embed } from 'ai';
+import { embed } from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {

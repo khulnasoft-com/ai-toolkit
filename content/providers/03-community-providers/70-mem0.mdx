@@ -70,7 +70,7 @@ const mem0 = createMem0({
 - Add Memories to Enhance Context:
 
 ```ts
-import { LanguageModelV1Prompt } from 'ai';
+import { LanguageModelV1Prompt } from 'ai-toolkit';
 import { addMemories } from '@mem0/khulnasoft-ai-provider';
 
 const messages: LanguageModelV1Prompt = [
@@ -126,7 +126,7 @@ await getMemories(prompt, {
 You can use language models from **OpenAI**, **Anthropic**, **Cohere**, and **Groq** to generate text with the `generateText` function:
 
 ```ts
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 
 const mem0 = createMem0();
@@ -140,7 +140,7 @@ const { text } = await generateText({
 ### Structured Message Format with Memory
 
 ```ts
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 
 const mem0 = createMem0();
@@ -162,7 +162,7 @@ const { text } = await generateText({
 ### Streaming Responses with Memory Context
 
 ```ts
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 
 const mem0 = createMem0();
@@ -183,7 +183,7 @@ for await (const textPart of textStream) {
 ### Generate Responses with Tools Call
 
 ```ts
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 import { createMem0 } from '@mem0/khulnasoft-ai-provider';
 import { z } from 'zod';
 

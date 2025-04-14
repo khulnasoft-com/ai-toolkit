@@ -34,7 +34,7 @@ import { luma } from '@ai-toolkit/luma';
 
 ```ts
 import { luma } from '@ai-toolkit/luma';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 import fs from 'fs';
 
 const { image } = await generateImage({

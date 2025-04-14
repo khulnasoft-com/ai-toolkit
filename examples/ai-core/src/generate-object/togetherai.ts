@@ -1,5 +1,5 @@
 import { togetherai } from '@ai-toolkit/togetherai';
-import { generateObject } from 'ai';
+import { generateObject } from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

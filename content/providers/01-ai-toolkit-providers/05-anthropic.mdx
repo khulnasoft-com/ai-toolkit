@@ -78,7 +78,7 @@ You can use Anthropic language models to generate text with the `generateText` f
 
 ```ts
 import { anthropic } from '@ai-toolkit/anthropic';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: anthropic('claude-3-haiku-20240307'),
@@ -113,7 +113,7 @@ and specifying a thinking budget in tokens.
 
 ```ts
 import { anthropic, AnthropicProviderOptions } from '@ai-toolkit/anthropic';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, reasoning, reasoningDetails } = await generateText({
   model: anthropic('claude-3-7-sonnet-20250219'),
@@ -153,7 +153,7 @@ that resolves to the metadata. Alternatively you can receive it in the
 
 ```ts highlight="8,18-20,29-30"
 import { anthropic } from '@ai-toolkit/anthropic';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const errorMessage = '... long error message ...';
 

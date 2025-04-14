@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { experimental_createMCPClient, generateText } from 'ai';
+import { experimental_createMCPClient, generateText } from 'ai-toolkit';
 
 export async function POST() {
   let client;

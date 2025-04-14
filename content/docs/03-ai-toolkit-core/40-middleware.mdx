@@ -19,7 +19,7 @@ It takes a language model and a language model middleware and returns a new
 language model that incorporates the middleware.
 
 ```ts
-import { wrapLanguageModel } from 'ai';
+import { wrapLanguageModel } from 'ai-toolkit';
 
 const wrappedLanguageModel = wrapLanguageModel({
   model: yourModel,
@@ -66,7 +66,7 @@ e.g. &lt;think&gt; and &lt;/think&gt;.
 The `extractReasoningMiddleware` function can be used to extract this reasoning information and expose it as a `reasoning` property on the result.
 
 ```ts
-import { wrapLanguageModel, extractReasoningMiddleware } from 'ai';
+import { wrapLanguageModel, extractReasoningMiddleware } from 'ai-toolkit';
 
 const model = wrapLanguageModel({
   model: yourModel,
@@ -87,7 +87,7 @@ The `simulateStreamingMiddleware` function can be used to simulate streaming beh
 This is useful when you want to maintain a consistent streaming interface even when using models that only provide complete responses.
 
 ```ts
-import { wrapLanguageModel, simulateStreamingMiddleware } from 'ai';
+import { wrapLanguageModel, simulateStreamingMiddleware } from 'ai-toolkit';
 
 const model = wrapLanguageModel({
   model: yourModel,
@@ -100,7 +100,7 @@ const model = wrapLanguageModel({
 The `defaultSettingsMiddleware` function can be used to apply default settings to a language model.
 
 ```ts
-import { wrapLanguageModel, defaultSettingsMiddleware } from 'ai';
+import { wrapLanguageModel, defaultSettingsMiddleware } from 'ai-toolkit';
 
 const model = wrapLanguageModel({
   model: yourModel,
@@ -145,7 +145,7 @@ Here are some examples of how to implement language model middleware:
 This example shows how to log the parameters and generated text of a language model call.
 
 ```ts
-import type { LanguageModelV1Middleware, LanguageModelV1StreamPart } from 'ai';
+import type { LanguageModelV1Middleware, LanguageModelV1StreamPart } from 'ai-toolkit';
 
 export const yourLogMiddleware: LanguageModelV1Middleware = {
   wrapGenerate: async ({ doGenerate, params }) => {
@@ -199,7 +199,7 @@ export const yourLogMiddleware: LanguageModelV1Middleware = {
 This example shows how to build a simple cache for the generated text of a language model call.
 
 ```ts
-import type { LanguageModelV1Middleware } from 'ai';
+import type { LanguageModelV1Middleware } from 'ai-toolkit';
 
 const cache = new Map<string, any>();
 
@@ -233,7 +233,7 @@ This example shows how to use RAG as middleware.
 </Note>
 
 ```ts
-import type { LanguageModelV1Middleware } from 'ai';
+import type { LanguageModelV1Middleware } from 'ai-toolkit';
 
 export const yourRagMiddleware: LanguageModelV1Middleware = {
   transformParams: async ({ params }) => {
@@ -262,7 +262,7 @@ Guard rails are a way to ensure that the generated text of a language model call
 is safe and appropriate. This example shows how to use guardrails as middleware.
 
 ```ts
-import type { LanguageModelV1Middleware } from 'ai';
+import type { LanguageModelV1Middleware } from 'ai-toolkit';
 
 export const yourGuardrailMiddleware: LanguageModelV1Middleware = {
   wrapGenerate: async ({ doGenerate }) => {

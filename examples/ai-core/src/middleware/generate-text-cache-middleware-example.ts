@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { generateText, wrapLanguageModel } from 'ai';
+import { generateText, wrapLanguageModel } from 'ai-toolkit';
 import 'dotenv/config';
 import { yourCacheMiddleware } from './your-cache-middleware';
 

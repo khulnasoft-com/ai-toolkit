@@ -53,7 +53,7 @@
     "url": "https://github.com/khulnasoft/ai/issues"
   },
   "keywords": [
-    "ai"
+    "ai-toolkit"
   ],
   "packageManager": "pnpm@9.12.3",
   "prettier": {

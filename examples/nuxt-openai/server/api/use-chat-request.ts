@@ -1,5 +1,5 @@
 import { createOpenAI } from '@ai-toolkit/openai';
-import { streamText, type Message } from 'ai';
+import { streamText, type Message } from 'ai-toolkit';
 
 export default defineLazyEventHandler(async () => {
   const openai = createOpenAI({

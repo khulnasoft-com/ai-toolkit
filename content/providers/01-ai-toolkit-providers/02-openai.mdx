@@ -111,7 +111,7 @@ You can use OpenAI language models to generate text with the `generateText` func
 
 ```ts
 import { openai } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: openai('gpt-4-turbo'),
@@ -235,7 +235,7 @@ They support additional settings and response metadata:
 
 ```ts highlight="4,7-11,17"
 import { openai } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, usage, providerMetadata } = await generateText({
   model: openai('o3-mini'),
@@ -281,7 +281,7 @@ The JSON schema is used as a grammar and the outputs will always conform to the 
 
 ```ts highlight="7"
 import { openai } from '@ai-toolkit/openai';
-import { generateObject } from 'ai';
+import { generateObject } from 'ai-toolkit';
 import { z } from 'zod';
 
 const result = await generateObject({
@@ -440,7 +440,7 @@ This will save the generation to the OpenAI platform for later use in distillati
 
 ```typescript highlight="9-16"
 import { openai } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {
@@ -479,7 +479,7 @@ including `gpt-4o`, `gpt-4o-mini`, `o1-preview`, and `o1-mini`.
 
 ```ts highlight="11"
 import { openai } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, usage, providerMetadata } = await generateText({
   model: openai('gpt-4o-mini'),
@@ -503,7 +503,7 @@ With the `gpt-4o-audio-preview` model, you can pass audio files to the model.
 
 ```ts highlight="12-14"
 import { openai } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const result = await generateText({
   model: openai('gpt-4o-audio-preview'),
@@ -536,7 +536,7 @@ You can validate the provider options using the `OpenAIResponsesProviderOptions`
 
 ```ts
 import { openai, OpenAIResponsesProviderOptions } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const result = await generateText({
   model: openai.responses('gpt-4o-mini'),
@@ -827,7 +827,7 @@ const model = openai.transcription('whisper-1');
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying the input language in ISO-639-1 (e.g. `en`) format will improve accuracy and latency.
 
 ```ts highlight="6"
-import { experimental_transcribe as transcribe } from 'ai';
+import { experimental_transcribe as transcribe } from 'ai-toolkit';
 import { openai } from '@ai-toolkit/openai';
 
 const result = await transcribe({
@@ -883,7 +883,7 @@ const model = openai.speech('tts-1');
 You can also pass additional provider-specific options using the `providerOptions` argument. For example, supplying a voice to use for the generated audio.
 
 ```ts highlight="6"
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { experimental_generateSpeech as generateSpeech } from 'ai-toolkit';
 import { openai } from '@ai-toolkit/openai';
 
 const result = await generateSpeech({

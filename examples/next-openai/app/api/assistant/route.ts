@@ -1,4 +1,4 @@
-import { AssistantResponse } from 'ai';
+import { AssistantResponse } from 'ai-toolkit';
 import OpenAI from 'openai';
 
 // Create an OpenAI API client (that's edge friendly!)

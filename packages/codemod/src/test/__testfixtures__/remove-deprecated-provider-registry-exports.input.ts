@@ -4,7 +4,7 @@ import {
 	type experimental_ProviderRegistry,
 	type experimental_ModelRegistry,
 	experimental_createModelRegistry,
-} from "ai";
+} from "ai-toolkit";
 
 function createProvider(): experimental_Provider {
 	return {

@@ -11,7 +11,7 @@
   "dependencies": {
     "@ai-toolkit/openai": "workspace:*",
     "@ai-toolkit/react": "workspace:*",
-    "ai": "workspace:*",
+    "ai-toolkit": "workspace:*",
     "next": "latest",
     "openai": "^4.52.6",
     "react": "^18",

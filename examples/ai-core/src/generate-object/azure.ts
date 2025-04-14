@@ -1,5 +1,5 @@
 import { azure } from '@ai-toolkit/azure';
-import { generateObject } from 'ai';
+import { generateObject } from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

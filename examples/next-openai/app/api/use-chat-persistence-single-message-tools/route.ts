@@ -7,7 +7,7 @@ import {
   createIdGenerator,
   streamText,
   tool,
-} from 'ai';
+} from 'ai-toolkit';
 import { z } from 'zod';
 
 // Allow streaming responses up to 30 seconds

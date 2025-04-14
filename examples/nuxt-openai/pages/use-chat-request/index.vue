@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useChat } from '@ai-toolkit/vue';
-import { createIdGenerator } from 'ai';
+import { createIdGenerator } from 'ai-toolkit';
 
 const { input, handleSubmit, messages } = useChat({
   api: '/api/use-chat-request',

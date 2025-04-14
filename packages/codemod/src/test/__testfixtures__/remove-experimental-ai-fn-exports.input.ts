@@ -4,7 +4,7 @@ import {
 	experimental_streamText,
 	experimental_generateObject,
 	experimental_streamObject,
-} from "ai";
+} from "ai-toolkit";
 
 async function main() {
 	const result = await experimental_generateText({

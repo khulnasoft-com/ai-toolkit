@@ -99,7 +99,7 @@ You can use the `extractReasoningMiddleware` to extract this reasoning and expos
 
 ```ts
 import { azure } from '@ai-toolkit/azure';
-import { wrapLanguageModel, extractReasoningMiddleware } from 'ai';
+import { wrapLanguageModel, extractReasoningMiddleware } from 'ai-toolkit';
 
 const enhancedModel = wrapLanguageModel({
   model: azure('your-deepseek-r1-deployment-name'),
@@ -115,7 +115,7 @@ You can use OpenAI language models to generate text with the `generateText` func
 
 ```ts
 import { azure } from '@ai-toolkit/azure';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: azure('your-deployment-name'),
@@ -236,7 +236,7 @@ You can validate the provider options using the `OpenAIResponsesProviderOptions`
 
 ```ts
 import { azure, OpenAIResponsesProviderOptions } from '@ai-toolkit/azure';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const result = await generateText({
   model: azure.responses('your-deployment-name'),
@@ -484,7 +484,7 @@ You can use Azure OpenAI image models to generate images with the `generateImage
 
 ```ts
 import { azure } from '@ai-toolkit/azure';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 
 const { image } = await generateImage({
   model: azure.imageModel('your-dalle-deployment-name'),

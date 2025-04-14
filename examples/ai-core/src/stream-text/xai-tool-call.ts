@@ -4,7 +4,7 @@ import {
   type CoreMessage,
   type ToolCallPart,
   type ToolResultPart,
-} from 'ai';
+} from 'ai-toolkit';
 import 'dotenv/config';
 import { weatherTool } from '../tools/weather-tool';
 

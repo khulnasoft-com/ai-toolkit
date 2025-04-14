@@ -55,10 +55,10 @@ export default function Page() {
 
 ## Server
 
-Let's create a route handler for `/api/completion` that will generate text based on the input prompt. The route will call the `generateText` function from the `ai` module, which will then generate text based on the input prompt and return it.
+Let's create a route handler for `/api/completion` that will generate text based on the input prompt. The route will call the `generateText` function from the `ai-toolkit` module, which will then generate text based on the input prompt and return it.
 
 ```typescript filename='app/api/completion/route.ts'
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 import { openai } from '@ai-toolkit/openai';
 
 export async function POST(req: Request) {

@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { streamText, type Message } from 'ai';
+import { streamText, type Message } from 'ai-toolkit';
 import type { APIEvent } from '@solidjs/start/server';
 
 export const POST = async (event: APIEvent) => {

@@ -2,7 +2,7 @@ import {
   anthropic,
   type AnthropicProviderOptions,
 } from '@ai-toolkit/anthropic';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {

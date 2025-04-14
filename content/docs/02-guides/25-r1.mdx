@@ -47,7 +47,7 @@ At the center of the AI TOOLKIT is [AI TOOLKIT Core](/docs/ai-toolkit-core/overv
 
 ```ts
 import { deepseek } from '@ai-toolkit/deepseek';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { reasoning, text } = await generateText({
   model: deepseek('deepseek-reasoner'),
@@ -63,7 +63,7 @@ import {
   generateText,
   wrapLanguageModel,
   extractReasoningMiddleware,
-} from 'ai';
+} from 'ai-toolkit';
 
 // middleware to extract reasoning tokens
 const enhancedModel = wrapLanguageModel({
@@ -85,7 +85,7 @@ import {
   generateText,
   wrapLanguageModel,
   extractReasoningMiddleware,
-} from 'ai';
+} from 'ai-toolkit';
 
 // middleware to extract reasoning tokens
 const enhancedModel = wrapLanguageModel({
@@ -141,7 +141,7 @@ Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
 import { deepseek } from '@ai-toolkit/deepseek';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();

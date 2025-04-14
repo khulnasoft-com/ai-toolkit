@@ -11,7 +11,7 @@ to smooth out text streaming by buffering and releasing complete words with conf
 This creates a more natural reading experience when streaming text responses.
 
 ```ts highlight={"6-9"}
-import { smoothStream, streamText } from 'ai';
+import { smoothStream, streamText } from 'ai-toolkit';
 
 const result = streamText({
   model,
@@ -25,7 +25,7 @@ const result = streamText({
 
 ## Import
 
-<Snippet text={`import { smoothStream } from "ai"`} prompt={false} />
+<Snippet text={`import { smoothStream } from "ai-toolkit"`} prompt={false} />
 
 ## API Signature
 

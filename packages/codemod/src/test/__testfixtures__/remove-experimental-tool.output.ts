@@ -1,5 +1,5 @@
 // @ts-nocheck
-import type { CoreTool } from "ai";
+import type { CoreTool } from "ai-toolkit";
 
 interface Config {
 	tool: CoreTool;

@@ -4,7 +4,7 @@ import type {
 	CoreUserMessage,
 	CoreAssistantMessage,
 	CoreToolMessage,
-} from "ai";
+} from "ai-toolkit";
 
 function processMessage(message: CoreMessage) {
 	console.log(message);

@@ -1,4 +1,4 @@
-import type { LanguageModelV1CallOptions } from 'ai';
+import type { LanguageModelV1CallOptions } from 'ai-toolkit';
 
 export function addToLastUserMessage({
   text,

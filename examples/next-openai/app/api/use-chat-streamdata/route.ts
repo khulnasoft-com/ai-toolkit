@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { generateId, createDataStreamResponse, streamText } from 'ai';
+import { generateId, createDataStreamResponse, streamText } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();

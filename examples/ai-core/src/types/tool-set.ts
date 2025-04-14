@@ -4,7 +4,7 @@ import {
   type ToolResultUnion,
   generateText,
   tool,
-} from 'ai';
+} from 'ai-toolkit';
 import { z } from 'zod';
 
 const myToolSet = {

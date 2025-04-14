@@ -1,7 +1,7 @@
 'use client';
 
 import { Message, useChat } from '@ai-toolkit/react';
-import { createIdGenerator } from 'ai';
+import { createIdGenerator } from 'ai-toolkit';
 
 export default function Chat({
   id,

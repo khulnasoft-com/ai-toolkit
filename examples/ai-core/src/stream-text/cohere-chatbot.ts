@@ -1,5 +1,5 @@
 import { cohere } from '@ai-toolkit/cohere';
-import { type CoreMessage, streamText, tool } from 'ai';
+import { type CoreMessage, streamText, tool } from 'ai-toolkit';
 import 'dotenv/config';
 import * as readline from 'node:readline/promises';
 import { z } from 'zod';

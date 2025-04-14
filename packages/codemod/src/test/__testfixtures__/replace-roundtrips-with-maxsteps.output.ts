@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { generateText, streamText } from "ai";
+import { generateText, streamText } from "ai-toolkit";
 
 // Test generateText with both roundtrip types
 await generateText({

@@ -81,7 +81,7 @@ You can use xAI language models to generate text with the `generateText` functio
 
 ```ts
 import { xai } from '@ai-toolkit/xai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: xai('grok-3'),
@@ -137,7 +137,7 @@ You can create xAI image models using the `.imageModel()` factory method. For mo
 
 ```ts
 import { xai } from '@ai-toolkit/xai';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 
 const { image } = await generateImage({
   model: xai.image('grok-2-image'),
@@ -156,7 +156,7 @@ You can customize the image generation behavior with model-specific settings:
 
 ```ts
 import { xai } from '@ai-toolkit/xai';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 
 const { images } = await generateImage({
   model: xai.image('grok-2-image', {

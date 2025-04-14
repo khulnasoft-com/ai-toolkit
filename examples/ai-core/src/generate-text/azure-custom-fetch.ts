@@ -1,5 +1,5 @@
 import { createAzure } from '@ai-toolkit/azure';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 import 'dotenv/config';
 
 const azure = createAzure({

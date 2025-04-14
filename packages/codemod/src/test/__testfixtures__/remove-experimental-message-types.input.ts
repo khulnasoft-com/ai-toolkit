@@ -4,7 +4,7 @@ import type {
 	ExperimentalUserMessage,
 	ExperimentalAssistantMessage,
 	ExperimentalToolMessage,
-} from "ai";
+} from "ai-toolkit";
 
 function processMessage(message: ExperimentalMessage) {
 	console.log(message);

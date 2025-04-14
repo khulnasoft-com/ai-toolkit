@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { perplexity } from '@ai-toolkit/perplexity';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 async function main() {
   const result = await generateText({

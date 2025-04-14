@@ -83,7 +83,7 @@ It supports the options `parsed`, `hidden`, and `raw`.
 
 ```ts
 import { groq } from '@ai-toolkit/groq';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const result = await generateText({
   model: groq('qwen-qwq-32b'),
@@ -102,7 +102,7 @@ You can use Groq language models to generate text with the `generateText` functi
 
 ```ts
 import { groq } from '@ai-toolkit/groq';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: groq('gemma2-9b-it'),

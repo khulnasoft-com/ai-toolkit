@@ -2,7 +2,7 @@ import {
   openai,
   type OpenAIResponsesProviderOptions,
 } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {

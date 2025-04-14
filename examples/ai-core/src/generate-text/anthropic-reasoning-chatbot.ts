@@ -2,7 +2,7 @@ import {
   anthropic,
   type AnthropicProviderOptions,
 } from '@ai-toolkit/anthropic';
-import { type CoreMessage, generateText } from 'ai';
+import { type CoreMessage, generateText } from 'ai-toolkit';
 import 'dotenv/config';
 import * as readline from 'node:readline/promises';
 import { weatherTool } from '../tools/weather-tool';

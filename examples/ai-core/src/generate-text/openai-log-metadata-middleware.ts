@@ -3,7 +3,7 @@ import {
   generateText,
   type LanguageModelV1Middleware,
   wrapLanguageModel,
-} from 'ai';
+} from 'ai-toolkit';
 import 'dotenv/config';
 
 const logProviderMetadataMiddleware: LanguageModelV1Middleware = {

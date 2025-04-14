@@ -1,5 +1,5 @@
 import { cohere } from '@ai-toolkit/cohere';
-import { generateObject } from 'ai';
+import { generateObject } from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

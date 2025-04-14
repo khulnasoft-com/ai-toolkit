@@ -38,7 +38,7 @@ Navigate to the newly created directory:
 
 ### Install dependencies
 
-Install `ai`, `@ai-toolkit/react`, and `@ai-toolkit/openai`, the AI package, AI TOOLKIT's React hooks, and AI TOOLKIT's [ OpenAI provider ](/providers/ai-toolkit-providers/openai) respectively.
+Install `ai-toolkit`, `@ai-toolkit/react`, and `@ai-toolkit/openai`, the AI package, AI TOOLKIT's React hooks, and AI TOOLKIT's [ OpenAI provider ](/providers/ai-toolkit-providers/openai) respectively.
 
 <Note>
   The AI TOOLKIT is designed to be a unified interface to interact with any
@@ -62,7 +62,7 @@ Install `ai`, `@ai-toolkit/react`, and `@ai-toolkit/openai`, the AI package, AI 
 </div>
 
 <Note type="secondary" fill>
-  Make sure you are using `ai` version 3.1 or higher.
+  Make sure you are using `ai-toolkit` version 3.1 or higher.
 </Note>
 
 ### Configure OpenAI API Key
@@ -96,7 +96,7 @@ Create a Route Handler (`app/api/chat/route.ts`) and add the following code:
 
 ```tsx filename="app/api/chat/route.ts"
 import { openai } from '@ai-toolkit/openai';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -116,7 +116,7 @@ export async function POST(req: Request) {
 Let's take a look at what is happening in this code:
 
 1. Define an asynchronous `POST` request handler and extract `messages` from the body of the request. The `messages` variable contains a history of the conversation between you and the chatbot and provides the chatbot with the necessary context to make the next generation.
-2. Call [`streamText`](/docs/reference/ai-toolkit-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider (imported from `@ai-toolkit/openai`) and `messages` (defined in step 1). You can pass additional [settings](/docs/ai-toolkit-core/settings) to further customise the model's behaviour.
+2. Call [`streamText`](/docs/reference/ai-toolkit-core/stream-text), which is imported from the `ai-toolkit` package. This function accepts a configuration object that contains a `model` provider (imported from `@ai-toolkit/openai`) and `messages` (defined in step 1). You can pass additional [settings](/docs/ai-toolkit-core/settings) to further customise the model's behaviour.
 3. The `streamText` function returns a [`StreamTextResult`](/docs/reference/ai-toolkit-core/stream-text#result-object). This result object contains the [ `toDataStreamResponse` ](/docs/reference/ai-toolkit-core/stream-text#to-data-stream-response) function which converts the result to a streamed response object.
 4. Finally, return the result to the client to stream the response.
 
@@ -192,7 +192,7 @@ Modify your `app/api/chat/route.ts` file to include the new weather tool:
 
 ```tsx filename="app/api/chat/route.ts" highlight="2,13-27"
 import { openai } from '@ai-toolkit/openai';
-import { streamText, tool } from 'ai';
+import { streamText, tool } from 'ai-toolkit';
 import { z } from 'zod';
 
 export const maxDuration = 30;
@@ -226,7 +226,7 @@ export async function POST(req: Request) {
 
 In this updated code:
 
-1. You import the `tool` function from the `ai` package and `z` from `zod` for schema validation.
+1. You import the `tool` function from the `ai-toolkit` package and `z` from `zod` for schema validation.
 2. You define a `tools` object with a `weather` tool. This tool:
 
    - Has a description that helps the model understand when to use it.
@@ -317,7 +317,7 @@ Update your `app/api/chat/route.ts` file to add a new tool to convert the temper
 
 ```tsx filename="app/api/chat/route.ts" highlight="27-40"
 import { openai } from '@ai-toolkit/openai';
-import { streamText, tool } from 'ai';
+import { streamText, tool } from 'ai-toolkit';
 import { z } from 'zod';
 
 export const maxDuration = 30;

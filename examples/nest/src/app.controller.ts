@@ -1,6 +1,6 @@
 import { openai } from '@ai-toolkit/openai';
 import { Controller, Post, Res } from '@nestjs/common';
-import { pipeDataStreamToResponse, streamText } from 'ai';
+import { pipeDataStreamToResponse, streamText } from 'ai-toolkit';
 import type { Response } from 'express';
 
 @Controller()

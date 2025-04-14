@@ -1,4 +1,4 @@
-import { AssistantResponse } from 'ai';
+import { AssistantResponse } from 'ai-toolkit';
 import OpenAI from 'openai';
 
 const openai = new OpenAI({

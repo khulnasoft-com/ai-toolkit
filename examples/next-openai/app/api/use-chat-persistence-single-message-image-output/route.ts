@@ -6,7 +6,7 @@ import {
   createDataStreamResponse,
   createIdGenerator,
   streamText,
-} from 'ai';
+} from 'ai-toolkit';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;

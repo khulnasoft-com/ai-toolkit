@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { expect } from 'vitest';
 import { deepseek as provider } from '@ai-toolkit/deepseek';
-import type { APICallError } from 'ai';
+import type { APICallError } from 'ai-toolkit';
 import {
   createFeatureTestSuite,
   createLanguageModelWithCapabilities,

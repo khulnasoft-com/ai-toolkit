@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { streamText } from "ai";
+import { streamText } from "ai-toolkit";
 
 async function handler(req, res) {
 	const stream = await streamText({

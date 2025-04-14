@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { APICallError, TypeValidationError } from "ai";
+import { APICallError, TypeValidationError } from "ai-toolkit";
 import { NoSuchModelError } from "@ai-toolkit/provider";
 import { CustomError } from "other-pkg";
 

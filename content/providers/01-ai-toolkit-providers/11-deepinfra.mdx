@@ -70,7 +70,7 @@ You can create language models using a provider instance. The first argument is 
 
 ```ts
 import { deepinfra } from '@ai-toolkit/deepinfra';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: deepinfra('meta-llama/Meta-Llama-3.1-70B-Instruct'),
@@ -122,7 +122,7 @@ For more on image generation with the AI TOOLKIT see [generateImage()](/docs/ref
 
 ```ts
 import { deepinfra } from '@ai-toolkit/deepinfra';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 
 const { image } = await generateImage({
   model: deepinfra.image('stabilityai/sd3.5'),
@@ -144,7 +144,7 @@ You can pass model-specific parameters using the `providerOptions.deepinfra` fie
 
 ```ts
 import { deepinfra } from '@ai-toolkit/deepinfra';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 
 const { image } = await generateImage({
   model: deepinfra.image('stabilityai/sd3.5'),

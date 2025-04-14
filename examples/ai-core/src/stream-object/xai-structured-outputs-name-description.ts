@@ -1,5 +1,5 @@
 import { xai } from '@ai-toolkit/xai';
-import { streamObject } from 'ai';
+import { streamObject } from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 
