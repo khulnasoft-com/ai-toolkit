@@ -1,5 +1,8 @@
 import { streamObject } from 'ai-toolkit';
-import { convertArrayToReadableStream, MockLanguageModelV1 } from 'ai-toolkit/test';
+import {
+  convertArrayToReadableStream,
+  MockLanguageModelV1,
+} from 'ai-toolkit/test';
 import 'dotenv/config';
 import { z } from 'zod';
 

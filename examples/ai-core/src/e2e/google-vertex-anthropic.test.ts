@@ -9,7 +9,11 @@ import {
   createVertexAnthropic as createVertexAnthropicEdge,
   vertexAnthropic as vertexAnthropicEdge,
 } from '@ai-toolkit/google-vertex/anthropic/edge';
-import { generateText, type APICallError, type LanguageModelV1 } from 'ai-toolkit';
+import {
+  generateText,
+  type APICallError,
+  type LanguageModelV1,
+} from 'ai-toolkit';
 import fs from 'fs';
 import {
   createFeatureTestSuite,

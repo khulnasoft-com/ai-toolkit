@@ -1,4 +1,7 @@
-import type { LanguageModelV1Middleware, LanguageModelV1StreamPart } from 'ai-toolkit';
+import type {
+  LanguageModelV1Middleware,
+  LanguageModelV1StreamPart,
+} from 'ai-toolkit';
 
 export const yourLogMiddleware: LanguageModelV1Middleware = {
   wrapGenerate: async ({ doGenerate, params }) => {

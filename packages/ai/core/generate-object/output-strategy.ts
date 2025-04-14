@@ -7,7 +7,10 @@ import {
   TypeValidationError,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
-import { safeValidateTypes, ValidationResult } from '@ai-toolkit/provider-utils';
+import {
+  safeValidateTypes,
+  ValidationResult,
+} from '@ai-toolkit/provider-utils';
 import { asSchema, DeepPartial, Schema } from '@ai-toolkit/ui-utils';
 import { z } from 'zod';
 import { NoObjectGeneratedError } from '../../errors/no-object-generated-error';
