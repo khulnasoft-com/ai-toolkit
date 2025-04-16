@@ -1373,7 +1373,7 @@ describe('streamText', () => {
       expect(response.status).toStrictEqual(200);
       expect(Object.fromEntries(response.headers.entries())).toStrictEqual({
         'content-type': 'text/plain; charset=utf-8',
-        'x-vercel-ai-data-stream': 'v1',
+        'x-khulnasoft-ai-data-stream': 'v1',
       });
       expect(response.headers.get('Content-Type')).toStrictEqual(
         'text/plain; charset=utf-8',
@@ -1400,7 +1400,7 @@ describe('streamText', () => {
       expect(response.statusText).toStrictEqual('foo');
       expect(Object.fromEntries(response.headers.entries())).toStrictEqual({
         'content-type': 'text/plain; charset=utf-8',
-        'x-vercel-ai-data-stream': 'v1',
+        'x-khulnasoft-ai-data-stream': 'v1',
         'custom-header': 'custom-value',
       });
       expect(await convertResponseStreamToArray(response)).toMatchSnapshot();
