@@ -1137,16 +1137,16 @@ importers:
   packages/ai:
     dependencies:
       '@ai-toolkit/provider':
-        specifier: 1.1.2
+        specifier: 2.0.0
         version: link:../provider
       '@ai-toolkit/provider-utils':
-        specifier: 2.2.6
+        specifier: 3.0.0
         version: link:../provider-utils
       '@ai-toolkit/react':
-        specifier: 1.2.8
+        specifier: 2.0.0
         version: link:../react
       '@ai-toolkit/ui-utils':
-        specifier: 1.2.7
+        specifier: 2.0.0
         version: link:../ui-utils
       '@opentelemetry/api':
         specifier: 1.9.0
