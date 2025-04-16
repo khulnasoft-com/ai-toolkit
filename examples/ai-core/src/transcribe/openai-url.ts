@@ -6,7 +6,7 @@ async function main() {
   const result = await transcribe({
     model: openai.transcription('whisper-1'),
     audio: new URL(
-      'https://github.com/khulnasoft/ai/raw/refs/heads/main/examples/ai-core/data/galileo.mp3',
+      'https://github.com/khulnasoft/ai-toolkit/raw/refs/heads/main/examples/ai-core/data/galileo.mp3',
     ),
   });
 

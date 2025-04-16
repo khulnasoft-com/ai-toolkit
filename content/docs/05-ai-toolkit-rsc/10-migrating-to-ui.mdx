@@ -15,11 +15,11 @@ We introduced support for using [React Server Components](https://react.dev/refe
 
 However, given we're pushing the boundaries of this technology, AI TOOLKIT RSC currently faces significant limitations that make it unsuitable for stable production use.
 
-- It is not possible to abort a stream using server actions. This will be improved in future releases of React and Next.js [(1122)](https://github.com/khulnasoft/ai/issues/1122).
-- When using `createStreamableUI` and `streamUI`, components remount on `.done()`, causing them to flicker [(2939)](https://github.com/khulnasoft/ai/issues/2939).
-- Many suspense boundaries can lead to crashes [(2843)](https://github.com/khulnasoft/ai/issues/2843).
+- It is not possible to abort a stream using server actions. This will be improved in future releases of React and Next.js [(1122)](https://github.com/khulnasoft/ai-toolkit/issues/1122).
+- When using `createStreamableUI` and `streamUI`, components remount on `.done()`, causing them to flicker [(2939)](https://github.com/khulnasoft/ai-toolkit/issues/2939).
+- Many suspense boundaries can lead to crashes [(2843)](https://github.com/khulnasoft/ai-toolkit/issues/2843).
 - Using `createStreamableUI` can lead to quadratic data transfer. You can avoid this using createStreamableValue instead, and rendering the component client-side.
-- Closed RSC streams cause update issues [(3007)](https://github.com/khulnasoft/ai/issues/3007).
+- Closed RSC streams cause update issues [(3007)](https://github.com/khulnasoft/ai-toolkit/issues/3007).
 
 Due to these limitations, AI TOOLKIT RSC is marked as experimental, and we do not recommend using it for stable production environments.
 

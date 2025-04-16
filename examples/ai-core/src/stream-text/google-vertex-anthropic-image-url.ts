@@ -14,7 +14,7 @@ async function main() {
           {
             type: 'image',
             image:
-              'https://github.com/khulnasoft/ai/blob/main/examples/ai-core/data/comic-cat.png?raw=true',
+              'https://github.com/khulnasoft/ai-toolkit/blob/main/examples/ai-core/data/comic-cat.png?raw=true',
           },
         ],
       },

@@ -16,7 +16,7 @@ async function main() {
           {
             type: 'file',
             data: new URL(
-              'https://github.com/khulnasoft/ai/blob/main/examples/ai-core/data/ai.pdf?raw=true',
+              'https://github.com/khulnasoft/ai-toolkit/blob/main/examples/ai-core/data/ai.pdf?raw=true',
             ),
             mimeType: 'application/pdf',
           },
