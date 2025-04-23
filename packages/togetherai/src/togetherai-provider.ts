@@ -1,4 +1,4 @@
-import {
+import type {
   LanguageModelV1,
   EmbeddingModelV1,
   ProviderV1,
@@ -10,24 +10,24 @@ import {
   OpenAICompatibleEmbeddingModel,
 } from '@ai-toolkit/openai-compatible';
 import {
-  FetchFunction,
+  type FetchFunction,
   loadApiKey,
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
-import {
+import type {
   TogetherAIChatModelId,
   TogetherAIChatSettings,
 } from './togetherai-chat-settings';
-import {
+import type {
   TogetherAIEmbeddingModelId,
   TogetherAIEmbeddingSettings,
 } from './togetherai-embedding-settings';
-import {
+import type {
   TogetherAICompletionModelId,
   TogetherAICompletionSettings,
 } from './togetherai-completion-settings';
 import { TogetherAIImageModel } from './togetherai-image-model';
-import {
+import type {
   TogetherAIImageModelId,
   TogetherAIImageSettings,
 } from './togetherai-image-settings';

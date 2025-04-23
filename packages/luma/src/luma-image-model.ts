@@ -1,10 +1,10 @@
 import {
-  ImageModelV1,
-  ImageModelV1CallWarning,
+  type ImageModelV1,
+  type ImageModelV1CallWarning,
   InvalidResponseDataError,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
+  type FetchFunction,
   combineHeaders,
   createBinaryResponseHandler,
   createJsonResponseHandler,
@@ -14,7 +14,7 @@ import {
   getFromApi,
   postJsonToApi,
 } from '@ai-toolkit/provider-utils';
-import { LumaImageSettings } from './luma-image-settings';
+import type { LumaImageSettings } from './luma-image-settings';
 import { z } from 'zod';
 
 const DEFAULT_POLL_INTERVAL_MILLIS = 500;
@@ -129,7 +129,7 @@ export class LumaImageModel implements ImageModelV1 {
     headers: Record<string, string | undefined>,
     abortSignal: AbortSignal | undefined,
   ): Promise<string> {
-    let attemptCount = 0;
+    const attemptCount = 0;
     const url = this.getLumaGenerationsUrl(generationId);
     for (let i = 0; i < this.maxPollAttempts; i++) {
       const { value: statusResponse } = await getFromApi({

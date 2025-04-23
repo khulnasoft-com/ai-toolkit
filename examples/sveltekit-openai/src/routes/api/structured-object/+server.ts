@@ -1,4 +1,4 @@
-import { streamObject } from 'ai';
+import { streamObject } from 'ai-toolkit';
 import { notificationSchema } from '../../structured-object/schema.js';
 import { createOpenAI } from '@ai-toolkit/openai';
 import { env } from '$env/dynamic/private';

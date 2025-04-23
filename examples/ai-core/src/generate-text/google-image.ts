@@ -1,5 +1,8 @@
-import { google, GoogleGenerativeAIProviderOptions } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import {
+  google,
+  type GoogleGenerativeAIProviderOptions,
+} from '@ai-toolkit/google';
+import { generateText } from 'ai-toolkit';
 import 'dotenv/config';
 import fs from 'node:fs';
 

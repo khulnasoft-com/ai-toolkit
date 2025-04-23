@@ -46,14 +46,14 @@
   "homepage": "https://sdk.khulnasoft.com/docs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khulnasoft/ai.git"
+    "url": "git+https://github.com/khulnasoft/ai-toolkit.git"
   },
   "license": "Apache License",
   "bugs": {
-    "url": "https://github.com/khulnasoft/ai/issues"
+    "url": "https://github.com/khulnasoft/ai-toolkit/issues"
   },
   "keywords": [
-    "ai"
+    "ai-toolkit"
   ],
   "packageManager": "pnpm@9.12.3",
   "prettier": {

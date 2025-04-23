@@ -1,5 +1,9 @@
 import { fireworks } from '@ai-toolkit/fireworks';
-import { extractReasoningMiddleware, streamText, wrapLanguageModel } from 'ai';
+import {
+  extractReasoningMiddleware,
+  streamText,
+  wrapLanguageModel,
+} from 'ai-toolkit';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;

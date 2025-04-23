@@ -1,16 +1,16 @@
 import {
   InvalidResponseDataError,
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
-  LanguageModelV1FinishReason,
-  LanguageModelV1LogProbs,
-  LanguageModelV1ProviderMetadata,
-  LanguageModelV1StreamPart,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1FinishReason,
+  type LanguageModelV1LogProbs,
+  type LanguageModelV1ProviderMetadata,
+  type LanguageModelV1StreamPart,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
+  type FetchFunction,
+  type ParseResult,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
@@ -22,7 +22,10 @@ import { z } from 'zod';
 import { convertToOpenAIChatMessages } from './convert-to-openai-chat-messages';
 import { mapOpenAIChatLogProbsOutput } from './map-openai-chat-logprobs';
 import { mapOpenAIFinishReason } from './map-openai-finish-reason';
-import { OpenAIChatModelId, OpenAIChatSettings } from './openai-chat-settings';
+import type {
+  OpenAIChatModelId,
+  OpenAIChatSettings,
+} from './openai-chat-settings';
 import {
   openaiErrorDataSchema,
   openaiFailedResponseHandler,
@@ -432,8 +435,8 @@ export class OpenAIChatLanguageModel implements LanguageModelV1 {
             })),
       finishReason: mapOpenAIFinishReason(choice.finish_reason),
       usage: {
-        promptTokens: response.usage?.prompt_tokens ?? NaN,
-        completionTokens: response.usage?.completion_tokens ?? NaN,
+        promptTokens: response.usage?.prompt_tokens ?? Number.NaN,
+        completionTokens: response.usage?.completion_tokens ?? Number.NaN,
       },
       rawCall: { rawPrompt, rawSettings },
       rawResponse: { headers: responseHeaders, body: rawResponse },
@@ -772,8 +775,8 @@ export class OpenAIChatLanguageModel implements LanguageModelV1 {
               finishReason,
               logprobs,
               usage: {
-                promptTokens: usage.promptTokens ?? NaN,
-                completionTokens: usage.completionTokens ?? NaN,
+                promptTokens: usage.promptTokens ?? Number.NaN,
+                completionTokens: usage.completionTokens ?? Number.NaN,
               },
               ...(providerMetadata != null ? { providerMetadata } : {}),
             });

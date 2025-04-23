@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { ToolInvocation, streamText } from 'ai';
+import { ToolInvocation, streamText } from 'ai-toolkit';
 import { z } from 'zod';
 
 interface Message {

@@ -57,7 +57,7 @@ You can use LangDB with the `generateText` or `streamText` function:
 
 ```tsx
 import { createLangDB } from '@langdb/khulnasoft-provider';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const langdb = createLangDB({
   apiKey: process.env.LANGDB_API_KEY,
@@ -78,7 +78,7 @@ export async function generateTextExample() {
 
 ```tsx
 import { createLangDB } from '@langdb/khulnasoft-provider';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 import fs from 'fs';
 import path from 'path';
 
@@ -103,7 +103,7 @@ export async function generateImageExample() {
 
 ```tsx
 import { createLangDB } from '@langdb/khulnasoft-provider';
-import { embed } from 'ai';
+import { embed } from 'ai-toolkit';
 
 const langdb = createLangDB({
   apiKey: process.env.LANGDB_API_KEY,

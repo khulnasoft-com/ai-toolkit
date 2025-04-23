@@ -1,6 +1,6 @@
 import { vertex } from '@ai-toolkit/google-vertex';
 import { perplexity } from '@ai-toolkit/perplexity';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;

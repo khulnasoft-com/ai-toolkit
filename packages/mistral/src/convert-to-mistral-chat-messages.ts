@@ -1,9 +1,9 @@
 import {
-  LanguageModelV1Prompt,
+  type LanguageModelV1Prompt,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
-import { MistralPrompt } from './mistral-chat-prompt';
+import type { MistralPrompt } from './mistral-chat-prompt';
 
 export function convertToMistralChatMessages(
   prompt: LanguageModelV1Prompt,

@@ -32,7 +32,7 @@ Navigate to the newly created directory:
 
 ### Install dependencies
 
-Install `ai` and `@ai-toolkit/openai`, the AI TOOLKIT's OpenAI provider.
+Install `ai-toolkit` and `@ai-toolkit/openai`, the AI TOOLKIT's OpenAI provider.
 
 <Note>
   The AI TOOLKIT is designed to be a unified interface to interact with any
@@ -59,7 +59,7 @@ Install `ai` and `@ai-toolkit/openai`, the AI TOOLKIT's OpenAI provider.
 </div>
 
 <Note type="secondary" fill>
-  Make sure you are using `ai` version 3.1 or higher.
+  Make sure you are using `ai-toolkit` version 3.1 or higher.
 </Note>
 
 ### Configure OpenAI API key
@@ -95,7 +95,7 @@ export default defineNuxtConfig({
 Create an API route, `server/api/chat.ts` and add the following code:
 
 ```typescript filename="server/api/chat.ts"
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 import { createOpenAI } from '@ai-toolkit/openai';
 
 export default defineLazyEventHandler(async () => {
@@ -122,7 +122,7 @@ Let's take a look at what is happening in this code:
 
 1. Create an OpenAI provider instance with the `createOpenAI` function from the `@ai-toolkit/openai` package.
 2. Define an Event Handler and extract `messages` from the body of the request. The `messages` variable contains a history of the conversation with you and the chatbot and will provide the chatbot with the necessary context to make the next generation.
-3. Call [`streamText`](/docs/reference/ai-toolkit-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider (defined in step 1) and `messages` (defined in step 2). You can pass additional [settings](/docs/ai-toolkit-core/settings) to further customise the model's behaviour.
+3. Call [`streamText`](/docs/reference/ai-toolkit-core/stream-text), which is imported from the `ai-toolkit` package. This function accepts a configuration object that contains a `model` provider (defined in step 1) and `messages` (defined in step 2). You can pass additional [settings](/docs/ai-toolkit-core/settings) to further customise the model's behaviour.
 4. The `streamText` function returns a [`StreamTextResult`](/docs/reference/ai-toolkit-core/stream-text#result). This result object contains the [ `toDataStreamResponse` ](/docs/reference/ai-toolkit-core/stream-text#to-data-stream-response) function which converts the result to a streamed response object.
 5. Return the result to the client to stream the response.
 
@@ -197,7 +197,7 @@ Let's enhance your chatbot by adding a simple weather tool.
 Modify your `server/api/chat.ts` file to include the new weather tool:
 
 ```typescript filename="server/api/chat.ts" highlight="1,18-34"
-import { streamText, tool } from 'ai';
+import { streamText, tool } from 'ai-toolkit';
 import { createOpenAI } from '@ai-toolkit/openai';
 import { z } from 'zod';
 
@@ -240,7 +240,7 @@ export default defineLazyEventHandler(async () => {
 
 In this updated code:
 
-1. You import the `tool` function from the `ai` package and `z` from `zod` for schema validation.
+1. You import the `tool` function from the `ai-toolkit` package and `z` from `zod` for schema validation.
 2. You define a `tools` object with a `weather` tool. This tool:
 
    - Has a description that helps the model understand when to use it.
@@ -322,7 +322,7 @@ By setting `maxSteps` to 5, you're allowing the model to use up to 5 "steps" for
 Update your `server/api/chat.ts` file to add a new tool to convert the temperature from Fahrenheit to Celsius:
 
 ```typescript filename="server/api/chat.ts" highlight="34-47"
-import { streamText, tool } from 'ai';
+import { streamText, tool } from 'ai-toolkit';
 import { createOpenAI } from '@ai-toolkit/openai';
 import { z } from 'zod';
 

@@ -1,6 +1,6 @@
 // @ts-nocheck
-import OpenAI from 'openai';
+import OpenAI from "openai";
 
 const openaiClient = new OpenAI({
-  apiKey: 'key2'
+	apiKey: "key2",
 });

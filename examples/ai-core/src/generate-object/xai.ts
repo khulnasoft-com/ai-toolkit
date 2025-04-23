@@ -1,5 +1,5 @@
 import { xai } from '@ai-toolkit/xai';
-import { generateObject } from 'ai';
+import { generateObject } from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

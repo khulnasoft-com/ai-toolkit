@@ -1,4 +1,4 @@
-import { LanguageModelV1Prompt } from '@ai-toolkit/provider';
+import type { LanguageModelV1Prompt } from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   createTestServer,
@@ -242,7 +242,7 @@ describe('doGenerate', () => {
 
     expect(usage).toStrictEqual({
       promptTokens: 20,
-      completionTokens: NaN,
+      completionTokens: Number.NaN,
     });
   });
 
@@ -1571,8 +1571,8 @@ describe('doStream', () => {
         type: 'finish',
         finishReason: 'error',
         usage: {
-          promptTokens: NaN,
-          completionTokens: NaN,
+          promptTokens: Number.NaN,
+          completionTokens: Number.NaN,
         },
         providerMetadata: {
           'test-provider': {},
@@ -1601,8 +1601,8 @@ describe('doStream', () => {
       finishReason: 'error',
       type: 'finish',
       usage: {
-        completionTokens: NaN,
-        promptTokens: NaN,
+        completionTokens: Number.NaN,
+        promptTokens: Number.NaN,
       },
       providerMetadata: {
         'test-provider': {},

@@ -1,5 +1,5 @@
 import { xai } from '@ai-toolkit/xai';
-import { CoreMessage, streamText, tool } from 'ai';
+import { type CoreMessage, streamText, tool } from 'ai-toolkit';
 import 'dotenv/config';
 import * as readline from 'node:readline/promises';
 import { z } from 'zod';

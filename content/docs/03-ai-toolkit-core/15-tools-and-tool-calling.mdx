@@ -21,7 +21,7 @@ The `tools` parameter of `generateText` and `streamText` is an object that has t
 
 ```ts highlight="6-17"
 import { z } from 'zod';
-import { generateText, tool } from 'ai';
+import { generateText, tool } from 'ai-toolkit';
 
 const result = await generateText({
   model: yourModel,
@@ -80,7 +80,7 @@ In the following example, there are two steps:
 
 ```ts highlight="18"
 import { z } from 'zod';
-import { generateText, tool } from 'ai';
+import { generateText, tool } from 'ai-toolkit';
 
 const { text, steps } = await generateText({
   model: yourModel,
@@ -112,7 +112,7 @@ It contains all the text, tool calls, tool results, and more from each step.
 #### Example: Extract tool results from all steps
 
 ```ts highlight="3,9-10"
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { steps } = await generateText({
   model: openai('gpt-4-turbo'),
@@ -132,7 +132,7 @@ i.e. all text deltas, tool calls, and tool results for the step are available.
 When you have multiple steps, the callback is triggered for each step.
 
 ```tsx highlight="5-7"
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const result = await generateText({
   // ...
@@ -154,7 +154,7 @@ It is also available in the `onFinish` callback of `streamText`.
 The `response.messages` property contains an array of `CoreMessage` objects that you can add to your conversation history:
 
 ```ts
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const messages: CoreMessage[] = [
   // ...
@@ -181,7 +181,7 @@ It supports the following settings:
 
 ```ts highlight="18"
 import { z } from 'zod';
-import { generateText, tool } from 'ai';
+import { generateText, tool } from 'ai-toolkit';
 
 const result = await generateText({
   model: yourModel,
@@ -212,7 +212,7 @@ The ID of the tool call is forwarded to the tool execution.
 You can use it e.g. when sending tool-call related information with stream data.
 
 ```ts highlight="14-20"
-import { StreamData, streamText, tool } from 'ai';
+import { StreamData, streamText, tool } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -252,7 +252,7 @@ You can access them in the second parameter of the `execute` function.
 In multi-step calls, the messages contain the text, tool calls, and tool results from all previous steps.
 
 ```ts highlight="8-9"
-import { generateText, tool } from 'ai';
+import { generateText, tool } from 'ai-toolkit';
 
 const result = await generateText({
   // ...
@@ -275,7 +275,7 @@ You can access them in the second parameter of the `execute` function and e.g. a
 
 ```ts highlight="6,11,14"
 import { z } from 'zod';
-import { generateText, tool } from 'ai';
+import { generateText, tool } from 'ai-toolkit';
 
 const result = await generateText({
   model: yourModel,
@@ -315,7 +315,7 @@ extract the tool call and tool result types from the tools.
 
 ```ts highlight="18-19,23-24"
 import { openai } from '@ai-toolkit/openai';
-import { ToolCallUnion, ToolResultUnion, generateText, tool } from 'ai';
+import { ToolCallUnion, ToolResultUnion, generateText, tool } from 'ai-toolkit';
 import { z } from 'zod';
 
 const myToolSet = {
@@ -426,7 +426,12 @@ You can use different strategies to repair the tool call:
 
 ```ts
 import { openai } from '@ai-toolkit/openai';
-import { generateObject, generateText, NoSuchToolError, tool } from 'ai';
+import {
+  generateObject,
+  generateText,
+  NoSuchToolError,
+  tool,
+} from 'ai-toolkit';
 
 const result = await generateText({
   model,
@@ -467,7 +472,12 @@ const result = await generateText({
 
 ```ts
 import { openai } from '@ai-toolkit/openai';
-import { generateObject, generateText, NoSuchToolError, tool } from 'ai';
+import {
+  generateObject,
+  generateText,
+  NoSuchToolError,
+  tool,
+} from 'ai-toolkit';
 
 const result = await generateText({
   model,
@@ -543,7 +553,7 @@ By default, the value is `undefined` and all tools are active.
 
 ```ts highlight="7"
 import { openai } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: openai('gpt-4o'),
@@ -608,7 +618,7 @@ The `tool` helper function is crucial for this, because it ensures correct type 
 Here is an example of an extracted tool:
 
 ```ts filename="tools/weather-tool.ts" highlight="1,4-5"
-import { tool } from 'ai';
+import { tool } from 'ai-toolkit';
 import { z } from 'zod';
 
 // the `tool` helper function ensures correct type inference:
@@ -646,7 +656,7 @@ Create an MCP client using either:
 The SSE can be configured using a simple object with a `type` and `url` property:
 
 ```typescript
-import { experimental_createMCPClient as createMCPClient } from 'ai';
+import { experimental_createMCPClient as createMCPClient } from 'ai-toolkit';
 
 const mcpClient = await createMCPClient({
   transport: {
@@ -666,8 +676,8 @@ const mcpClient = await createMCPClient({
 The Stdio transport requires importing the `StdioMCPTransport` class from the `ai/mcp-stdio` package:
 
 ```typescript
-import { experimental_createMCPClient as createMCPClient } from 'ai';
-import { Experimental_StdioMCPTransport as StdioMCPTransport } from 'ai/mcp-stdio';
+import { experimental_createMCPClient as createMCPClient } from 'ai-toolkit';
+import { Experimental_StdioMCPTransport as StdioMCPTransport } from 'ai-toolkit/mcp-stdio';
 
 const mcpClient = await createMCPClient({
   transport: new StdioMCPTransport({
@@ -682,7 +692,7 @@ const mcpClient = await createMCPClient({
 You can also bring your own transport by implementing the `MCPTransport` interface:
 
 ```typescript
-import { MCPTransport, createMCPClient } from 'ai';
+import { MCPTransport, createMCPClient } from 'ai-toolkit';
 
 const mcpClient = await createMCPClient({
   transport: new MyCustomTransport({

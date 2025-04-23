@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { experimental_generateSpeech as generateSpeech } from 'ai';
+import { experimental_generateSpeech as generateSpeech } from 'ai-toolkit';
 import 'dotenv/config';
 import { saveAudioFile } from '../lib/save-audio';
 

@@ -1,5 +1,8 @@
-import { anthropic, AnthropicProviderOptions } from '@ai-toolkit/anthropic';
-import { generateText } from 'ai';
+import {
+  anthropic,
+  type AnthropicProviderOptions,
+} from '@ai-toolkit/anthropic';
+import { generateText } from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {

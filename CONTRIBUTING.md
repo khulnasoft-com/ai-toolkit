@@ -20,7 +20,7 @@ We're always looking for suggestions to make our project better. If you have an 
 ## Improving Documentation
 
 Documentation is crucial for understanding and using our project effectively.
-You can find the content of our docs under [`content`](https://github.com/khulnasoft/ai/tree/main/content).
+You can find the content of our docs under [`content`](https://github.com/khulnasoft/ai-toolkit/tree/main/content).
 
 To fix smaller typos, you can edit the code directly in GitHub or use Github.dev (press `.` in Github).
 
@@ -63,7 +63,7 @@ Once built, the new code is picked up by the examples.
 
 To test the package that you're working on, run `pnpm test` in the package folder.
 You do not need to rebuild your package to test it (only dependencies need to be built).
-Some packages like `ai` also have more details tests and watch mode, see their `package.json` for more information.
+Some packages like `ai-toolkit` also have more details tests and watch mode, see their `package.json` for more information.
 
 ### Submitting Pull Requests
 

@@ -1,4 +1,4 @@
-import type { LanguageModelV1Middleware } from 'ai';
+import type { LanguageModelV1Middleware } from 'ai-toolkit';
 
 const cache = new Map<string, any>();
 

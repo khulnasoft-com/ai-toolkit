@@ -1,16 +1,16 @@
 import {
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
-  LanguageModelV1FinishReason,
-  LanguageModelV1FunctionToolCall,
-  LanguageModelV1ProviderMetadata,
-  LanguageModelV1StreamPart,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1FinishReason,
+  type LanguageModelV1FunctionToolCall,
+  type LanguageModelV1ProviderMetadata,
+  type LanguageModelV1StreamPart,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
-  Resolvable,
+  type FetchFunction,
+  type ParseResult,
+  type Resolvable,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
@@ -20,7 +20,7 @@ import {
 } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 import { anthropicFailedResponseHandler } from './anthropic-error';
-import {
+import type {
   AnthropicMessagesModelId,
   AnthropicMessagesSettings,
 } from './anthropic-messages-settings';

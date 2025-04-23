@@ -1,4 +1,4 @@
-import { CoreMessage } from 'ai';
+import { CoreMessage } from 'ai-toolkit';
 import { useState } from 'react';
 
 export default function Page() {

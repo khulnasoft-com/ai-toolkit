@@ -1,6 +1,6 @@
 {
   "name": "@ai-toolkit/solid",
-  "version": "1.2.9",
+  "version": "2.0.0",
   "license": "Apache-2.0",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -29,8 +29,8 @@
     "CHANGELOG.md"
   ],
   "dependencies": {
-    "@ai-toolkit/provider-utils": "2.2.6",
-    "@ai-toolkit/ui-utils": "1.2.7",
+    "@ai-toolkit/provider-utils": "workspace:*",
+    "@ai-toolkit/ui-utils": "workspace:*",
     "@solid-primitives/trigger": "^1.1.0",
     "zod": "^3.23.8"
   },
@@ -67,13 +67,13 @@
   "homepage": "https://sdk.khulnasoft.com/docs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khulnasoft/ai.git"
+    "url": "git+https://github.com/khulnasoft/ai-toolkit.git"
   },
   "bugs": {
-    "url": "https://github.com/khulnasoft/ai/issues"
+    "url": "https://github.com/khulnasoft/ai-toolkit/issues"
   },
   "keywords": [
-    "ai",
+    "ai-toolkit",
     "solid"
   ]
 }

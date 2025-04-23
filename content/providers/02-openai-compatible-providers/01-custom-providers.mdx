@@ -251,7 +251,7 @@ Once published, users can use your provider like this:
 
 ```ts
 import { example } from '@company-name/example';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: example('example/chat-model-1'),
@@ -269,4 +269,4 @@ As you work on your provider you may need to use some of the internal API of the
 import { convertToOpenAICompatibleChatMessages } from '@ai-toolkit/openai-compatible/internal';
 ```
 
-You can see the latest available exports in the AI TOOLKIT [GitHub repository](https://github.com/khulnasoft/ai/blob/main/packages/openai-compatible/src/internal/index.ts).
+You can see the latest available exports in the AI TOOLKIT [GitHub repository](https://github.com/khulnasoft/ai-toolkit/blob/main/packages/openai-compatible/src/internal/index.ts).

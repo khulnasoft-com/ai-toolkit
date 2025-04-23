@@ -1,7 +1,10 @@
-import { openai, OpenAIResponsesProviderOptions } from '@ai-toolkit/openai';
+import {
+  openai,
+  type OpenAIResponsesProviderOptions,
+} from '@ai-toolkit/openai';
 import 'dotenv/config';
 import { weatherTool } from '../tools/weather-tool';
-import { streamText, tool } from 'ai';
+import { streamText, tool } from 'ai-toolkit';
 import { z } from 'zod';
 
 async function main() {

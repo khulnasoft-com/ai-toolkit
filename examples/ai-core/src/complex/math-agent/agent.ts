@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { generateText, tool } from 'ai';
+import { generateText, tool } from 'ai-toolkit';
 import 'dotenv/config';
 import * as mathjs from 'mathjs';
 import { z } from 'zod';

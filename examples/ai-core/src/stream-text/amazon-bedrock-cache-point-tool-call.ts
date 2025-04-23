@@ -2,10 +2,10 @@ import { bedrock } from '@ai-toolkit/amazon-bedrock';
 import {
   streamText,
   tool,
-  CoreMessage,
-  ToolCallPart,
-  ToolResultPart,
-} from 'ai';
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
+} from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

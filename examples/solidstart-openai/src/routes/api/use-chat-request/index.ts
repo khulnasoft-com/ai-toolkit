@@ -1,6 +1,6 @@
 import { openai } from '@ai-toolkit/openai';
-import { streamText, Message } from 'ai';
-import { APIEvent } from '@solidjs/start/server';
+import { streamText, type Message } from 'ai-toolkit';
+import type { APIEvent } from '@solidjs/start/server';
 
 export const POST = async (event: APIEvent) => {
   // Extract the `messages` from the body of the request

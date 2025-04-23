@@ -1,5 +1,5 @@
 import { cohere } from '@ai-toolkit/cohere';
-import { embedMany } from 'ai';
+import { embedMany } from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {

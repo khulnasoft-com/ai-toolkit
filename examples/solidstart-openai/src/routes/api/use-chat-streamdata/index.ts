@@ -1,6 +1,6 @@
 import { openai } from '@ai-toolkit/openai';
-import { APIEvent } from '@solidjs/start/server';
-import { createDataStreamResponse, generateId, streamText } from 'ai';
+import type { APIEvent } from '@solidjs/start/server';
+import { createDataStreamResponse, generateId, streamText } from 'ai-toolkit';
 
 export const POST = async (event: APIEvent) => {
   const { messages } = await event.request.json();

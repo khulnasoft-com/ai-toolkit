@@ -1,5 +1,5 @@
 import { anthropic, AnthropicProviderOptions } from '@ai-toolkit/anthropic';
-import { streamText, tool } from 'ai';
+import { streamText, tool } from 'ai-toolkit';
 import { z } from 'zod';
 
 // Allow streaming responses up to 30 seconds

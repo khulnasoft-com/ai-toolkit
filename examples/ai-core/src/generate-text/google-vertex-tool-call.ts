@@ -1,5 +1,5 @@
 import { vertex } from '@ai-toolkit/google-vertex';
-import { generateText, tool } from 'ai';
+import { generateText, tool } from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

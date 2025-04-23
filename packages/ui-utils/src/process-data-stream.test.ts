@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { DataStreamPartType } from './data-stream-parts';
+import type { DataStreamPartType } from './data-stream-parts';
 import { processDataStream } from './process-data-stream';
 
 function createReadableStream(

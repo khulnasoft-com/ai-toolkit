@@ -1,5 +1,9 @@
 import { fireworks } from '@ai-toolkit/fireworks';
-import { extractReasoningMiddleware, streamText, wrapLanguageModel } from 'ai';
+import {
+  extractReasoningMiddleware,
+  streamText,
+  wrapLanguageModel,
+} from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {

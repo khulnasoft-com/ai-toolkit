@@ -11,7 +11,7 @@ It is ideal for non-interactive use cases such as automation tasks where you nee
 
 ```ts
 import { openai } from '@ai-toolkit/openai';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: openai('gpt-4o'),
@@ -25,7 +25,7 @@ To see `generateText` in action, check out [these examples](#examples).
 
 ## Import
 
-<Snippet text={`import { generateText } from "ai"`} prompt={false} />
+<Snippet text={`import { generateText } from "ai-toolkit"`} prompt={false} />
 
 ## API Signature
 

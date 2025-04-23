@@ -23,7 +23,7 @@ At the center of the AI TOOLKIT is [AI TOOLKIT Core](/docs/ai-toolkit-core/overv
 
 ```ts
 import { anthropic } from '@ai-toolkit/anthropic';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, reasoning, reasoningDetails } = await generateText({
   model: anthropic('claude-3-7-sonnet-20250219'),
@@ -36,7 +36,7 @@ The unified interface also means that you can easily switch between providers by
 
 ```ts
 import { bedrock } from '@ai-toolkit/amazon-bedrock';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { reasoning, text } = await generateText({
   model: bedrock('anthropic.claude-3-7-sonnet-20250219-v1:0'),
@@ -50,7 +50,7 @@ Claude 3.7 Sonnet introduces a new extended thinking—the ability to solve comp
 
 ```ts
 import { anthropic, AnthropicProviderOptions } from '@ai-toolkit/anthropic';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, reasoning, reasoningDetails } = await generateText({
   model: anthropic('claude-3-7-sonnet-20250219'),
@@ -85,7 +85,7 @@ Then, create a route handler for the chat endpoint:
 
 ```tsx filename="app/api/chat/route.ts"
 import { anthropic, AnthropicProviderOptions } from '@ai-toolkit/anthropic';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();

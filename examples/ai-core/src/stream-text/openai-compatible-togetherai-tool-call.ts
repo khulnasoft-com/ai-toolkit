@@ -1,6 +1,11 @@
 import 'dotenv/config';
 import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
-import { streamText, CoreMessage, ToolCallPart, ToolResultPart } from 'ai';
+import {
+  streamText,
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
+} from 'ai-toolkit';
 import { weatherTool } from '../tools/weather-tool';
 
 const messages: CoreMessage[] = [];

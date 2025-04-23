@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ClientMessage } from './actions';
-import { useActions } from 'ai/rsc';
+import { useActions } from 'ai-toolkit/rsc';
 
 export default function Home() {
   const [input, setInput] = useState('');

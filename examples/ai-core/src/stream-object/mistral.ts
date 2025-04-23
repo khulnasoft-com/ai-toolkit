@@ -1,5 +1,5 @@
 import { mistral } from '@ai-toolkit/mistral';
-import { streamObject } from 'ai';
+import { streamObject } from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

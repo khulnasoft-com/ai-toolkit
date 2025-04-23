@@ -1,12 +1,15 @@
-import { ImageModelV1, ImageModelV1CallWarning } from '@ai-toolkit/provider';
+import type {
+  ImageModelV1,
+  ImageModelV1CallWarning,
+} from '@ai-toolkit/provider';
 import {
   combineHeaders,
   createJsonResponseHandler,
   createJsonErrorResponseHandler,
-  FetchFunction,
+  type FetchFunction,
   postJsonToApi,
 } from '@ai-toolkit/provider-utils';
-import {
+import type {
   TogetherAIImageModelId,
   TogetherAIImageSettings,
 } from './togetherai-image-settings';
@@ -73,8 +76,8 @@ export class TogetherAIImageModel implements ImageModelV1 {
         seed,
         n,
         ...(splitSize && {
-          width: parseInt(splitSize[0]),
-          height: parseInt(splitSize[1]),
+          width: Number.parseInt(splitSize[0]),
+          height: Number.parseInt(splitSize[1]),
         }),
         response_format: 'base64',
         ...(providerOptions.togetherai ?? {}),

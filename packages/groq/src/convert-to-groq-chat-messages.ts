@@ -1,9 +1,9 @@
 import {
-  LanguageModelV1Prompt,
+  type LanguageModelV1Prompt,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
-import { GroqChatPrompt } from './groq-api-types';
+import type { GroqChatPrompt } from './groq-api-types';
 
 export function convertToGroqChatMessages(
   prompt: LanguageModelV1Prompt,

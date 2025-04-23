@@ -1,12 +1,12 @@
 import {
-  LanguageModelV1CallWarning,
-  LanguageModelV1Message,
-  LanguageModelV1Prompt,
-  LanguageModelV1ProviderMetadata,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1Message,
+  type LanguageModelV1Prompt,
+  type LanguageModelV1ProviderMetadata,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
-import {
+import type {
   AnthropicAssistantMessage,
   AnthropicCacheControl,
   AnthropicMessagesPrompt,

@@ -3,7 +3,7 @@ import {
   extractReasoningMiddleware,
   generateText,
   wrapLanguageModel,
-} from 'ai';
+} from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {

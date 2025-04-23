@@ -1,12 +1,12 @@
 import { elevenlabs } from '@ai-toolkit/elevenlabs';
-import { experimental_transcribe as transcribe } from 'ai';
+import { experimental_transcribe as transcribe } from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {
   const result = await transcribe({
     model: elevenlabs.transcription('scribe_v1'),
     audio: new URL(
-      'https://github.com/khulnasoft/ai/raw/refs/heads/main/examples/ai-core/data/galileo.mp3',
+      'https://github.com/khulnasoft/ai-toolkit/raw/refs/heads/main/examples/ai-core/data/galileo.mp3',
     ),
   });
 

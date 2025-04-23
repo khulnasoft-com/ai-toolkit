@@ -1,5 +1,5 @@
 import { google } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 import 'dotenv/config';
 import { presentImages } from '../lib/present-image';
 

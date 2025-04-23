@@ -1,6 +1,6 @@
 import { InvalidArgumentError } from '@ai-toolkit/provider';
 import { safeValidateTypes } from './validate-types';
-import { z } from 'zod';
+import type { z } from 'zod';
 
 export function parseProviderOptions<T>({
   provider,

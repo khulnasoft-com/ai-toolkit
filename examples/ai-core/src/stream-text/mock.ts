@@ -1,5 +1,8 @@
-import { streamText } from 'ai';
-import { convertArrayToReadableStream, MockLanguageModelV1 } from 'ai/test';
+import { streamText } from 'ai-toolkit';
+import {
+  convertArrayToReadableStream,
+  MockLanguageModelV1,
+} from 'ai-toolkit/test';
 import 'dotenv/config';
 
 async function main() {

@@ -1,5 +1,10 @@
 import { cohere } from '@ai-toolkit/cohere';
-import { streamText, CoreMessage, ToolCallPart, ToolResultPart } from 'ai';
+import {
+  streamText,
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
+} from 'ai-toolkit';
 import 'dotenv/config';
 import { weatherTool } from '../tools/weather-tool';
 

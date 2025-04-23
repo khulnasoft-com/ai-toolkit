@@ -1,4 +1,4 @@
-import { EmbeddingModelV1Embedding } from '@ai-toolkit/provider';
+import type { EmbeddingModelV1Embedding } from '@ai-toolkit/provider';
 import { createTestServer } from '@ai-toolkit/provider-utils/test';
 import { createMistral } from './mistral-provider';
 

@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { generateText, Output } from 'ai';
+import { generateText, Output } from 'ai-toolkit';
 import { xai } from '@ai-toolkit/xai';
 import { z } from 'zod';
 

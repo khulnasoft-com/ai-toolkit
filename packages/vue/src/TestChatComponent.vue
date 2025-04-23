@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
-import { Message, useChat } from './use-chat';
+import { type Message, useChat } from './use-chat';
 
 const onFinishCalls: Array<{
   message: Message;

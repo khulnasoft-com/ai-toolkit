@@ -1,5 +1,9 @@
 import { openai } from '@ai-toolkit/openai';
-import { defaultSettingsMiddleware, generateText, wrapLanguageModel } from 'ai';
+import {
+  defaultSettingsMiddleware,
+  generateText,
+  wrapLanguageModel,
+} from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {

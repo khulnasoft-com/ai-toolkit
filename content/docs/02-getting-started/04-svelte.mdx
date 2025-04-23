@@ -34,7 +34,7 @@ Navigate to the newly created directory:
 
 ### Install Dependencies
 
-Install `ai` and `@ai-toolkit/openai`, the AI TOOLKIT's OpenAI provider.
+Install `ai-toolkit` and `@ai-toolkit/openai`, the AI TOOLKIT's OpenAI provider.
 
 <Note>
   The AI TOOLKIT is designed to be a unified interface to interact with any
@@ -67,7 +67,7 @@ Install `ai` and `@ai-toolkit/openai`, the AI TOOLKIT's OpenAI provider.
 </div>
 
 <Note type="secondary" fill>
-  Make sure you are using `ai` version 3.1 or higher.
+  Make sure you are using `ai-toolkit` version 3.1 or higher.
 </Note>
 
 ### Configure OpenAI API Key
@@ -96,7 +96,7 @@ Create a SvelteKit Endpoint, `src/routes/api/chat/+server.ts` and add the follow
 
 ```tsx filename="src/routes/api/chat/+server.ts"
 import { createOpenAI } from '@ai-toolkit/openai';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 import { OPENAI_API_KEY } from '$env/static/private';
 
@@ -125,7 +125,7 @@ Let's take a look at what is happening in this code:
 
 1. Create an OpenAI provider instance with the `createOpenAI` function from the `@ai-toolkit/openai` package.
 2. Define a `POST` request handler and extract `messages` from the body of the request. The `messages` variable contains a history of the conversation with you and the chatbot and will provide the chatbot with the necessary context to make the next generation.
-3. Call [`streamText`](/docs/reference/ai-toolkit-core/stream-text), which is imported from the `ai` package. This function accepts a configuration object that contains a `model` provider (defined in step 1) and `messages` (defined in step 2). You can pass additional [settings](/docs/ai-toolkit-core/settings) to further customise the model's behaviour.
+3. Call [`streamText`](/docs/reference/ai-toolkit-core/stream-text), which is imported from the `ai-toolkit` package. This function accepts a configuration object that contains a `model` provider (defined in step 1) and `messages` (defined in step 2). You can pass additional [settings](/docs/ai-toolkit-core/settings) to further customise the model's behaviour.
 4. The `streamText` function returns a [`StreamTextResult`](/docs/reference/ai-toolkit-core/stream-text#result-object). This result object contains the [ `toDataStreamResponse` ](/docs/reference/ai-toolkit-core/stream-text#to-data-stream-response) function which converts the result to a streamed response object.
 5. Return the result to the client to stream the response.
 
@@ -197,7 +197,7 @@ Modify your `src/routes/api/chat/+server.ts` file to include the new weather too
 
 ```tsx filename="src/routes/api/chat/+server.ts" highlight="2,3,17-31"
 import { createOpenAI } from '@ai-toolkit/openai';
-import { streamText, tool } from 'ai';
+import { streamText, tool } from 'ai-toolkit';
 import { z } from 'zod';
 
 import { OPENAI_API_KEY } from '$env/static/private';
@@ -235,7 +235,7 @@ export async function POST({ request }) {
 
 In this updated code:
 
-1. You import the `tool` function from the `ai` package and `z` from `zod` for schema validation.
+1. You import the `tool` function from the `ai-toolkit` package and `z` from `zod` for schema validation.
 2. You define a `tools` object with a `weather` tool. This tool:
 
    - Has a description that helps the model understand when to use it.
@@ -317,7 +317,7 @@ Update your `src/routes/api/chat/+server.ts` file to add a new tool to convert t
 
 ```tsx filename="src/routes/api/chat/+server.ts" highlight="31-44"
 import { createOpenAI } from '@ai-toolkit/openai';
-import { streamText, tool } from 'ai';
+import { streamText, tool } from 'ai-toolkit';
 import { z } from 'zod';
 
 import { OPENAI_API_KEY } from '$env/static/private';

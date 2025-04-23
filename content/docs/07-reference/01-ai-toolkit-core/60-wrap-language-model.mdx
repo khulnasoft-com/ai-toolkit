@@ -10,7 +10,7 @@ by wrapping them with middleware.
 See [Language Model Middleware](/docs/ai-toolkit-core/middleware) for more information on middleware.
 
 ```ts
-import { wrapLanguageModel } from 'ai';
+import { wrapLanguageModel } from 'ai-toolkit';
 
 const wrappedLanguageModel = wrapLanguageModel({
   model: yourModel,
@@ -20,7 +20,10 @@ const wrappedLanguageModel = wrapLanguageModel({
 
 ## Import
 
-<Snippet text={`import { wrapLanguageModel } from "ai"`} prompt={false} />
+<Snippet
+  text={`import { wrapLanguageModel } from "ai-toolkit"`}
+  prompt={false}
+/>
 
 ## API Signature
 

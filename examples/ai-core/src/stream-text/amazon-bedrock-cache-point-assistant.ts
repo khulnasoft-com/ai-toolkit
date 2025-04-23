@@ -1,5 +1,5 @@
 import { bedrock } from '@ai-toolkit/amazon-bedrock';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 import 'dotenv/config';
 import fs from 'node:fs';
 

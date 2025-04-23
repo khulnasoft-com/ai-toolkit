@@ -11,7 +11,7 @@ import {
   type DeepPartial,
   type Schema,
 } from '@ai-toolkit/ui-utils';
-import { type z } from 'zod';
+import type { z } from 'zod';
 import {
   getStructuredObjectContext,
   hasStructuredObjectContext,

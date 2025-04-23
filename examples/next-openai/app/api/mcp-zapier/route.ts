@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { experimental_createMCPClient, streamText } from 'ai';
+import { experimental_createMCPClient, streamText } from 'ai-toolkit';
 
 export const maxDuration = 30;
 

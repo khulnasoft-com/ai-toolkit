@@ -1,8 +1,8 @@
 import {
-  GoogleVertexImageProviderOptions,
+  type GoogleVertexImageProviderOptions,
   vertex,
 } from '@ai-toolkit/google-vertex';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 import 'dotenv/config';
 import { presentImages } from '../lib/present-image';
 

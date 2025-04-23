@@ -4,7 +4,7 @@
   import type { Schema } from '@ai-toolkit/ui-utils';
   import type { z } from 'zod';
 
-  let {
+  const {
     id,
     api,
     schema,

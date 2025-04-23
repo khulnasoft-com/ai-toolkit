@@ -42,7 +42,7 @@ Currently, Cerebras offers two models:
 
 ```ts
 import { cerebras } from '@ai-toolkit/cerebras';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: cerebras('llama3.1-8b'),

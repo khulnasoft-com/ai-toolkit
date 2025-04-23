@@ -4,7 +4,7 @@ import type {
 } from '@ai-toolkit/provider';
 import type { Resolvable } from '@ai-toolkit/provider-utils';
 import {
-  FetchFunction,
+  type FetchFunction,
   combineHeaders,
   createBinaryResponseHandler,
   createJsonResponseHandler,
@@ -15,7 +15,7 @@ import {
   resolve,
 } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
-import {
+import type {
   FalImageModelId,
   FalImageSettings,
   FalImageSize,

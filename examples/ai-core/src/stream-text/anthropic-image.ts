@@ -1,5 +1,5 @@
 import { anthropic } from '@ai-toolkit/anthropic';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 import 'dotenv/config';
 import fs from 'node:fs';
 

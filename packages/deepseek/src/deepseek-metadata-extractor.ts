@@ -1,4 +1,4 @@
-import { MetadataExtractor } from '@ai-toolkit/openai-compatible';
+import type { MetadataExtractor } from '@ai-toolkit/openai-compatible';
 import { safeValidateTypes } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 
@@ -9,8 +9,8 @@ const buildDeepseekMetadata = (
     ? undefined
     : {
         deepseek: {
-          promptCacheHitTokens: usage.prompt_cache_hit_tokens ?? NaN,
-          promptCacheMissTokens: usage.prompt_cache_miss_tokens ?? NaN,
+          promptCacheHitTokens: usage.prompt_cache_hit_tokens ?? Number.NaN,
+          promptCacheMissTokens: usage.prompt_cache_miss_tokens ?? Number.NaN,
         },
       };
 };

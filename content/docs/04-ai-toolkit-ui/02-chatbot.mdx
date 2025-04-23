@@ -47,7 +47,7 @@ export default function Page() {
 
 ```ts filename='app/api/chat/route.ts'
 import { openai } from '@ai-toolkit/openai';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -389,7 +389,7 @@ You can forward error messages or send your own error message by providing a `ge
 
 ```ts filename="app/api/chat/route.ts" highlight="13-27"
 import { openai } from '@ai-toolkit/openai';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -425,7 +425,7 @@ By default, the usage information is sent back to the client. You can disable it
 
 ```ts filename="app/api/chat/route.ts" highlight="13"
 import { openai } from '@ai-toolkit/openai';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -509,7 +509,7 @@ You can forward them to the client with the `sendReasoning` option:
 
 ```ts filename="app/api/chat/route.ts" highlight="13"
 import { deepseek } from '@ai-toolkit/deepseek';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -565,7 +565,7 @@ You can forward them to the client with the `sendSources` option:
 
 ```ts filename="app/api/chat/route.ts" highlight="13"
 import { perplexity } from '@ai-toolkit/perplexity';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   const { messages } = await req.json();

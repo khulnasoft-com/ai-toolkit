@@ -1,4 +1,4 @@
-import { simulateReadableStream } from 'ai';
+import { simulateReadableStream } from 'ai-toolkit';
 
 export async function POST(req: Request) {
   return new Response(

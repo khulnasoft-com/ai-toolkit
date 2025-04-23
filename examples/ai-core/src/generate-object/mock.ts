@@ -1,5 +1,5 @@
-import { generateObject } from 'ai';
-import { MockLanguageModelV1 } from 'ai/test';
+import { generateObject } from 'ai-toolkit';
+import { MockLanguageModelV1 } from 'ai-toolkit/test';
 import 'dotenv/config';
 import { z } from 'zod';
 

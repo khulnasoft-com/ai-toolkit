@@ -1,5 +1,5 @@
 import { openai } from '@ai-toolkit/openai';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 import 'dotenv/config';
 import { setTimeout } from 'node:timers/promises';
 import { performance } from 'node:perf_hooks';
@@ -154,9 +154,9 @@ function createCompletion() {
 }
 
 async function main() {
-  let start = performance.now();
-  let result = await createCompletion();
-  let end = performance.now();
+  const start = performance.now();
+  const result = await createCompletion();
+  const end = performance.now();
   console.log(`duration: ${Math.floor(end - start)} ms`);
 
   let fullResponse = '';

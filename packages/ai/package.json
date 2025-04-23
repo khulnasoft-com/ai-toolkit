@@ -1,6 +1,6 @@
 {
-  "name": "ai",
-  "version": "4.3.5",
+  "name": "ai-toolkit",
+  "version": "5.0.0",
   "description": "AI TOOLKIT by Khulnasoft - The AI Toolkit for TypeScript and JavaScript",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -66,10 +66,10 @@
     }
   },
   "dependencies": {
-    "@ai-toolkit/provider": "1.1.2",
-    "@ai-toolkit/provider-utils": "2.2.6",
-    "@ai-toolkit/react": "1.2.8",
-    "@ai-toolkit/ui-utils": "1.2.7",
+    "@ai-toolkit/provider": "2.0.0",
+    "@ai-toolkit/provider-utils": "3.0.0",
+    "@ai-toolkit/react": "2.0.0",
+    "@ai-toolkit/ui-utils": "2.0.0",
     "@opentelemetry/api": "1.9.0",
     "jsondiffpatch": "0.6.0"
   },
@@ -106,14 +106,14 @@
   "homepage": "https://sdk.khulnasoft.com/docs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khulnasoft/ai.git"
+    "url": "git+https://github.com/khulnasoft/ai-toolkit.git"
   },
   "bugs": {
-    "url": "https://github.com/khulnasoft/ai/issues"
+    "url": "https://github.com/khulnasoft/ai-toolkit/issues"
   },
   "keywords": [
-    "ai",
-    "vercel",
+    "ai-toolkit",
+    "khulnasoft",
     "react",
     "next",
     "nextjs"

@@ -76,7 +76,7 @@ export function createEventSourceParserStream() {
         lastEventId = value;
         break;
       case 'retry':
-        const parsedRetry = parseInt(value, 10);
+        const parsedRetry = Number.parseInt(value, 10);
         if (!isNaN(parsedRetry)) {
           retry = parsedRetry;
         }

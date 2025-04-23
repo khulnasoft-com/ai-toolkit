@@ -1,17 +1,22 @@
 // @ts-nocheck
-import { experimental_Provider, experimental_ProviderRegistry, experimental_ModelRegistry, experimental_createModelRegistry } from 'ai';
+import {
+	type experimental_Provider,
+	type experimental_ProviderRegistry,
+	type experimental_ModelRegistry,
+	experimental_createModelRegistry,
+} from "ai-toolkit";
 
 function createProvider(): experimental_Provider {
-  return {
-    languageModel: () => null,
-    textEmbeddingModel: () => null
-  };
+	return {
+		languageModel: () => null,
+		textEmbeddingModel: () => null,
+	};
 }
 
 function createRegistry(): experimental_ProviderRegistry {
-  return experimental_createModelRegistry({
-    test: createProvider()
-  });
+	return experimental_createModelRegistry({
+		test: createProvider(),
+	});
 }
 
 const registry: experimental_ModelRegistry = createRegistry();

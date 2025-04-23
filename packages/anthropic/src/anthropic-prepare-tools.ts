@@ -1,9 +1,9 @@
 import {
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
-import { AnthropicTool, AnthropicToolChoice } from './anthropic-api-types';
+import type { AnthropicTool, AnthropicToolChoice } from './anthropic-api-types';
 
 export function prepareTools(
   mode: Parameters<LanguageModelV1['doGenerate']>[0]['mode'] & {

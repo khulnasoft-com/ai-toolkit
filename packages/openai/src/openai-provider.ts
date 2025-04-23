@@ -1,4 +1,4 @@
-import {
+import type {
   EmbeddingModelV1,
   ImageModelV1,
   TranscriptionModelV1,
@@ -7,34 +7,37 @@ import {
   SpeechModelV1,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
+  type FetchFunction,
   loadApiKey,
   withoutTrailingSlash,
 } from '@ai-toolkit/provider-utils';
 import { OpenAIChatLanguageModel } from './openai-chat-language-model';
-import { OpenAIChatModelId, OpenAIChatSettings } from './openai-chat-settings';
+import type {
+  OpenAIChatModelId,
+  OpenAIChatSettings,
+} from './openai-chat-settings';
 import { OpenAICompletionLanguageModel } from './openai-completion-language-model';
-import {
+import type {
   OpenAICompletionModelId,
   OpenAICompletionSettings,
 } from './openai-completion-settings';
 import { OpenAIEmbeddingModel } from './openai-embedding-model';
-import {
+import type {
   OpenAIEmbeddingModelId,
   OpenAIEmbeddingSettings,
 } from './openai-embedding-settings';
 import { OpenAIImageModel } from './openai-image-model';
-import {
+import type {
   OpenAIImageModelId,
   OpenAIImageSettings,
 } from './openai-image-settings';
 import { OpenAITranscriptionModel } from './openai-transcription-model';
-import { OpenAITranscriptionModelId } from './openai-transcription-settings';
+import type { OpenAITranscriptionModelId } from './openai-transcription-settings';
 import { OpenAIResponsesLanguageModel } from './responses/openai-responses-language-model';
-import { OpenAIResponsesModelId } from './responses/openai-responses-settings';
+import type { OpenAIResponsesModelId } from './responses/openai-responses-settings';
 import { openaiTools } from './openai-tools';
 import { OpenAISpeechModel } from './openai-speech-model';
-import { OpenAISpeechModelId } from './openai-speech-settings';
+import type { OpenAISpeechModelId } from './openai-speech-settings';
 
 export interface OpenAIProvider extends ProviderV1 {
   (
@@ -295,12 +298,10 @@ export function createOpenAI(
     });
   };
 
-  const provider = function (
+  const provider = (
     modelId: OpenAIChatModelId | OpenAICompletionModelId,
     settings?: OpenAIChatSettings | OpenAICompletionSettings,
-  ) {
-    return createLanguageModel(modelId, settings);
-  };
+  ) => createLanguageModel(modelId, settings);
 
   provider.languageModel = createLanguageModel;
   provider.chat = createChatModel;

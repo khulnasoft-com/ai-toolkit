@@ -137,7 +137,7 @@ Further configuration can be done using Google Generative AI provider options. Y
 ```ts
 import { google } from '@ai-toolkit/google';
 import { GoogleGenerativeAIProviderOptions } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: google('gemini-1.5-pro-latest'),
@@ -159,7 +159,7 @@ You can use Google Generative AI language models to generate text with the `gene
 
 ```ts
 import { google } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: google('gemini-1.5-pro-latest'),
@@ -176,7 +176,7 @@ The Google Generative AI provider supports file inputs, e.g. PDF files.
 
 ```ts
 import { google } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const result = await generateText({
   model: google('gemini-1.5-flash'),
@@ -215,7 +215,7 @@ You can use Google Generative AI language models to cache content:
 ```ts
 import { google } from '@ai-toolkit/google';
 import { GoogleAICacheManager } from '@google/generative-ai/server';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const cacheManager = new GoogleAICacheManager(
   process.env.GOOGLE_GENERATIVE_AI_API_KEY,
@@ -259,7 +259,7 @@ Search grounding can be used to provide answers around current events:
 ```ts highlight="7,14-20"
 import { google } from '@ai-toolkit/google';
 import { GoogleGenerativeAIProviderMetadata } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, providerMetadata } = await generateText({
   model: google('gemini-1.5-pro', {
@@ -331,7 +331,7 @@ With [dynamic retrieval](https://cloud.google.com/vertex-ai/generative-ai/docs/m
 
 ```ts highlight="7-10"
 import { google } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, providerMetadata } = await generateText({
   model: google('gemini-1.5-flash', {
@@ -366,7 +366,7 @@ You can access them using the `sources` property of the result:
 
 ```ts
 import { google } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { sources } = await generateText({
   model: google('gemini-2.0-flash-exp', { useSearchGrounding: true }),
@@ -381,7 +381,7 @@ You need to enable image output in the provider options using the `responseModal
 
 ```ts
 import { google } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const result = await generateText({
   model: google('gemini-2.0-flash-exp'),

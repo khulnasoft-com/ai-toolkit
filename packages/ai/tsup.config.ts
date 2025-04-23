@@ -56,7 +56,7 @@ export default defineConfig([
     outExtension() {
       return {
         // It must be `.d.ts` instead of `.d.mts` to support node resolution.
-        // See https://github.com/khulnasoft/ai/issues/1028.
+        // See https://github.com/khulnasoft/ai-toolkit/issues/1028.
         dts: '.d.ts',
         js: '.mjs',
       };

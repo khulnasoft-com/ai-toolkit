@@ -306,7 +306,7 @@ You can use Google Vertex language models to generate text with the `generateTex
 
 ```ts highlight="1,4"
 import { vertex } from '@ai-toolkit/google-vertex';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: vertex('gemini-1.5-pro'),
@@ -323,7 +323,7 @@ The Google Vertex provider supports file inputs, e.g. PDF files.
 
 ```ts
 import { vertex } from '@ai-toolkit/google-vertex';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: vertex('gemini-1.5-pro'),
@@ -363,7 +363,7 @@ Search grounding can be used to provide answers around current events:
 ```ts highlight="7,14-20"
 import { vertex } from '@ai-toolkit/google-vertex';
 import { GoogleGenerativeAIProviderMetadata } from '@ai-toolkit/google';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, providerMetadata } = await generateText({
   model: vertex('gemini-1.5-pro', {
@@ -441,7 +441,7 @@ You can access them using the `sources` property of the result:
 
 ```ts
 import { vertex } from '@ai-toolkit/google-vertex';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { sources } = await generateText({
   model: vertex('gemini-1.5-pro', { useSearchGrounding: true }),
@@ -591,7 +591,7 @@ using the `.image()` factory method. For more on image generation with the AI TO
 
 ```ts
 import { vertex } from '@ai-toolkit/google-vertex';
-import { experimental_generateImage as generateImage } from 'ai';
+import { experimental_generateImage as generateImage } from 'ai-toolkit';
 
 const { image } = await generateImage({
   model: vertex.image('imagen-3.0-generate-001'),
@@ -605,7 +605,7 @@ Further configuration can be done using Google Vertex provider options. You can 
 ```ts
 import { vertex } from '@ai-toolkit/google-vertex';
 import { GoogleVertexImageProviderOptions } from '@ai-toolkit/google-vertex';
-import { generateImage } from 'ai';
+import { generateImage } from 'ai-toolkit';
 
 const { image } = await generateImage({
   model: vertex.image('imagen-3.0-generate-001'),
@@ -835,7 +835,7 @@ You can use Anthropic language models to generate text with the `generateText` f
 
 ```ts
 import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: vertexAnthropic('claude-3-haiku-20240307'),
@@ -870,7 +870,7 @@ and specifying a thinking budget in tokens.
 
 ```ts
 import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, reasoning, reasoningDetails } = await generateText({
   model: vertexAnthropic('claude-3-7-sonnet@20250219'),
@@ -909,7 +909,7 @@ that resolves to the metadata. Alternatively you can receive it in the
 
 ```ts highlight="8,18-20,29-30"
 import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const errorMessage = '... long error message ...';
 

@@ -43,7 +43,7 @@ import {
   type LanguageModelV1StreamPart,
   simulateReadableStream,
   wrapLanguageModel,
-} from 'ai';
+} from 'ai-toolkit';
 import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
@@ -208,7 +208,7 @@ The middleware can be easily integrated into your existing AI TOOLKIT setup:
 
 ```ts highlight="4,8"
 import { openai } from '@ai-toolkit/openai';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 import 'dotenv/config';
 import { cached } from '../middleware/your-cache-middleware';
 

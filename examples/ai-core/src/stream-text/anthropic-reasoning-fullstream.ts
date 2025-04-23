@@ -2,10 +2,10 @@ import { anthropic } from '@ai-toolkit/anthropic';
 import {
   extractReasoningMiddleware,
   streamText,
-  ToolCallPart,
-  ToolResultPart,
+  type ToolCallPart,
+  type ToolResultPart,
   wrapLanguageModel,
-} from 'ai';
+} from 'ai-toolkit';
 import 'dotenv/config';
 import { weatherTool } from '../tools/weather-tool';
 

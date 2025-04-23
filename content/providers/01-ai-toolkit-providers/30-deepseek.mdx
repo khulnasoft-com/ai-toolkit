@@ -69,7 +69,7 @@ You can create language models using a provider instance:
 
 ```ts
 import { deepseek } from '@ai-toolkit/deepseek';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text } = await generateText({
   model: deepseek('deepseek-chat'),
@@ -86,7 +86,7 @@ DeepSeek has reasoning support for the `deepseek-reasoner` model:
 
 ```ts
 import { deepseek } from '@ai-toolkit/deepseek';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const { text, reasoning } = await generateText({
   model: deepseek('deepseek-reasoner'),
@@ -106,7 +106,7 @@ DeepSeek provides context caching on disk technology that can significantly redu
 
 ```ts
 import { deepseek } from '@ai-toolkit/deepseek';
-import { generateText } from 'ai';
+import { generateText } from 'ai-toolkit';
 
 const result = await generateText({
   model: deepseek('deepseek-chat'),

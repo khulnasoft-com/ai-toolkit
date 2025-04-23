@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { openai } from '@ai-toolkit/openai';
-import { streamText } from 'ai';
+import { streamText } from 'ai-toolkit';
 
 async function main() {
   const result = streamText({

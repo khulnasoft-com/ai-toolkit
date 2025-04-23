@@ -1,11 +1,11 @@
 import { cohere } from '@ai-toolkit/cohere';
 import {
   streamText,
-  CoreMessage,
-  ToolCallPart,
-  ToolResultPart,
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
   tool,
-} from 'ai';
+} from 'ai-toolkit';
 import 'dotenv/config';
 import { z } from 'zod';
 

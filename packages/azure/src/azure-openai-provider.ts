@@ -8,12 +8,14 @@ import {
   OpenAIImageModel,
   OpenAIImageSettings,
   OpenAIResponsesLanguageModel,
+  OpenAITranscriptionModel,
 } from '@ai-toolkit/openai/internal';
 import {
   EmbeddingModelV1,
   LanguageModelV1,
   ProviderV1,
   ImageModelV1,
+  TranscriptionModelV1,
 } from '@ai-toolkit/provider';
 import {
   FetchFunction,
@@ -87,6 +89,11 @@ Creates an Azure OpenAI model for text embeddings.
     deploymentId: string,
     settings?: OpenAIEmbeddingSettings,
   ): EmbeddingModelV1<string>;
+
+  /**
+   * Creates an Azure OpenAI model for audio transcription.
+   */
+  transcription(deploymentId: string): TranscriptionModelV1;
 }
 
 export interface AzureOpenAIProviderSettings {
@@ -218,6 +225,14 @@ export function createAzure(
       fetch: options.fetch,
     });
 
+  const createTranscriptionModel = (modelId: string) =>
+    new OpenAITranscriptionModel(modelId, {
+      provider: 'azure-openai.transcription',
+      url,
+      headers: getHeaders,
+      fetch: options.fetch,
+    });
+
   const provider = function (
     deploymentId: string,
     settings?: OpenAIChatSettings | OpenAICompletionSettings,
@@ -240,6 +255,7 @@ export function createAzure(
   provider.textEmbedding = createEmbeddingModel;
   provider.textEmbeddingModel = createEmbeddingModel;
   provider.responses = createResponsesModel;
+  provider.transcription = createTranscriptionModel;
   return provider;
 }
 

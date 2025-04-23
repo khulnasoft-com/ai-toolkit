@@ -1,8 +1,8 @@
-import { FetchFunction } from '@ai-toolkit/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { createTestServer } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import { FireworksImageModel } from './fireworks-image-model';
-import { FireworksImageSettings } from './fireworks-image-settings';
+import type { FireworksImageSettings } from './fireworks-image-settings';
 
 const prompt = 'A cute baby sea otter';
 

@@ -1,5 +1,5 @@
 import { azure } from '@ai-toolkit/azure';
-import { embedMany } from 'ai';
+import { embedMany } from 'ai-toolkit';
 import 'dotenv/config';
 
 async function main() {
