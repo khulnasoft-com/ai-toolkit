@@ -1,9 +1,14 @@
-import { JSONSchema7 } from '@ai-toolkit/provider';
+import type { JSONSchema7 } from '@ai-toolkit/provider';
 import { jsonSchema } from '@ai-toolkit/ui-utils';
-import { z, ZodType } from 'zod';
+import type { z, ZodType } from 'zod';
 import { MCPClientError } from '../../../errors';
-import { inferParameters, tool, Tool, ToolExecutionOptions } from '../tool';
 import {
+  type inferParameters,
+  tool,
+  type Tool,
+  type ToolExecutionOptions,
+} from '../tool';
+import type {
   JSONRPCError,
   JSONRPCNotification,
   JSONRPCRequest,
@@ -12,25 +17,25 @@ import {
 import {
   createMcpTransport,
   isCustomMcpTransport,
-  MCPTransport,
-  MCPTransportConfig,
+  type MCPTransport,
+  type MCPTransportConfig,
 } from './mcp-transport';
 import {
-  CallToolResult,
+  type CallToolResult,
   CallToolResultSchema,
-  Configuration as ClientConfiguration,
+  type Configuration as ClientConfiguration,
   InitializeResultSchema,
   LATEST_PROTOCOL_VERSION,
-  ListToolsResult,
+  type ListToolsResult,
   ListToolsResultSchema,
-  McpToolSet,
-  Notification,
-  PaginatedRequest,
-  Request,
-  RequestOptions,
-  ServerCapabilities,
+  type McpToolSet,
+  type Notification,
+  type PaginatedRequest,
+  type Request,
+  type RequestOptions,
+  type ServerCapabilities,
   SUPPORTED_PROTOCOL_VERSIONS,
-  ToolSchemas,
+  type ToolSchemas,
 } from './types';
 
 const CLIENT_VERSION = '1.0.0';
@@ -315,8 +320,6 @@ class MCPClient {
                 additionalProperties: false,
               } as JSONSchema7)
             : schemas[name].parameters;
-
-        const self = this;
         const toolWithExecute = tool({
           description,
           parameters,
@@ -326,7 +329,7 @@ class MCPClient {
           ): Promise<CallToolResult> => {
             options?.abortSignal?.throwIfAborted();
 
-            return self.callTool({
+            return this.callTool({
               name,
               args,
               options,

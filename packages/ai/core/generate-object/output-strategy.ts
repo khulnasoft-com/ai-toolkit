@@ -1,25 +1,25 @@
 import {
   isJSONArray,
   isJSONObject,
-  JSONObject,
-  JSONSchema7,
-  JSONValue,
+  type JSONObject,
+  type JSONSchema7,
+  type JSONValue,
   TypeValidationError,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import {
   safeValidateTypes,
-  ValidationResult,
+  type ValidationResult,
 } from '@ai-toolkit/provider-utils';
-import { asSchema, DeepPartial, Schema } from '@ai-toolkit/ui-utils';
-import { z } from 'zod';
+import { asSchema, type DeepPartial, type Schema } from '@ai-toolkit/ui-utils';
+import type { z } from 'zod';
 import { NoObjectGeneratedError } from '../../errors/no-object-generated-error';
 import {
-  AsyncIterableStream,
+  type AsyncIterableStream,
   createAsyncIterableStream,
 } from '../util/async-iterable-stream';
-import { ObjectStreamPart } from './stream-object-result';
-import {
+import type { ObjectStreamPart } from './stream-object-result';
+import type {
   FinishReason,
   LanguageModelResponseMetadata,
   LanguageModelUsage,

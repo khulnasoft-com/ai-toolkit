@@ -1,6 +1,6 @@
-import { z } from 'zod';
+import type { z } from 'zod';
 import { InvalidArgumentError } from '../../errors/invalid-argument-error';
-import { Schema } from '@ai-toolkit/ui-utils';
+import type { Schema } from '@ai-toolkit/ui-utils';
 
 export function validateObjectGenerationInput({
   output,

@@ -13,4 +13,4 @@ export type CohereChatModelId =
   | 'command-light-nightly'
   | (string & {});
 
-export interface CohereChatSettings {}
+export type CohereChatSettings = {};

@@ -1,14 +1,14 @@
 import { EmptyResponseBodyError } from '@ai-toolkit/provider';
 import {
-  ParseResult,
+  type ParseResult,
   safeParseJSON,
   extractResponseHeaders,
-  ResponseHandler,
+  type ResponseHandler,
   safeValidateTypes,
 } from '@ai-toolkit/provider-utils';
 import { EventStreamCodec } from '@smithy/eventstream-codec';
 import { toUtf8, fromUtf8 } from '@smithy/util-utf8';
-import { ZodSchema } from 'zod';
+import type { ZodSchema } from 'zod';
 
 // https://docs.aws.amazon.com/lexv2/latest/dg/event-stream-encoding.html
 export const createBedrockEventStreamResponseHandler =
@@ -72,7 +72,7 @@ export const createBedrockEventStreamResponseHandler =
 
                   // The `p` field appears to be padding or some other non-functional field.
                   delete (parsedDataResult.value as any).p;
-                  let wrappedData = {
+                  const wrappedData = {
                     [decoded.headers[':event-type']?.value as string]:
                       parsedDataResult.value,
                   };

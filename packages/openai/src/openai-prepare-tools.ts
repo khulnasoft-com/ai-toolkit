@@ -1,7 +1,7 @@
 import {
-  JSONSchema7,
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
+  type JSONSchema7,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 

@@ -1,8 +1,8 @@
-import { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
+import type { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
 import { generateId as generateIdFunction } from '@ai-toolkit/provider-utils';
 import {
   calculateLanguageModelUsage,
-  LanguageModelUsage,
+  type LanguageModelUsage,
 } from './duplicated/usage';
 import { parsePartialJson } from './parse-partial-json';
 import { processDataStream } from './process-data-stream';
@@ -100,9 +100,9 @@ export async function processChatResponse({
   > = {};
 
   let usage: LanguageModelUsage = {
-    completionTokens: NaN,
-    promptTokens: NaN,
-    totalTokens: NaN,
+    completionTokens: Number.NaN,
+    promptTokens: Number.NaN,
+    totalTokens: Number.NaN,
   };
   let finishReason: LanguageModelV1FinishReason = 'unknown';
 

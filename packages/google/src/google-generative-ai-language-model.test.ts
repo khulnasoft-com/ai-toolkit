@@ -1,4 +1,4 @@
-import { LanguageModelV1Prompt } from '@ai-toolkit/provider';
+import type { LanguageModelV1Prompt } from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   createTestServer,
@@ -7,7 +7,7 @@ import {
   GoogleGenerativeAILanguageModel,
   groundingMetadataSchema,
 } from './google-generative-ai-language-model';
-import { GoogleGenerativeAIGroundingMetadata } from './google-generative-ai-prompt';
+import type { GoogleGenerativeAIGroundingMetadata } from './google-generative-ai-prompt';
 import { createGoogleGenerativeAI } from './google-provider';
 
 const TEST_PROMPT: LanguageModelV1Prompt = [

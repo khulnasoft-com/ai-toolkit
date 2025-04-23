@@ -1,18 +1,18 @@
 import {
   BEDROCK_CACHE_POINT,
-  BedrockAssistantMessage,
-  BedrockCachePoint,
-  BedrockDocumentFormat,
-  BedrockImageFormat,
-  BedrockMessages,
-  BedrockSystemMessages,
-  BedrockUserMessage,
+  type BedrockAssistantMessage,
+  type BedrockCachePoint,
+  type BedrockDocumentFormat,
+  type BedrockImageFormat,
+  type BedrockMessages,
+  type BedrockSystemMessages,
+  type BedrockUserMessage,
 } from './bedrock-api-types';
 import {
-  JSONObject,
-  LanguageModelV1Message,
-  LanguageModelV1Prompt,
-  LanguageModelV1ProviderMetadata,
+  type JSONObject,
+  type LanguageModelV1Message,
+  type LanguageModelV1Prompt,
+  type LanguageModelV1ProviderMetadata,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import {
@@ -34,7 +34,7 @@ export function convertToBedrockChatMessages(prompt: LanguageModelV1Prompt): {
 } {
   const blocks = groupIntoBlocks(prompt);
 
-  let system: BedrockSystemMessages = [];
+  const system: BedrockSystemMessages = [];
   const messages: BedrockMessages = [];
 
   for (let i = 0; i < blocks.length; i++) {

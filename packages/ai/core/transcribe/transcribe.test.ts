@@ -1,4 +1,4 @@
-import {
+import type {
   JSONValue,
   TranscriptionModelV1,
   TranscriptionModelV1CallWarning,

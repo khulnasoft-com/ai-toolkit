@@ -3,9 +3,9 @@ import { convertReadableStreamToArray } from '@ai-toolkit/provider-utils/test';
 import { formatDataStreamPart } from '@ai-toolkit/ui-utils';
 import { expect, it } from 'vitest';
 import { DelayedPromise } from '../../util/delayed-promise';
-import { Source } from '../types/language-model';
+import type { Source } from '../types/language-model';
 import { createDataStream } from './create-data-stream';
-import { DataStreamWriter } from './data-stream-writer';
+import type { DataStreamWriter } from './data-stream-writer';
 
 describe('createDataStream', () => {
   it('should send single data json and close the stream', async () => {

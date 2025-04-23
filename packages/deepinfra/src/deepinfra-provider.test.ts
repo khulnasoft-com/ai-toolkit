@@ -5,9 +5,9 @@ import {
   OpenAICompatibleCompletionLanguageModel,
   OpenAICompatibleEmbeddingModel,
 } from '@ai-toolkit/openai-compatible';
-import { LanguageModelV1, EmbeddingModelV1 } from '@ai-toolkit/provider';
+import type { LanguageModelV1, EmbeddingModelV1 } from '@ai-toolkit/provider';
 import { loadApiKey } from '@ai-toolkit/provider-utils';
-import { describe, it, expect, vi, beforeEach, Mock } from 'vitest';
+import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
 
 // Add type assertion for the mocked class
 const OpenAICompatibleChatLanguageModelMock =

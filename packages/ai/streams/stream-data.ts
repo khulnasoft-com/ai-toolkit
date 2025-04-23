@@ -1,4 +1,4 @@
-import { JSONValue, formatDataStreamPart } from '@ai-toolkit/ui-utils';
+import { type JSONValue, formatDataStreamPart } from '@ai-toolkit/ui-utils';
 import { HANGING_STREAM_WARNING_TIME_MS } from '../util/constants';
 
 /**
@@ -12,19 +12,17 @@ export class StreamData {
   private controller: ReadableStreamController<Uint8Array> | null = null;
   public stream: ReadableStream<Uint8Array>;
 
-  private isClosed: boolean = false;
+  private isClosed = false;
   private warningTimeout: NodeJS.Timeout | null = null;
 
   constructor() {
-    const self = this;
-
     this.stream = new ReadableStream({
       start: async controller => {
-        self.controller = controller;
+        this.controller = controller;
 
         // Set a timeout to show a warning if the stream is not closed within 3 seconds
         if (process.env.NODE_ENV === 'development') {
-          self.warningTimeout = setTimeout(() => {
+          this.warningTimeout = setTimeout(() => {
             console.warn(
               'The data stream is hanging. Did you forget to close it with `data.close()`?',
             );

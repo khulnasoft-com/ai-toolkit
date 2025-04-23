@@ -1,4 +1,4 @@
-import { ImageModelV1 } from '@ai-toolkit/provider';
+import type { ImageModelV1 } from '@ai-toolkit/provider';
 import { notImplemented } from './not-implemented';
 
 export class MockImageModelV1 implements ImageModelV1 {

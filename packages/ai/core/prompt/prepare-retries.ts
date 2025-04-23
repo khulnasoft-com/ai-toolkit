@@ -1,6 +1,6 @@
 import { InvalidArgumentError } from '../../errors/invalid-argument-error';
 import {
-  RetryFunction,
+  type RetryFunction,
   retryWithExponentialBackoff,
 } from '../../util/retry-with-exponential-backoff';
 

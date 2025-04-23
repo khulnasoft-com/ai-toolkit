@@ -1,8 +1,8 @@
 import {
-  LanguageModelV1Prompt,
+  type LanguageModelV1Prompt,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
-import { PerplexityPrompt } from './perplexity-language-model-prompt';
+import type { PerplexityPrompt } from './perplexity-language-model-prompt';
 
 export function convertToPerplexityMessages(
   prompt: LanguageModelV1Prompt,

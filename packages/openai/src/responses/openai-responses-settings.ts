@@ -28,4 +28,4 @@ export type OpenAIResponsesModelId =
   | 'chatgpt-4o-latest'
   | (string & {});
 
-export interface OpenAIResponsesSettings {}
+export type OpenAIResponsesSettings = {};

@@ -1,19 +1,19 @@
 import {
-  LanguageModelV1,
-  LanguageModelV1FinishReason,
-  LanguageModelV1StreamPart,
+  type LanguageModelV1,
+  type LanguageModelV1FinishReason,
+  type LanguageModelV1StreamPart,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
+  type FetchFunction,
+  type ParseResult,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
   postJsonToApi,
 } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
-import {
+import type {
   CohereChatModelId,
   CohereChatSettings,
 } from '../src/cohere-chat-settings';

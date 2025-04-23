@@ -1,7 +1,7 @@
 import { openai } from '@ai-toolkit/openai';
 import { streamObject } from 'ai';
 import { notificationSchema } from './schema';
-import { APIHandler } from '@solidjs/start/server';
+import type { APIHandler } from '@solidjs/start/server';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;

@@ -3,7 +3,7 @@
   import type { HTMLTextareaAttributes } from 'svelte/elements';
   import { cn } from '$lib/utils.js';
 
-  let {
+  const {
     ref = $bindable(null),
     value = $bindable(),
     class: className,

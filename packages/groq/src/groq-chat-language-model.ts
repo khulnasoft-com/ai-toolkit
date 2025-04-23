@@ -1,14 +1,14 @@
 import {
   InvalidResponseDataError,
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
-  LanguageModelV1FinishReason,
-  LanguageModelV1ProviderMetadata,
-  LanguageModelV1StreamPart,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1FinishReason,
+  type LanguageModelV1ProviderMetadata,
+  type LanguageModelV1StreamPart,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
+  type FetchFunction,
+  type ParseResult,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
@@ -20,7 +20,7 @@ import {
 import { z } from 'zod';
 import { convertToGroqChatMessages } from './convert-to-groq-chat-messages';
 import { getResponseMetadata } from './get-response-metadata';
-import { GroqChatModelId, GroqChatSettings } from './groq-chat-settings';
+import type { GroqChatModelId, GroqChatSettings } from './groq-chat-settings';
 import { groqErrorDataSchema, groqFailedResponseHandler } from './groq-error';
 import { prepareTools } from './groq-prepare-tools';
 import { mapGroqFinishReason } from './map-groq-finish-reason';
@@ -236,8 +236,8 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
       })),
       finishReason: mapGroqFinishReason(choice.finish_reason),
       usage: {
-        promptTokens: response.usage?.prompt_tokens ?? NaN,
-        completionTokens: response.usage?.completion_tokens ?? NaN,
+        promptTokens: response.usage?.prompt_tokens ?? Number.NaN,
+        completionTokens: response.usage?.completion_tokens ?? Number.NaN,
       },
       rawCall: { rawPrompt, rawSettings },
       rawResponse: { headers: responseHeaders, body: rawResponse },
@@ -475,8 +475,8 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
               type: 'finish',
               finishReason,
               usage: {
-                promptTokens: usage.promptTokens ?? NaN,
-                completionTokens: usage.completionTokens ?? NaN,
+                promptTokens: usage.promptTokens ?? Number.NaN,
+                completionTokens: usage.completionTokens ?? Number.NaN,
               },
               ...(providerMetadata != null ? { providerMetadata } : {}),
             });

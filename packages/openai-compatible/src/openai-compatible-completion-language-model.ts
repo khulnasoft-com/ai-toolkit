@@ -1,9 +1,9 @@
 import {
-  APICallError,
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
-  LanguageModelV1FinishReason,
-  LanguageModelV1StreamPart,
+  type APICallError,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1FinishReason,
+  type LanguageModelV1StreamPart,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import {
@@ -11,22 +11,22 @@ import {
   createEventSourceResponseHandler,
   createJsonErrorResponseHandler,
   createJsonResponseHandler,
-  FetchFunction,
-  ParseResult,
+  type FetchFunction,
+  type ParseResult,
   postJsonToApi,
-  ResponseHandler,
+  type ResponseHandler,
 } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 import { convertToOpenAICompatibleCompletionPrompt } from './convert-to-openai-compatible-completion-prompt';
 import { getResponseMetadata } from './get-response-metadata';
 import { mapOpenAICompatibleFinishReason } from './map-openai-compatible-finish-reason';
-import {
+import type {
   OpenAICompatibleCompletionModelId,
   OpenAICompatibleCompletionSettings,
 } from './openai-compatible-completion-settings';
 import {
   defaultOpenAICompatibleErrorStructure,
-  ProviderErrorStructure,
+  type ProviderErrorStructure,
 } from './openai-compatible-error';
 
 type OpenAICompatibleCompletionConfig = {
@@ -207,8 +207,8 @@ export class OpenAICompatibleCompletionLanguageModel
     return {
       text: choice.text,
       usage: {
-        promptTokens: response.usage?.prompt_tokens ?? NaN,
-        completionTokens: response.usage?.completion_tokens ?? NaN,
+        promptTokens: response.usage?.prompt_tokens ?? Number.NaN,
+        completionTokens: response.usage?.completion_tokens ?? Number.NaN,
       },
       finishReason: mapOpenAICompatibleFinishReason(choice.finish_reason),
       rawCall: { rawPrompt, rawSettings },

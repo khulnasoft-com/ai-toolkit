@@ -1,12 +1,15 @@
-import { ImageModelV1, ImageModelV1CallWarning } from '@ai-toolkit/provider';
+import type {
+  ImageModelV1,
+  ImageModelV1CallWarning,
+} from '@ai-toolkit/provider';
 import {
-  FetchFunction,
+  type FetchFunction,
   combineHeaders,
   createJsonErrorResponseHandler,
   createJsonResponseHandler,
   postJsonToApi,
 } from '@ai-toolkit/provider-utils';
-import {
+import type {
   DeepInfraImageModelId,
   DeepInfraImageSettings,
 } from './deepinfra-image-settings';

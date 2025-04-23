@@ -1,4 +1,4 @@
-import { LanguageModelV1LogProbs } from '@ai-toolkit/provider';
+import type { LanguageModelV1LogProbs } from '@ai-toolkit/provider';
 
 type OpenAIChatLogProbs = {
   content:

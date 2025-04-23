@@ -1,0 +1,51 @@
+name: 'Build'
+description: 'Build everything'
+inputs:
+  node-version:
+    description: 'Node Version'
+    required: false
+    default: '20'
+  packages-only:
+    description: 'Whether to build packages/ only'
+    required: false
+    default: 'false'
+runs:
+  using: 'composite'
+  steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2
+    - name: Use Node.js ${{ inputs.node-version }}
+      uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: 'pnpm'
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install
+    - name: Restore Turborepo cache
+      uses: actions/cache/restore@1bd1e32a3bdc45362d1e726936510720a7c30a57
+      with:
+        path: .turbo
+        key: turbo-${{ runner.os }}-node-${{ inputs.node-version }}-${{ github.sha }}
+        restore-keys: |
+          turbo-${{ runner.os }}-node-${{ inputs.node-version }}-
+          turbo-${{ runner.os }}-node-
+    - if: ${{ inputs.packages-only == 'false' }}
+      name: Build
+      shell: bash
+      # GitHub Actions runners have two cores, so we can run two tasks in parallel
+      run: pnpm turbo --concurrency=2 build
+      env:
+        NODE_OPTIONS: '--max_old_space_size=8192'
+    - if: ${{ inputs.packages-only == 'true' }}
+      name: Build packages
+      shell: bash
+      run: pnpm turbo --concurrency=2 --filter './packages/**' build
+      env:
+        NODE_OPTIONS: '--max_old_space_size=8192'
+    - if: ${{ inputs.packages-only != 'true' && inputs.packages-only != 'false' }}
+      name: Build package
+      shell: bash
+      run: pnpm turbo --concurrency=2 --filter '${{inputs.packages-only}}' build
+      env:
+        NODE_OPTIONS: '--max_old_space_size=8192'

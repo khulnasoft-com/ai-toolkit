@@ -1,6 +1,6 @@
 import {
   generateAuthToken,
-  GoogleCredentials,
+  type GoogleCredentials,
 } from './google-vertex-auth-edge';
 
 describe('Google Vertex Edge Auth', () => {

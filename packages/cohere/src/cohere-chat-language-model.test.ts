@@ -1,4 +1,4 @@
-import { LanguageModelV1Prompt } from '@ai-toolkit/provider';
+import type { LanguageModelV1Prompt } from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   createTestServer,
@@ -770,8 +770,8 @@ describe('doStream', () => {
       finishReason: 'error',
       type: 'finish',
       usage: {
-        completionTokens: NaN,
-        promptTokens: NaN,
+        completionTokens: Number.NaN,
+        promptTokens: Number.NaN,
       },
     });
   });

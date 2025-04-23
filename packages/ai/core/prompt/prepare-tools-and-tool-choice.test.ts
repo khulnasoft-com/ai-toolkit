@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { ToolSet } from '../generate-text/tool-set';
-import { Tool, tool } from '../tool/tool';
+import type { ToolSet } from '../generate-text/tool-set';
+import { type Tool, tool } from '../tool/tool';
 import { prepareToolsAndToolChoice } from './prepare-tools-and-tool-choice';
 
 const mockTools: ToolSet = {

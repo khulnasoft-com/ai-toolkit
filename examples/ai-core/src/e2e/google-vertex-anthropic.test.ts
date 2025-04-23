@@ -9,12 +9,12 @@ import {
   createVertexAnthropic as createVertexAnthropicEdge,
   vertexAnthropic as vertexAnthropicEdge,
 } from '@ai-toolkit/google-vertex/anthropic/edge';
-import { generateText, APICallError, LanguageModelV1 } from 'ai';
+import { generateText, type APICallError, type LanguageModelV1 } from 'ai';
 import fs from 'fs';
 import {
   createFeatureTestSuite,
   createLanguageModelWithCapabilities,
-  ModelWithCapabilities,
+  type ModelWithCapabilities,
 } from './feature-test-suite';
 
 const RUNTIME_VARIANTS = {

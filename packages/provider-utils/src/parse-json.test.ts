@@ -77,7 +77,7 @@ describe('safeParseJSON', () => {
   it('should handle nested objects and preserve raw values', () => {
     const schema = z.object({
       user: z.object({
-        id: z.string().transform(val => parseInt(val, 10)),
+        id: z.string().transform(val => Number.parseInt(val, 10)),
         name: z.string(),
       }),
     });
