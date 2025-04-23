@@ -1,4 +1,4 @@
-import { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
+import type { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
 
 export function mapGoogleGenerativeAIFinishReason({
   finishReason,
@@ -12,6 +12,7 @@ export function mapGoogleGenerativeAIFinishReason({
       return hasToolCalls ? 'tool-calls' : 'stop';
     case 'MAX_TOKENS':
       return 'length';
+    case 'IMAGE_SAFETY':
     case 'RECITATION':
     case 'SAFETY':
     case 'BLOCKLIST':

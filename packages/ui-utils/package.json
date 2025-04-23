@@ -1,6 +1,6 @@
 {
   "name": "@ai-toolkit/ui-utils",
-  "version": "1.1.17",
+  "version": "2.0.0",
   "license": "Apache-2.0",
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -37,26 +37,21 @@
     }
   },
   "dependencies": {
-    "@ai-toolkit/provider": "1.0.10",
-    "@ai-toolkit/provider-utils": "2.1.11",
+    "@ai-toolkit/provider": "workspace:*",
+    "@ai-toolkit/provider-utils": "workspace:*",
     "zod-to-json-schema": "^3.24.1"
   },
   "devDependencies": {
-    "@types/json-schema": "7.0.15",
-    "@types/node": "^18",
-    "@types/react": "^18",
+    "@types/json-schema": "^7.0.15",
+    "@types/node": "^20.17.24",
+    "@types/react": "^18.3.3",
     "@khulnasoft/ai-tsconfig": "workspace:*",
-    "tsup": "^8",
-    "typescript": "5.6.3",
-    "zod": "3.23.8"
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3",
+    "zod": "^3.23.8"
   },
   "peerDependencies": {
-    "zod": "^3.0.0"
-  },
-  "peerDependenciesMeta": {
-    "zod": {
-      "optional": true
-    }
+    "zod": "^3.23.8"
   },
   "engines": {
     "node": ">=18"

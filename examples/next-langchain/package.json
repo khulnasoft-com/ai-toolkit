@@ -9,24 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-toolkit/react": "1.1.21",
-    "@langchain/openai": "0.0.28",
-    "@langchain/core": "0.1.63",
-    "ai-toolkit": "1.1.1",
-    "langchain": "0.1.36",
+    "@ai-toolkit/react": "workspace:*",
+    "@langchain/openai": "^0.0.28",
+    "@langchain/core": "^0.1.63",
+    "ai-toolkit": "workspace:*",
+    "langchain": "^0.1.36",
     "next": "latest",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^17.0.12",
-    "@types/react": "^18",
+    "@types/node": "^20.17.24",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.14",
-    "eslint": "8.57.1",
-    "eslint-config-next": "14.2.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^14.2.3",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15",
-    "typescript": "5.6.3"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.6.3"
   }
 }

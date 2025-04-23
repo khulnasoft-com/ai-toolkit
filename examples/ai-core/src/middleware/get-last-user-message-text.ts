@@ -1,4 +1,4 @@
-import { LanguageModelV1Prompt } from 'ai-toolkit';
+import type { LanguageModelV1Prompt } from 'ai-toolkit';
 
 export function getLastUserMessageText({
   prompt,

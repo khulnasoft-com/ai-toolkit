@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
-import { CoreMessage, streamText, tool } from 'ai-toolkit';
+import { type CoreMessage, streamText, tool } from 'ai-toolkit';
 import * as readline from 'node:readline/promises';
 import { z } from 'zod';
 

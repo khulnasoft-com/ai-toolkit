@@ -1,9 +1,9 @@
-import { z } from 'zod';
+import type { z } from 'zod';
 
 /**
  * Used to mark validator functions so we can support both Zod and custom schemas.
  */
-export const validatorSymbol = Symbol.for('vercel.ai.validator');
+export const validatorSymbol = Symbol.for('khulnasoft.com.validator');
 
 export type ValidationResult<OBJECT> =
   | { success: true; value: OBJECT }

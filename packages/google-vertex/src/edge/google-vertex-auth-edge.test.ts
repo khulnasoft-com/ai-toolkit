@@ -1,7 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
 import {
   generateAuthToken,
-  GoogleCredentials,
+  type GoogleCredentials,
 } from './google-vertex-auth-edge';
 
 describe('Google Vertex Edge Auth', () => {

@@ -1,5 +1,8 @@
-import { anthropic } from '@ai-toolkit/anthropic';
-import { CoreMessage, generateText } from 'ai-toolkit';
+import {
+  anthropic,
+  type AnthropicProviderOptions,
+} from '@ai-toolkit/anthropic';
+import { type CoreMessage, generateText } from 'ai-toolkit';
 import 'dotenv/config';
 import * as readline from 'node:readline/promises';
 import { weatherTool } from '../tools/weather-tool';
@@ -25,7 +28,7 @@ async function main() {
       providerOptions: {
         anthropic: {
           thinking: { type: 'enabled', budgetTokens: 12000 },
-        },
+        } satisfies AnthropicProviderOptions,
       },
     });
 

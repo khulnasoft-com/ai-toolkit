@@ -4,9 +4,9 @@ This example shows how to use the [AI TOOLKIT](https://sdk.khulnasoft.com/docs) 
 
 ## Deploy your own
 
-Deploy the example using [Khulnasoft](https://khulnasoft.com?utm_source=github&utm_medium=readme&utm_campaign=ai-toolkit-example):
+Deploy the example using [Khulnasoft](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=ai-toolkit-example):
 
-[![Deploy with Khulnasoft](https://khulnasoft.com/button)](https://khulnasoft.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai%2Ftree%2Fmain%2Fexamples%2Fnext-google-vertex-edge&env=GOOGLE_API_KEY&project-name=ai-toolkit-vertex-edge&repository-name=ai-toolkit-vertex-edge)
+[![Deploy with Khulnasoft](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai%2Ftree%2Fmain%2Fexamples%2Fnext-google-vertex-edge&env=GOOGLE_API_KEY&project-name=ai-toolkit-vertex-edge&repository-name=ai-toolkit-vertex-edge)
 
 ## How to use
 
@@ -30,6 +30,6 @@ To run the example locally you need to:
 To learn more about Google Vertex AI, Next.js, and the AI TOOLKIT take a look at the following resources:
 
 - [AI TOOLKIT docs](https://sdk.khulnasoft.com/docs)
-- [Khulnasoft AI Playground](https://play.vercel.ai)
+- [Khulnasoft AI Playground](https://play.khulnasoft.com)
 - [Google Vertex AI Documentation](https://cloud.google.com/vertex-ai/docs) - learn about Vertex AI features and API
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API

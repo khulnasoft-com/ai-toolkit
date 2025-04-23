@@ -1,9 +1,10 @@
-import { LanguageModelV1Prompt } from '@ai-toolkit/provider';
+import type { LanguageModelV1Prompt } from '@ai-toolkit/provider';
 import {
   convertReadableStreamToArray,
   createTestServer,
 } from '@ai-toolkit/provider-utils/test';
 import { createAnthropic } from './anthropic-provider';
+import type { AnthropicProviderOptions } from './anthropic-messages-language-model';
 
 const TEST_PROMPT: LanguageModelV1Prompt = [
   { role: 'user', content: [{ type: 'text', text: 'Hello' }] },
@@ -77,7 +78,7 @@ describe('AnthropicMessagesLanguageModel', () => {
           providerMetadata: {
             anthropic: {
               thinking: { type: 'enabled', budgetTokens: 1000 },
-            },
+            } satisfies AnthropicProviderOptions,
           },
         });
 

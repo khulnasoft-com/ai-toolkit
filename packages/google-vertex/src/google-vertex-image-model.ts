@@ -1,14 +1,18 @@
-import { ImageModelV1, ImageModelV1CallWarning } from '@ai-toolkit/provider';
+import type {
+  ImageModelV1,
+  ImageModelV1CallWarning,
+} from '@ai-toolkit/provider';
 import {
-  Resolvable,
+  type Resolvable,
   combineHeaders,
   createJsonResponseHandler,
+  parseProviderOptions,
   postJsonToApi,
   resolve,
 } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 import { googleVertexFailedResponseHandler } from './google-vertex-error';
-import {
+import type {
   GoogleVertexImageModelId,
   GoogleVertexImageSettings,
 } from './google-vertex-image-settings';
@@ -65,13 +69,19 @@ export class GoogleVertexImageModel implements ImageModelV1 {
       });
     }
 
+    const vertexImageOptions = parseProviderOptions({
+      provider: 'vertex',
+      providerOptions,
+      schema: vertexImageProviderOptionsSchema,
+    });
+
     const body = {
       instances: [{ prompt }],
       parameters: {
         sampleCount: n,
         ...(aspectRatio != null ? { aspectRatio } : {}),
         ...(seed != null ? { seed } : {}),
-        ...(providerOptions.vertex ?? {}),
+        ...(vertexImageOptions ?? {}),
       },
     };
 
@@ -108,3 +118,23 @@ export class GoogleVertexImageModel implements ImageModelV1 {
 const vertexImageResponseSchema = z.object({
   predictions: z.array(z.object({ bytesBase64Encoded: z.string() })).nullish(),
 });
+
+const vertexImageProviderOptionsSchema = z.object({
+  negativePrompt: z.string().nullish(),
+  personGeneration: z
+    .enum(['dont_allow', 'allow_adult', 'allow_all'])
+    .nullish(),
+  safetySetting: z
+    .enum([
+      'block_low_and_above',
+      'block_medium_and_above',
+      'block_only_high',
+      'block_none',
+    ])
+    .nullish(),
+  addWatermark: z.boolean().nullish(),
+  storageUri: z.string().nullish(),
+});
+export type GoogleVertexImageProviderOptions = z.infer<
+  typeof vertexImageProviderOptionsSchema
+>;

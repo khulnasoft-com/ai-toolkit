@@ -1,17 +1,22 @@
 import {
-  FetchFunction,
+  type FetchFunction,
   isAbortError,
   safeValidateTypes,
 } from '@ai-toolkit/provider-utils';
 import {
   asSchema,
-  DeepPartial,
+  type DeepPartial,
   isDeepEqualData,
   parsePartialJson,
-  Schema,
+  type Schema,
 } from '@ai-toolkit/ui-utils';
-import { Accessor, createMemo, createSignal, createUniqueId } from 'solid-js';
-import z from 'zod';
+import {
+  type Accessor,
+  createMemo,
+  createSignal,
+  createUniqueId,
+} from 'solid-js';
+import type z from 'zod';
 import { convertToAccessorOptions } from './utils/convert-to-accessor-options';
 import { ReactiveLRU } from './utils/reactive-lru';
 
@@ -72,6 +77,13 @@ export type Experimental_UseObjectOptions<RESULT> = {
    * Additional HTTP headers to be included in the request.
    */
   headers?: Record<string, string> | Headers;
+
+  /**
+   * The credentials mode to be used for the fetch request.
+   * Possible values are: 'omit', 'same-origin', 'include'.
+   * Defaults to 'same-origin'.
+   */
+  credentials?: RequestCredentials;
 };
 
 export type Experimental_UseObjectHelpers<RESULT, INPUT> = {
@@ -103,6 +115,9 @@ export type Experimental_UseObjectHelpers<RESULT, INPUT> = {
 
 const objectCache = new ReactiveLRU<string, DeepPartial<any>>();
 
+/**
+ * @deprecated `@ai-toolkit/solid` has been deprecated and will be removed in AI TOOLKIT 5.
+ */
 function useObject<RESULT, INPUT = any>(
   rawUseObjectOptions:
     | Experimental_UseObjectOptions<RESULT>
@@ -112,7 +127,6 @@ function useObject<RESULT, INPUT = any>(
     convertToAccessorOptions(rawUseObjectOptions),
   );
 
-  const api = createMemo(() => useObjectOptions().api?.() ?? '/api/object');
   // Generate an unique id for the completion if not provided.
   const idKey = createMemo(
     () => useObjectOptions().id?.() ?? `object-${createUniqueId()}`,
@@ -161,6 +175,7 @@ function useObject<RESULT, INPUT = any>(
           'Content-Type': 'application/json',
           ...useObjectOptions().headers?.(),
         },
+        credentials: useObjectOptions().credentials?.(),
         signal: abortController.signal,
         body: JSON.stringify(input),
       });

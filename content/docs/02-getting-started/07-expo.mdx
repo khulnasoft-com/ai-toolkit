@@ -51,7 +51,7 @@ Install `ai-toolkit`, `@ai-toolkit/react` and `@ai-toolkit/openai`, the AI packa
     </Tab>
     <Tab>
       <Snippet
-        text="npm install ai-toolkit @ai-toolkit/openai @ai-toolkit/react zod"
+        text="npm install ai @ai-toolkit/openai @ai-toolkit/react zod"
         dark
       />
     </Tab>
@@ -103,7 +103,12 @@ export async function POST(req: Request) {
     messages,
   });
 
-  return result.toDataStreamResponse();
+  return result.toDataStreamResponse({
+    headers: {
+      'Content-Type': 'application/octet-stream',
+      'Content-Encoding': 'none',
+    },
+  });
 }
 ```
 
@@ -115,13 +120,6 @@ Let's take a look at what is happening in this code:
 4. Finally, return the result to the client to stream the response.
 
 This API route creates a POST request endpoint at `/api/chat`.
-
-<Note>
-  If you are experiencing issues with choppy/delayed streams on iOS, you can add
-  the `Content-Type`: `application/octet-stream` header to the response. For
-  more information, check out [this GitHub
-  issue](https://github.com/khulnasoft/ai-toolkit/issues/3946).
-</Note>
 
 ## Wire up the UI
 
@@ -292,7 +290,12 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toDataStreamResponse({
+    headers: {
+      'Content-Type': 'application/octet-stream',
+      'Content-Encoding': 'none',
+    },
+  });
 }
 ```
 
@@ -477,7 +480,12 @@ export async function POST(req: Request) {
     },
   });
 
-  return result.toDataStreamResponse();
+  return result.toDataStreamResponse({
+    headers: {
+      'Content-Type': 'application/octet-stream',
+      'Content-Encoding': 'none',
+    },
+  });
 }
 ```
 
@@ -568,4 +576,4 @@ You've built an AI chatbot using the AI TOOLKIT! From here, you have several pat
 
 - To learn more about the AI TOOLKIT, read through the [documentation](/docs).
 - If you're interested in diving deeper with guides, check out the [RAG (retrieval-augmented generation)](/docs/guides/rag-chatbot) and [multi-modal chatbot](/docs/guides/multi-modal-chatbot) guides.
-- To jumpstart your first AI project, explore available [templates](https://khulnasoft.com/templates?type=ai).
+- To jumpstart your first AI project, explore available [templates](https://vercel.com/templates?type=ai).

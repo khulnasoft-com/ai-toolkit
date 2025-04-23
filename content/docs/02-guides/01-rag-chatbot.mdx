@@ -114,7 +114,7 @@ This project will use the following stack:
 
 ### Clone Repo
 
-To reduce the scope of this guide, you will be starting with a [repository](https://github.com/khulnasoft/ai-toolkit-toolkit-rag-starter) that already has a few things set up for you:
+To reduce the scope of this guide, you will be starting with a [repository](https://github.com/khulnasoft/ai-toolkit-rag-starter) that already has a few things set up for you:
 
 - Drizzle ORM (`lib/db`) including an initial migration and a script to migrate (`db:migrate`)
 - a basic schema for the `resources` table (this will be for source material)
@@ -124,7 +124,7 @@ To get started, clone the starter repository with the following command:
 
 <Snippet
   text={[
-    'git clone https://github.com/khulnasoft/ai-toolkit-toolkit-rag-starter',
+    'git clone https://github.com/khulnasoft/ai-toolkit-rag-starter',
     'cd ai-toolkit-rag-starter',
   ]}
 />
@@ -137,7 +137,7 @@ First things first, run the following command to install the project’s depende
 
 You will need a Postgres database to complete this tutorial. If you don’t have Postgres setup on your local machine you can:
 
-- Create a free Postgres database with [Khulnasoft Postgres](https://khulnasoft.com/docs/storage/vercel-postgres); or
+- Create a free Postgres database with [Khulnasoft Postgres](https://vercel.com/docs/storage/khulnasoft-postgres); or
 - Follow [this guide](https://www.prisma.io/dataguide/postgresql/setting-up-a-local-postgresql-database) to set it up locally
 
 ### Migrate Database
@@ -161,7 +161,7 @@ This will first add the `pgvector` extension to your database. Then it will crea
   (`lib/db/migrations/0000_yielding_bloodaxe.sql`), cut (copy and remove) the
   first line, and run it directly on your postgres instance. You should now be
   able to run the updated migration. [More
-  info](https://github.com/khulnasoft/ai-toolkit-toolkit-rag-starter/issues/1).
+  info](https://github.com/khulnasoft/ai-toolkit-rag-starter/issues/1).
 </Note>
 
 ### OpenAI API Key

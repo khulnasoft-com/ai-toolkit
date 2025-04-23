@@ -1,8 +1,8 @@
-import { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
+import type { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
 import { generateId as generateIdFunction } from '@ai-toolkit/provider-utils';
 import {
   calculateLanguageModelUsage,
-  LanguageModelUsage,
+  type LanguageModelUsage,
 } from './duplicated/usage';
 import { parsePartialJson } from './parse-partial-json';
 import { processDataStream } from './process-data-stream';
@@ -100,9 +100,9 @@ export async function processChatResponse({
   > = {};
 
   let usage: LanguageModelUsage = {
-    completionTokens: NaN,
-    promptTokens: NaN,
-    totalTokens: NaN,
+    completionTokens: Number.NaN,
+    promptTokens: Number.NaN,
+    totalTokens: Number.NaN,
   };
   let finishReason: LanguageModelV1FinishReason = 'unknown';
 
@@ -197,6 +197,15 @@ export async function processChatResponse({
       });
 
       currentReasoningTextDetail = undefined;
+
+      execUpdate();
+    },
+    onFilePart(value) {
+      message.parts.push({
+        type: 'file',
+        mimeType: value.mimeType,
+        data: value.data,
+      });
 
       execUpdate();
     },
@@ -359,6 +368,10 @@ export async function processChatResponse({
       if (!replaceLastMessage) {
         message.id = value.messageId;
       }
+
+      // add a step boundary part to the message
+      message.parts.push({ type: 'step-start' });
+      execUpdate();
     },
     onFinishMessagePart(value) {
       finishReason = value.finishReason;

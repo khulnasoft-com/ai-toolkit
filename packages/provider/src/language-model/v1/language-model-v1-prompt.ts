@@ -1,4 +1,4 @@
-import { LanguageModelV1ProviderMetadata } from './language-model-v1-provider-metadata';
+import type { LanguageModelV1ProviderMetadata } from './language-model-v1-provider-metadata';
 
 /**
 A prompt is a list of messages.
@@ -32,6 +32,7 @@ export type LanguageModelV1Message =
         role: 'assistant';
         content: Array<
           | LanguageModelV1TextPart
+          | LanguageModelV1FilePart
           | LanguageModelV1ReasoningPart
           | LanguageModelV1RedactedReasoningPart
           | LanguageModelV1ToolCallPart
@@ -142,6 +143,11 @@ File content part of a prompt. It contains a file.
  */
 export interface LanguageModelV1FilePart {
   type: 'file';
+
+  /**
+   * Optional filename of the file.
+   */
+  filename?: string;
 
   /**
 File data as base64 encoded string or as a URL.

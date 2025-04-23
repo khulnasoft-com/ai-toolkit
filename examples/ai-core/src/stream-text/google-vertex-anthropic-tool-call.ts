@@ -2,9 +2,9 @@ import 'dotenv/config';
 import { vertexAnthropic } from '@ai-toolkit/google-vertex/anthropic';
 import {
   streamText,
-  CoreMessage,
-  ToolCallPart,
-  ToolResultPart,
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
 } from 'ai-toolkit';
 import { weatherTool } from '../tools/weather-tool';
 

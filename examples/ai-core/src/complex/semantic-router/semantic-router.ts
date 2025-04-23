@@ -1,6 +1,6 @@
 import {
-  Embedding,
-  EmbeddingModel,
+  type Embedding,
+  type EmbeddingModel,
   embed,
   embedMany,
   cosineSimilarity,
@@ -97,6 +97,5 @@ export class SemanticRouter<ROUTES extends Array<Route<string>>> {
   }
 }
 
-type RouteNames<ROUTES> = ROUTES extends Array<Route<infer NAME>>
-  ? NAME
-  : never;
+type RouteNames<ROUTES> =
+  ROUTES extends Array<Route<infer NAME>> ? NAME : never;

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { AssistantStreamPartType } from './assistant-stream-parts';
+import type { AssistantStreamPartType } from './assistant-stream-parts';
 import { processAssistantStream } from './process-assistant-stream';
 
 function createReadableStream(

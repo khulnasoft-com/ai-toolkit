@@ -1,4 +1,4 @@
-import { FetchFunction } from '@ai-toolkit/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import { createTestServer } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import { FalImageModel } from './fal-image-model';

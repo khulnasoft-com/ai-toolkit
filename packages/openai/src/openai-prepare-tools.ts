@@ -1,7 +1,7 @@
 import {
-  JSONSchema7,
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
+  type JSONSchema7,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 
@@ -38,8 +38,7 @@ export function prepareTools({
     parameters: JSONSchema7;
   }[];
   function_call?: { name: string };
-
-  toolWarnings: LanguageModelV1CallWarning[];
+  toolWarnings: Array<LanguageModelV1CallWarning>;
 } {
   // when the tools array is empty, change it to undefined to prevent errors:
   const tools = mode.tools?.length ? mode.tools : undefined;

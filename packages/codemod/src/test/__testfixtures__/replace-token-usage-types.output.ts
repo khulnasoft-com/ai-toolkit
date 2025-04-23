@@ -1,14 +1,14 @@
 // @ts-nocheck
-import { LanguageModelUsage, EmbeddingModelUsage } from 'ai-toolkit';
+import type { LanguageModelUsage, EmbeddingModelUsage } from "ai-toolkit";
 
 function recordUsage(usage: LanguageModelUsage) {
-  console.log(usage);
+	console.log(usage);
 }
 
 function processEmbedding(usage: EmbeddingModelUsage) {
-  console.log(usage);
+	console.log(usage);
 }
 
 const handler = (data: LanguageModelUsage) => {
-  console.log(data);
+	console.log(data);
 };

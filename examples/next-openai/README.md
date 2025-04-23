@@ -4,9 +4,9 @@ This example shows how to use the [AI TOOLKIT](https://sdk.khulnasoft.com/docs) 
 
 ## Deploy your own
 
-Deploy the example using [Khulnasoft](https://khulnasoft.com?utm_source=github&utm_medium=readme&utm_campaign=ai-toolkit-example):
+Deploy the example using [Khulnasoft](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=ai-toolkit-example):
 
-[![Deploy with Khulnasoft](https://khulnasoft.com/button)](https://khulnasoft.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai%2Ftree%2Fmain%2Fexamples%2Fnext-openai&env=OPENAI_API_KEY&project-name=ai-toolkit-next-openai&repository-name=ai-toolkit-next-openai)
+[![Deploy with Khulnasoft](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai%2Ftree%2Fmain%2Fexamples%2Fnext-openai&env=OPENAI_API_KEY&project-name=ai-toolkit-next-openai&repository-name=ai-toolkit-next-openai)
 
 ## How to use
 
@@ -28,7 +28,7 @@ To run the example locally you need to:
 
 1. Sign up at [OpenAI's Developer Platform](https://platform.openai.com/signup).
 2. Go to [OpenAI's dashboard](https://platform.openai.com/account/api-keys) and create an API KEY.
-3. If you choose to use external files for attachments, then create a [Khulnasoft Blob Store](https://khulnasoft.com/docs/storage/vercel-blob).
+3. If you choose to use external files for attachments, then create a [Khulnasoft Blob Store](https://vercel.com/docs/storage/vercel-blob).
 4. Set the required environment variable as the token value as shown [the example env file](./.env.local.example) but in a new file called `.env.local`
 5. `pnpm install` to install the required dependencies.
 6. `pnpm dev` to launch the development server.
@@ -38,6 +38,6 @@ To run the example locally you need to:
 To learn more about OpenAI, Next.js, and the AI TOOLKIT take a look at the following resources:
 
 - [AI TOOLKIT docs](https://sdk.khulnasoft.com/docs)
-- [Khulnasoft AI Playground](https://play.vercel.ai)
+- [Khulnasoft AI Playground](https://play.khulnasoft.com)
 - [OpenAI Documentation](https://platform.openai.com/docs) - learn about OpenAI features and API.
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.

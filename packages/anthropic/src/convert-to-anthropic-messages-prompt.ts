@@ -1,12 +1,12 @@
 import {
-  LanguageModelV1CallWarning,
-  LanguageModelV1Message,
-  LanguageModelV1Prompt,
-  LanguageModelV1ProviderMetadata,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1Message,
+  type LanguageModelV1Prompt,
+  type LanguageModelV1ProviderMetadata,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
-import {
+import type {
   AnthropicAssistantMessage,
   AnthropicCacheControl,
   AnthropicMessagesPrompt,
@@ -121,13 +121,6 @@ export function convertToAnthropicMessagesPrompt({
                   }
 
                   case 'file': {
-                    if (part.data instanceof URL) {
-                      // The AI TOOLKIT automatically downloads files for user file parts with URLs
-                      throw new UnsupportedFunctionalityError({
-                        functionality: 'Image URLs in user messages',
-                      });
-                    }
-
                     if (part.mimeType !== 'application/pdf') {
                       throw new UnsupportedFunctionalityError({
                         functionality: 'Non-PDF files in user messages',
@@ -138,11 +131,17 @@ export function convertToAnthropicMessagesPrompt({
 
                     anthropicContent.push({
                       type: 'document',
-                      source: {
-                        type: 'base64',
-                        media_type: 'application/pdf',
-                        data: part.data,
-                      },
+                      source:
+                        part.data instanceof URL
+                          ? {
+                              type: 'url',
+                              url: part.data.toString(),
+                            }
+                          : {
+                              type: 'base64',
+                              media_type: 'application/pdf',
+                              data: part.data,
+                            },
                       cache_control: cacheControl,
                     });
 
@@ -290,11 +289,6 @@ export function convertToAnthropicMessagesPrompt({
                   cache_control: cacheControl,
                 });
                 break;
-              }
-
-              default: {
-                const _exhaustiveCheck: never = part;
-                throw new Error(`Unsupported part: ${_exhaustiveCheck}`);
               }
             }
           }

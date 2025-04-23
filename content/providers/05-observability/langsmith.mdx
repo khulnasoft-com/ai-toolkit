@@ -12,7 +12,7 @@ Use of LangChain's open-source frameworks is not necessary, and LangSmith integr
 
 <Note>
   A version of this guide is also available in the [LangSmith
-  documentation](https://docs.smith.langchain.com/observability/how_to_guides/tracing/trace_with_vercel_ai_toolkit).
+  documentation](https://docs.smith.langchain.com/observability/how_to_guides/tracing/trace_with_khulnasoft_ai_sdk).
 </Note>
 
 ## Setup
@@ -61,7 +61,7 @@ import { AITOOLKITExporter } from 'langsmith/vercel';
 
 export function register() {
   registerOTel({
-    serviceName: 'langsmith-vercel-ai-toolkit-example',
+    serviceName: 'langsmith-khulnasoft-ai-toolkit-example',
     traceExporter: new AITOOLKITExporter(),
   });
 }
@@ -328,7 +328,7 @@ Metadata will be visible in your LangSmith dashboard and can be used to filter a
 ## Further reading
 
 - [LangSmith docs](https://docs.smith.langchain.com)
-- [LangSmith guide on tracing with the AI TOOLKIT](https://docs.smith.langchain.com/observability/how_to_guides/tracing/trace_with_vercel_ai_toolkit)
+- [LangSmith guide on tracing with the AI TOOLKIT](https://docs.smith.langchain.com/observability/how_to_guides/tracing/trace_with_khulnasoft_ai_sdk)
 - [LangSmith guide on tracing without environment variables](https://docs.smith.langchain.com/observability/how_to_guides/tracing/trace_without_env_vars)
 
 Once you've set up LangSmith tracing for your project, try gathering a dataset and evaluating it:

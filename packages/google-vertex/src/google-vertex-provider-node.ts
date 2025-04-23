@@ -1,10 +1,11 @@
+import { resolve } from '@ai-toolkit/provider-utils';
+import type { GoogleAuthOptions } from 'google-auth-library';
 import { generateAuthToken } from './google-vertex-auth-google-auth-library';
 import {
   createVertex as createVertexOriginal,
-  GoogleVertexProvider,
-  GoogleVertexProviderSettings as GoogleVertexProviderSettingsOriginal,
+  type GoogleVertexProvider,
+  type GoogleVertexProviderSettings as GoogleVertexProviderSettingsOriginal,
 } from './google-vertex-provider';
-import { GoogleAuthOptions } from 'google-auth-library';
 
 export interface GoogleVertexProviderSettings
   extends GoogleVertexProviderSettingsOriginal {
@@ -24,13 +25,12 @@ export function createVertex(
 ): GoogleVertexProvider {
   return createVertexOriginal({
     ...options,
-    headers:
-      options.headers ??
-      (async () => ({
-        Authorization: `Bearer ${await generateAuthToken(
-          options.googleAuthOptions,
-        )}`,
-      })),
+    headers: async () => ({
+      Authorization: `Bearer ${await generateAuthToken(
+        options.googleAuthOptions,
+      )}`,
+      ...(await resolve(options.headers)),
+    }),
   });
 }
 

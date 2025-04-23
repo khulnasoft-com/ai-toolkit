@@ -1,4 +1,4 @@
-import { FetchFunction } from '@ai-toolkit/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import type {
   ChatRequest,
   ChatRequestOptions,
@@ -20,14 +20,14 @@ import {
   updateToolCallResult,
 } from '@ai-toolkit/ui-utils';
 import {
-  Accessor,
+  type Accessor,
   createEffect,
   createMemo,
   createSignal,
-  JSX,
-  Setter,
+  type JSX,
+  type Setter,
 } from 'solid-js';
-import { createStore, reconcile, Store } from 'solid-js/store';
+import { createStore, reconcile, type Store } from 'solid-js/store';
 import { convertToAccessorOptions } from './utils/convert-to-accessor-options';
 import { ReactiveLRU } from './utils/reactive-lru';
 
@@ -161,6 +161,9 @@ By default, it's set to 1, which means that only a single LLM call is made.
   }) => unknown;
 };
 
+/**
+ * @deprecated `@ai-toolkit/solid` has been deprecated and will be removed in AI TOOLKIT 5.
+ */
 export function useChat(
   rawUseChatOptions: UseChatOptions | Accessor<UseChatOptions> = {},
 ): UseChatHelpers {
@@ -512,6 +515,11 @@ export function useChat(
     });
 
     mutate(currentMessages);
+
+    // when the request is ongoing, the auto-submit will be triggered after the request is finished
+    if (status() === 'submitted' || status() === 'streaming') {
+      return;
+    }
 
     // auto-submit when all tool calls in the last assistant message have results:
     const lastMessage = currentMessages[currentMessages.length - 1];

@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   //   providerOptions: {
   //     anthropic: {
   //       thinking: { type: 'enabled', budgetTokens: 12000 },
-  //     },
+  //     } satisfies AnthropicProviderOptions,
   //   },
   // });
 

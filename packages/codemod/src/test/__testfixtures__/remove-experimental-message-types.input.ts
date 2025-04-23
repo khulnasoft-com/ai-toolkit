@@ -1,17 +1,22 @@
 // @ts-nocheck
-import { ExperimentalMessage, ExperimentalUserMessage, ExperimentalAssistantMessage, ExperimentalToolMessage } from 'ai-toolkit';
+import type {
+	ExperimentalMessage,
+	ExperimentalUserMessage,
+	ExperimentalAssistantMessage,
+	ExperimentalToolMessage,
+} from "ai-toolkit";
 
 function processMessage(message: ExperimentalMessage) {
-  console.log(message);
+	console.log(message);
 }
 
 function handleUser(msg: ExperimentalUserMessage) {
-  console.log(msg);
+	console.log(msg);
 }
 
 const assistant: ExperimentalAssistantMessage = {
-  role: 'assistant',
-  content: 'Hello'
+	role: "assistant",
+	content: "Hello",
 };
 
 type ToolHandler = (msg: ExperimentalToolMessage) => void;

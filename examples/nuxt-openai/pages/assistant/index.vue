@@ -62,7 +62,7 @@ watchEffect(() => {
     ></div>
 
     <!-- Render Assistant Message Input Form -->
-    <form @submit.prevent="(e) => handleSubmit(e as any)">
+    <form @submit.prevent="e => handleSubmit(e as any)">
       <input
         ref="inputRef"
         :disabled="status === 'in_progress'"

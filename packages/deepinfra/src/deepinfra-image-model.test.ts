@@ -1,8 +1,8 @@
 import { createTestServer } from '@ai-toolkit/provider-utils/test';
 import { describe, expect, it } from 'vitest';
 import { DeepInfraImageModel } from './deepinfra-image-model';
-import { DeepInfraImageSettings } from './deepinfra-image-settings';
-import { FetchFunction } from '@ai-toolkit/provider-utils';
+import type { DeepInfraImageSettings } from './deepinfra-image-settings';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 
 const prompt = 'A cute baby sea otter';
 

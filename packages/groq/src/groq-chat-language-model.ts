@@ -1,25 +1,26 @@
 import {
   InvalidResponseDataError,
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
-  LanguageModelV1FinishReason,
-  LanguageModelV1ProviderMetadata,
-  LanguageModelV1StreamPart,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1FinishReason,
+  type LanguageModelV1ProviderMetadata,
+  type LanguageModelV1StreamPart,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
+  type FetchFunction,
+  type ParseResult,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
   generateId,
   isParsableJson,
+  parseProviderOptions,
   postJsonToApi,
 } from '@ai-toolkit/provider-utils';
 import { z } from 'zod';
 import { convertToGroqChatMessages } from './convert-to-groq-chat-messages';
 import { getResponseMetadata } from './get-response-metadata';
-import { GroqChatModelId, GroqChatSettings } from './groq-chat-settings';
+import type { GroqChatModelId, GroqChatSettings } from './groq-chat-settings';
 import { groqErrorDataSchema, groqFailedResponseHandler } from './groq-error';
 import { prepareTools } from './groq-prepare-tools';
 import { mapGroqFinishReason } from './map-groq-finish-reason';
@@ -74,6 +75,7 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
     responseFormat,
     seed,
     stream,
+    providerMetadata,
   }: Parameters<LanguageModelV1['doGenerate']>[0] & {
     stream: boolean;
   }) {
@@ -100,6 +102,14 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
       });
     }
 
+    const groqOptions = parseProviderOptions({
+      provider: 'groq',
+      providerOptions: providerMetadata,
+      schema: z.object({
+        reasoningFormat: z.enum(['parsed', 'raw', 'hidden']).nullish(),
+      }),
+    });
+
     const baseArgs = {
       // model id:
       model: this.modelId,
@@ -123,6 +133,9 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
         stream === false && responseFormat?.type === 'json'
           ? { type: 'json_object' }
           : undefined,
+
+      // provider options:
+      reasoning_format: groqOptions?.reasoningFormat,
 
       // messages:
       messages: convertToGroqChatMessages(prompt),
@@ -214,6 +227,7 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
 
     return {
       text: choice.message.content ?? undefined,
+      reasoning: choice.message.reasoning ?? undefined,
       toolCalls: choice.message.tool_calls?.map(toolCall => ({
         toolCallType: 'function',
         toolCallId: toolCall.id ?? generateId(),
@@ -222,8 +236,8 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
       })),
       finishReason: mapGroqFinishReason(choice.finish_reason),
       usage: {
-        promptTokens: response.usage?.prompt_tokens ?? NaN,
-        completionTokens: response.usage?.completion_tokens ?? NaN,
+        promptTokens: response.usage?.prompt_tokens ?? Number.NaN,
+        completionTokens: response.usage?.completion_tokens ?? Number.NaN,
       },
       rawCall: { rawPrompt, rawSettings },
       rawResponse: { headers: responseHeaders, body: rawResponse },
@@ -332,7 +346,14 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
 
             const delta = choice.delta;
 
-            if (delta.content != null) {
+            if (delta.reasoning != null && delta.reasoning.length > 0) {
+              controller.enqueue({
+                type: 'reasoning',
+                textDelta: delta.reasoning,
+              });
+            }
+
+            if (delta.content != null && delta.content.length > 0) {
               controller.enqueue({
                 type: 'text-delta',
                 textDelta: delta.content,
@@ -454,8 +475,8 @@ export class GroqChatLanguageModel implements LanguageModelV1 {
               type: 'finish',
               finishReason,
               usage: {
-                promptTokens: usage.promptTokens ?? NaN,
-                completionTokens: usage.completionTokens ?? NaN,
+                promptTokens: usage.promptTokens ?? Number.NaN,
+                completionTokens: usage.completionTokens ?? Number.NaN,
               },
               ...(providerMetadata != null ? { providerMetadata } : {}),
             });
@@ -479,8 +500,8 @@ const groqChatResponseSchema = z.object({
   choices: z.array(
     z.object({
       message: z.object({
-        role: z.literal('assistant').nullish(),
         content: z.string().nullish(),
+        reasoning: z.string().nullish(),
         tool_calls: z
           .array(
             z.object({
@@ -517,8 +538,8 @@ const groqChatChunkSchema = z.union([
       z.object({
         delta: z
           .object({
-            role: z.enum(['assistant']).nullish(),
             content: z.string().nullish(),
+            reasoning: z.string().nullish(),
             tool_calls: z
               .array(
                 z.object({

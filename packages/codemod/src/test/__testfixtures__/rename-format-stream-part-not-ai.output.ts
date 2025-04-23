@@ -1,4 +1,4 @@
 // @ts-nocheck
-import { formatStreamPart } from 'not-ai';
+import { formatStreamPart } from "not-ai";
 
-const response = new Response(formatStreamPart('text', cached));
+const response = new Response(formatStreamPart("text", cached));

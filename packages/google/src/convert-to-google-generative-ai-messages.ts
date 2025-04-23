@@ -1,9 +1,9 @@
 import {
-  LanguageModelV1Prompt,
+  type LanguageModelV1Prompt,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
-import {
+import type {
   GoogleGenerativeAIContent,
   GoogleGenerativeAIContentPart,
   GoogleGenerativeAIPrompt,
@@ -81,13 +81,6 @@ export function convertToGoogleGenerativeAIMessages(
 
               break;
             }
-
-            default: {
-              const _exhaustiveCheck: never = part;
-              throw new UnsupportedFunctionalityError({
-                functionality: `prompt part: ${_exhaustiveCheck}`,
-              });
-            }
           }
         }
 
@@ -108,6 +101,30 @@ export function convertToGoogleGenerativeAIMessages(
                     ? undefined
                     : { text: part.text };
                 }
+
+                case 'file': {
+                  if (part.mimeType !== 'image/png') {
+                    throw new UnsupportedFunctionalityError({
+                      functionality:
+                        'Only PNG images are supported in assistant messages',
+                    });
+                  }
+
+                  if (part.data instanceof URL) {
+                    throw new UnsupportedFunctionalityError({
+                      functionality:
+                        'File data URLs in assistant messages are not supported',
+                    });
+                  }
+
+                  return {
+                    inlineData: {
+                      mimeType: part.mimeType,
+                      data: part.data,
+                    },
+                  };
+                }
+
                 case 'tool-call': {
                   return {
                     functionCall: {
@@ -118,9 +135,7 @@ export function convertToGoogleGenerativeAIMessages(
                 }
               }
             })
-            .filter(
-              part => part !== undefined,
-            ) as GoogleGenerativeAIContentPart[],
+            .filter(part => part !== undefined),
         });
         break;
       }
@@ -141,10 +156,6 @@ export function convertToGoogleGenerativeAIMessages(
           })),
         });
         break;
-      }
-      default: {
-        const _exhaustiveCheck: never = role;
-        throw new Error(`Unsupported role: ${_exhaustiveCheck}`);
       }
     }
   }

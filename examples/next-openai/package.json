@@ -9,32 +9,33 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-toolkit/anthropic": "1.1.15",
-    "@ai-toolkit/deepseek": "0.1.13",
-    "@ai-toolkit/fireworks": "0.1.14",
-    "@ai-toolkit/openai": "1.2.1",
-    "@ai-toolkit/google-vertex": "2.1.24",
-    "@ai-toolkit/perplexity": "1.0.4",
-    "@ai-toolkit/ui-utils": "1.1.17",
-    "@ai-toolkit/react": "1.1.21",
+    "@ai-toolkit/anthropic": "workspace:*",
+    "@ai-toolkit/deepseek": "workspace:*",
+    "@ai-toolkit/fireworks": "workspace:*",
+    "@ai-toolkit/openai": "workspace:*",
+    "@ai-toolkit/google": "workspace:*",
+    "@ai-toolkit/google-vertex": "workspace:*",
+    "@ai-toolkit/perplexity": "workspace:*",
+    "@ai-toolkit/ui-utils": "workspace:*",
+    "@ai-toolkit/react": "workspace:*",
     "@vercel/blob": "^0.26.0",
-    "ai-toolkit": "1.1.1",
+    "ai-toolkit": "workspace:*",
     "next": "latest",
-    "openai": "4.52.6",
+    "openai": "^4.52.6",
     "react": "^18",
     "react-dom": "^18",
-    "react-markdown": "9.0.1",
-    "zod": "3.23.8"
+    "react-markdown": "^9.0.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^17.0.12",
-    "@types/react": "^18",
+    "@types/node": "^20.17.24",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.14",
-    "eslint": "8.57.1",
-    "eslint-config-next": "14.2.3",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "^14.2.3",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15",
-    "typescript": "5.6.3"
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.6.3"
   }
 }

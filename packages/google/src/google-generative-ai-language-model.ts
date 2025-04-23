@@ -1,4 +1,4 @@
-import {
+import type {
   LanguageModelV1,
   LanguageModelV1CallWarning,
   LanguageModelV1FinishReason,
@@ -7,12 +7,13 @@ import {
   LanguageModelV1StreamPart,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
-  Resolvable,
+  type FetchFunction,
+  type ParseResult,
+  type Resolvable,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
+  parseProviderOptions,
   postJsonToApi,
   resolve,
 } from '@ai-toolkit/provider-utils';
@@ -21,8 +22,8 @@ import { convertJSONSchemaToOpenAPISchema } from './convert-json-schema-to-opena
 import { convertToGoogleGenerativeAIMessages } from './convert-to-google-generative-ai-messages';
 import { getModelPath } from './get-model-path';
 import { googleFailedResponseHandler } from './google-error';
-import { GoogleGenerativeAIContentPart } from './google-generative-ai-prompt';
-import {
+import type { GoogleGenerativeAIContentPart } from './google-generative-ai-prompt';
+import type {
   GoogleGenerativeAIModelId,
   InternalGoogleGenerativeAISettings,
 } from './google-generative-ai-settings';
@@ -78,10 +79,17 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
     stopSequences,
     responseFormat,
     seed,
+    providerMetadata,
   }: Parameters<LanguageModelV1['doGenerate']>[0]) {
     const type = mode.type;
 
     const warnings: LanguageModelV1CallWarning[] = [];
+
+    const googleOptions = parseProviderOptions({
+      provider: 'google',
+      providerOptions: providerMetadata,
+      schema: googleGenerativeAIProviderOptionsSchema,
+    });
 
     const generationConfig = {
       // standardized settings:
@@ -108,6 +116,9 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
       ...(this.settings.audioTimestamp && {
         audioTimestamp: this.settings.audioTimestamp,
       }),
+
+      // provider options:
+      responseModalities: googleOptions?.responseModalities,
     };
 
     const { contents, systemInstruction } =
@@ -118,7 +129,8 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
         const { tools, toolConfig, toolWarnings } = prepareTools(
           mode,
           this.settings.useSearchGrounding ?? false,
-          this.modelId.includes('gemini-2'),
+          this.settings.dynamicRetrievalConfig,
+          this.modelId,
         );
 
         return {
@@ -239,14 +251,18 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
 
     return {
       text: getTextFromParts(parts),
+      files: getInlineDataParts(parts)?.map(part => ({
+        data: part.inlineData.data,
+        mimeType: part.inlineData.mimeType,
+      })),
       toolCalls,
       finishReason: mapGoogleGenerativeAIFinishReason({
         finishReason: candidate.finishReason,
         hasToolCalls: toolCalls != null && toolCalls.length > 0,
       }),
       usage: {
-        promptTokens: usageMetadata?.promptTokenCount ?? NaN,
-        completionTokens: usageMetadata?.candidatesTokenCount ?? NaN,
+        promptTokens: usageMetadata?.promptTokenCount ?? Number.NaN,
+        completionTokens: usageMetadata?.candidatesTokenCount ?? Number.NaN,
       },
       rawCall: { rawPrompt, rawSettings },
       rawResponse: { headers: responseHeaders, body: rawResponse },
@@ -319,8 +335,9 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
 
             if (usageMetadata != null) {
               usage = {
-                promptTokens: usageMetadata.promptTokenCount ?? NaN,
-                completionTokens: usageMetadata.candidatesTokenCount ?? NaN,
+                promptTokens: usageMetadata.promptTokenCount ?? Number.NaN,
+                completionTokens:
+                  usageMetadata.candidatesTokenCount ?? Number.NaN,
               };
             }
 
@@ -329,6 +346,57 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
             // sometimes the API returns an empty candidates array
             if (candidate == null) {
               return;
+            }
+
+            const content = candidate.content;
+
+            // Process tool call's parts before determining finishReason to ensure hasToolCalls is properly set
+            if (content != null) {
+              const deltaText = getTextFromParts(content.parts);
+              if (deltaText != null) {
+                controller.enqueue({
+                  type: 'text-delta',
+                  textDelta: deltaText,
+                });
+              }
+
+              const inlineDataParts = getInlineDataParts(content.parts);
+              if (inlineDataParts != null) {
+                for (const part of inlineDataParts) {
+                  controller.enqueue({
+                    type: 'file',
+                    mimeType: part.inlineData.mimeType,
+                    data: part.inlineData.data,
+                  });
+                }
+              }
+
+              const toolCallDeltas = getToolCallsFromParts({
+                parts: content.parts,
+                generateId,
+              });
+
+              if (toolCallDeltas != null) {
+                for (const toolCall of toolCallDeltas) {
+                  controller.enqueue({
+                    type: 'tool-call-delta',
+                    toolCallType: 'function',
+                    toolCallId: toolCall.toolCallId,
+                    toolName: toolCall.toolName,
+                    argsTextDelta: toolCall.args,
+                  });
+
+                  controller.enqueue({
+                    type: 'tool-call',
+                    toolCallType: 'function',
+                    toolCallId: toolCall.toolCallId,
+                    toolName: toolCall.toolName,
+                    args: toolCall.args,
+                  });
+
+                  hasToolCalls = true;
+                }
+              }
             }
 
             if (candidate.finishReason != null) {
@@ -353,47 +421,6 @@ export class GoogleGenerativeAILanguageModel implements LanguageModelV1 {
                   safetyRatings: candidate.safetyRatings ?? null,
                 },
               };
-            }
-
-            const content = candidate.content;
-
-            if (content == null) {
-              return;
-            }
-
-            const deltaText = getTextFromParts(content.parts);
-            if (deltaText != null) {
-              controller.enqueue({
-                type: 'text-delta',
-                textDelta: deltaText,
-              });
-            }
-
-            const toolCallDeltas = getToolCallsFromParts({
-              parts: content.parts,
-              generateId,
-            });
-
-            if (toolCallDeltas != null) {
-              for (const toolCall of toolCallDeltas) {
-                controller.enqueue({
-                  type: 'tool-call-delta',
-                  toolCallType: 'function',
-                  toolCallId: toolCall.toolCallId,
-                  toolName: toolCall.toolName,
-                  argsTextDelta: toolCall.args,
-                });
-
-                controller.enqueue({
-                  type: 'tool-call',
-                  toolCallType: 'function',
-                  toolCallId: toolCall.toolCallId,
-                  toolName: toolCall.toolName,
-                  args: toolCall.args,
-                });
-
-                hasToolCalls = true;
-              }
             }
           },
 
@@ -450,6 +477,39 @@ function getTextFromParts(parts: z.infer<typeof contentSchema>['parts']) {
     : textParts.map(part => part.text).join('');
 }
 
+function getInlineDataParts(parts: z.infer<typeof contentSchema>['parts']) {
+  return parts?.filter(
+    (
+      part,
+    ): part is {
+      inlineData: { mimeType: string; data: string };
+    } => 'inlineData' in part,
+  );
+}
+
+function extractSources({
+  groundingMetadata,
+  generateId,
+}: {
+  groundingMetadata: z.infer<typeof groundingMetadataSchema> | undefined | null;
+  generateId: () => string;
+}): undefined | LanguageModelV1Source[] {
+  return groundingMetadata?.groundingChunks
+    ?.filter(
+      (
+        chunk,
+      ): chunk is z.infer<typeof groundingChunkSchema> & {
+        web: { uri: string; title?: string };
+      } => chunk.web != null,
+    )
+    .map(chunk => ({
+      sourceType: 'url',
+      id: generateId(),
+      url: chunk.web.uri,
+      title: chunk.web.title,
+    }));
+}
+
 const contentSchema = z.object({
   role: z.string(),
   parts: z
@@ -462,6 +522,12 @@ const contentSchema = z.object({
           functionCall: z.object({
             name: z.string(),
             args: z.unknown(),
+          }),
+        }),
+        z.object({
+          inlineData: z.object({
+            mimeType: z.string(),
+            data: z.string(),
           }),
         }),
       ]),
@@ -557,25 +623,9 @@ const chunkSchema = z.object({
     .nullish(),
 });
 
-function extractSources({
-  groundingMetadata,
-  generateId,
-}: {
-  groundingMetadata: z.infer<typeof groundingMetadataSchema> | undefined | null;
-  generateId: () => string;
-}): undefined | LanguageModelV1Source[] {
-  return groundingMetadata?.groundingChunks
-    ?.filter(
-      (
-        chunk,
-      ): chunk is z.infer<typeof groundingChunkSchema> & {
-        web: { uri: string; title?: string };
-      } => chunk.web != null,
-    )
-    .map(chunk => ({
-      sourceType: 'url',
-      id: generateId(),
-      url: chunk.web.uri,
-      title: chunk.web.title,
-    }));
-}
+const googleGenerativeAIProviderOptionsSchema = z.object({
+  responseModalities: z.array(z.enum(['TEXT', 'IMAGE'])).nullish(),
+});
+export type GoogleGenerativeAIProviderOptions = z.infer<
+  typeof googleGenerativeAIProviderOptionsSchema
+>;

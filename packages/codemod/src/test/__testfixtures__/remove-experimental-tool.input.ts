@@ -1,11 +1,11 @@
 // @ts-nocheck
-import { ExperimentalTool } from 'ai-toolkit';
+import type { ExperimentalTool } from "ai-toolkit";
 
 interface Config {
-  tool: ExperimentalTool;
+	tool: ExperimentalTool;
 }
 
 const myTool: ExperimentalTool = {
-  description: 'test',
-  parameters: {}
+	description: "test",
+	parameters: {},
 };

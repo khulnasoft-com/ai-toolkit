@@ -2,9 +2,9 @@ import 'dotenv/config';
 import { createOpenAICompatible } from '@ai-toolkit/openai-compatible';
 import {
   streamText,
-  CoreMessage,
-  ToolCallPart,
-  ToolResultPart,
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
 } from 'ai-toolkit';
 import { weatherTool } from '../tools/weather-tool';
 

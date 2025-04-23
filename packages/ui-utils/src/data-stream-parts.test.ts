@@ -1,4 +1,4 @@
-import { ToolCall, ToolResult } from '@ai-toolkit/provider-utils';
+import type { ToolCall, ToolResult } from '@ai-toolkit/provider-utils';
 import { formatDataStreamPart, parseDataStreamPart } from './data-stream-parts';
 
 describe('data-stream-parts', () => {
@@ -193,7 +193,7 @@ describe('finish_message stream part', () => {
       type: 'finish_message',
       value: {
         finishReason: 'stop',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     });
   });
@@ -249,7 +249,7 @@ describe('finish_step stream part', () => {
       type: 'finish_step',
       value: {
         finishReason: 'stop',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
         isContinued: false,
       },
     });
@@ -403,6 +403,47 @@ describe('reasoning_signature stream part', () => {
     const input = 'j:"invalid string"';
     expect(() => parseDataStreamPart(input)).toThrow(
       '"reasoning_signature" parts expect an object with a "signature" property.',
+    );
+  });
+});
+
+describe('file stream part', () => {
+  it('should format a file stream part', () => {
+    const file = {
+      data: 'file content',
+      mimeType: 'text/plain',
+    };
+
+    expect(formatDataStreamPart('file', file)).toEqual(
+      `k:${JSON.stringify(file)}\n`,
+    );
+  });
+
+  it('should parse a file stream part', () => {
+    const file = {
+      data: 'file content',
+      mimeType: 'text/plain',
+    };
+
+    const input = `k:${JSON.stringify(file)}`;
+    expect(parseDataStreamPart(input)).toEqual({
+      type: 'file',
+      value: file,
+    });
+  });
+
+  it('should throw an error if the file value is not an object', () => {
+    const input = 'k:"not an object"';
+    expect(() => parseDataStreamPart(input)).toThrow(
+      '"file" parts expect an object with a "data" and "mimeType" property.',
+    );
+  });
+
+  it('should throw an error if the file object is missing required properties', () => {
+    const invalidFile = { name: 'test.txt' };
+    const input = `k:${JSON.stringify(invalidFile)}`;
+    expect(() => parseDataStreamPart(input)).toThrow(
+      '"file" parts expect an object with a "data" and "mimeType" property.',
     );
   });
 });

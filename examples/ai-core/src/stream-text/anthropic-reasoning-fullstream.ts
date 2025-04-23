@@ -2,8 +2,8 @@ import { anthropic } from '@ai-toolkit/anthropic';
 import {
   extractReasoningMiddleware,
   streamText,
-  ToolCallPart,
-  ToolResultPart,
+  type ToolCallPart,
+  type ToolResultPart,
   wrapLanguageModel,
 } from 'ai-toolkit';
 import 'dotenv/config';

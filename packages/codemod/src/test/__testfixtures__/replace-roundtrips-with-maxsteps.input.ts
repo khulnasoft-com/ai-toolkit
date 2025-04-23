@@ -1,45 +1,45 @@
 // @ts-nocheck
-import { generateText, streamText } from 'ai-toolkit';
+import { generateText, streamText } from "ai-toolkit";
 
 // Test generateText with both roundtrip types
 await generateText({
-  model,
-  maxToolRoundtrips: 3,
-  maxAutomaticRoundtrips: 2
+	model,
+	maxToolRoundtrips: 3,
+	maxAutomaticRoundtrips: 2,
 });
 
 // Test streamText with just maxToolRoundtrips
 await streamText({
-  model,
-  maxToolRoundtrips: 5
+	model,
+	maxToolRoundtrips: 5,
 });
 
 // Test streamText with subsequent maxToolRoundtrips
 await streamText({
-  model,
-  maxToolRoundtrips: 67
+	model,
+	maxToolRoundtrips: 67,
 });
 
 // Test streamText with no roundtrips
 await streamText({
-  model
+	model,
 });
 
 // Test generateText with just maxAutomaticRoundtrips
 await generateText({
-  model,
-  maxAutomaticRoundtrips: 4
+	model,
+	maxAutomaticRoundtrips: 4,
 });
 
 // Test generateText with subsequent maxToolRoundtrips
 await generateText({
-  model,
-  maxToolRoundtrips: 42
+	model,
+	maxToolRoundtrips: 42,
 });
 
 // Test generateText with no roundtrips
 await generateText({
-  model
+	model,
 });
 
 // Test property access

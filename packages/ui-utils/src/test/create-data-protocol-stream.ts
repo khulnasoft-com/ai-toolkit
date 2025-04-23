@@ -1,5 +1,5 @@
 import { convertArrayToReadableStream } from '@ai-toolkit/provider-utils/test';
-import { DataStreamString } from '../data-stream-parts';
+import type { DataStreamString } from '../data-stream-parts';
 
 export function createDataProtocolStream(
   dataPartTexts: DataStreamString[],

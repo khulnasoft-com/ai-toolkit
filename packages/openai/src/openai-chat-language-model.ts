@@ -1,16 +1,16 @@
 import {
   InvalidResponseDataError,
-  LanguageModelV1,
-  LanguageModelV1CallWarning,
-  LanguageModelV1FinishReason,
-  LanguageModelV1LogProbs,
-  LanguageModelV1ProviderMetadata,
-  LanguageModelV1StreamPart,
+  type LanguageModelV1,
+  type LanguageModelV1CallWarning,
+  type LanguageModelV1FinishReason,
+  type LanguageModelV1LogProbs,
+  type LanguageModelV1ProviderMetadata,
+  type LanguageModelV1StreamPart,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import {
-  FetchFunction,
-  ParseResult,
+  type FetchFunction,
+  type ParseResult,
   combineHeaders,
   createEventSourceResponseHandler,
   createJsonResponseHandler,
@@ -22,7 +22,10 @@ import { z } from 'zod';
 import { convertToOpenAIChatMessages } from './convert-to-openai-chat-messages';
 import { mapOpenAIChatLogProbsOutput } from './map-openai-chat-logprobs';
 import { mapOpenAIFinishReason } from './map-openai-finish-reason';
-import { OpenAIChatModelId, OpenAIChatSettings } from './openai-chat-settings';
+import type {
+  OpenAIChatModelId,
+  OpenAIChatSettings,
+} from './openai-chat-settings';
 import {
   openaiErrorDataSchema,
   openaiFailedResponseHandler,
@@ -133,15 +136,15 @@ export class OpenAIChatLanguageModel implements LanguageModelV1 {
       });
     }
 
-    if (
-      getSystemMessageMode(this.modelId) === 'remove' &&
-      prompt.some(message => message.role === 'system')
-    ) {
-      warnings.push({
-        type: 'other',
-        message: 'system messages are removed for this model',
-      });
-    }
+    const { messages, warnings: messageWarnings } = convertToOpenAIChatMessages(
+      {
+        prompt,
+        useLegacyFunctionCalling,
+        systemMessageMode: getSystemMessageMode(this.modelId),
+      },
+    );
+
+    warnings.push(...messageWarnings);
 
     const baseArgs = {
       // model id:
@@ -158,10 +161,10 @@ export class OpenAIChatLanguageModel implements LanguageModelV1 {
         typeof this.settings.logprobs === 'number'
           ? this.settings.logprobs
           : typeof this.settings.logprobs === 'boolean'
-          ? this.settings.logprobs
-            ? 0
-            : undefined
-          : undefined,
+            ? this.settings.logprobs
+              ? 0
+              : undefined
+            : undefined,
       user: this.settings.user,
       parallel_tool_calls: this.settings.parallelToolCalls,
 
@@ -199,11 +202,7 @@ export class OpenAIChatLanguageModel implements LanguageModelV1 {
         this.settings.reasoningEffort,
 
       // messages:
-      messages: convertToOpenAIChatMessages({
-        prompt,
-        useLegacyFunctionCalling,
-        systemMessageMode: getSystemMessageMode(this.modelId),
-      }),
+      messages,
     };
 
     if (isReasoningModel(this.modelId)) {
@@ -270,8 +269,17 @@ export class OpenAIChatLanguageModel implements LanguageModelV1 {
         }
         baseArgs.max_tokens = undefined;
       }
+    } else if (this.modelId.startsWith('gpt-4o-search-preview')) {
+      if (baseArgs.temperature != null) {
+        baseArgs.temperature = undefined;
+        warnings.push({
+          type: 'unsupported-setting',
+          setting: 'temperature',
+          details:
+            'temperature is not supported for the gpt-4o-search-preview model and has been removed.',
+        });
+      }
     }
-
     switch (type) {
       case 'regular': {
         const { tools, tool_choice, functions, function_call, toolWarnings } =
@@ -427,8 +435,8 @@ export class OpenAIChatLanguageModel implements LanguageModelV1 {
             })),
       finishReason: mapOpenAIFinishReason(choice.finish_reason),
       usage: {
-        promptTokens: response.usage?.prompt_tokens ?? NaN,
-        completionTokens: response.usage?.completion_tokens ?? NaN,
+        promptTokens: response.usage?.prompt_tokens ?? Number.NaN,
+        completionTokens: response.usage?.completion_tokens ?? Number.NaN,
       },
       rawCall: { rawPrompt, rawSettings },
       rawResponse: { headers: responseHeaders, body: rawResponse },
@@ -767,8 +775,8 @@ export class OpenAIChatLanguageModel implements LanguageModelV1 {
               finishReason,
               logprobs,
               usage: {
-                promptTokens: usage.promptTokens ?? NaN,
-                completionTokens: usage.completionTokens ?? NaN,
+                promptTokens: usage.promptTokens ?? Number.NaN,
+                completionTokens: usage.completionTokens ?? Number.NaN,
               },
               ...(providerMetadata != null ? { providerMetadata } : {}),
             });

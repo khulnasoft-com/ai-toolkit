@@ -1,6 +1,6 @@
 /** @jsxImportSource solid-js */
 import { withTestServer } from '@ai-toolkit/provider-utils/test';
-import { formatDataStreamPart, Message } from '@ai-toolkit/ui-utils';
+import { formatDataStreamPart, type Message } from '@ai-toolkit/ui-utils';
 import { mockFetchDataStream } from '@ai-toolkit/ui-utils/test';
 import {
   cleanup,
@@ -610,9 +610,9 @@ describe('text stream', () => {
             options: {
               finishReason: 'unknown',
               usage: {
-                completionTokens: NaN,
-                promptTokens: NaN,
-                totalTokens: NaN,
+                completionTokens: Number.NaN,
+                promptTokens: Number.NaN,
+                totalTokens: Number.NaN,
               },
             },
           },

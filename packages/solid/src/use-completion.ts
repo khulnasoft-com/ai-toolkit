@@ -1,4 +1,4 @@
-import { FetchFunction } from '@ai-toolkit/provider-utils';
+import type { FetchFunction } from '@ai-toolkit/provider-utils';
 import type {
   JSONValue,
   Message,
@@ -7,9 +7,9 @@ import type {
 } from '@ai-toolkit/ui-utils';
 import { callCompletionApi } from '@ai-toolkit/ui-utils';
 import {
-  Accessor,
-  JSX,
-  Setter,
+  type Accessor,
+  type JSX,
+  type Setter,
   createEffect,
   createMemo,
   createSignal,
@@ -74,6 +74,9 @@ or to provide a custom fetch implementation for e.g. testing.
 
 const completionCache = new ReactiveLRU<string, string>();
 
+/**
+ * @deprecated `@ai-toolkit/solid` has been deprecated and will be removed in AI TOOLKIT 5.
+ */
 export function useCompletion(
   rawUseCompletionOptions:
     | UseCompletionOptions

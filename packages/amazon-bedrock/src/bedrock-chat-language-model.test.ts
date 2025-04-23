@@ -1,4 +1,4 @@
-import { LanguageModelV1Prompt } from '@ai-toolkit/provider';
+import type { LanguageModelV1Prompt } from '@ai-toolkit/provider';
 import {
   createTestServer,
   convertReadableStreamToArray,
@@ -6,7 +6,7 @@ import {
 import { BedrockChatLanguageModel } from './bedrock-chat-language-model';
 import { vi } from 'vitest';
 import { injectFetchHeaders } from './inject-fetch-headers';
-import {
+import type {
   BedrockReasoningContentBlock,
   BedrockRedactedReasoningContentBlock,
 } from './bedrock-api-types';
@@ -269,7 +269,7 @@ describe('doStream', () => {
       {
         type: 'finish',
         finishReason: 'tool-calls',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     ]);
   });
@@ -412,7 +412,7 @@ describe('doStream', () => {
       {
         type: 'finish',
         finishReason: 'tool-calls',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     ]);
   });
@@ -454,8 +454,8 @@ describe('doStream', () => {
         finishReason: 'error',
         type: 'finish',
         usage: {
-          completionTokens: NaN,
-          promptTokens: NaN,
+          completionTokens: Number.NaN,
+          promptTokens: Number.NaN,
         },
       },
     ]);
@@ -497,7 +497,7 @@ describe('doStream', () => {
       {
         finishReason: 'error',
         type: 'finish',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     ]);
   });
@@ -538,7 +538,7 @@ describe('doStream', () => {
       {
         finishReason: 'error',
         type: 'finish',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     ]);
   });
@@ -579,7 +579,7 @@ describe('doStream', () => {
       {
         finishReason: 'error',
         type: 'finish',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     ]);
   });
@@ -604,7 +604,7 @@ describe('doStream', () => {
       {
         finishReason: 'error',
         type: 'finish',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     ]);
   });
@@ -1028,7 +1028,7 @@ describe('doStream', () => {
       {
         type: 'finish',
         finishReason: 'stop',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     ]);
   });
@@ -1072,7 +1072,7 @@ describe('doStream', () => {
       {
         type: 'finish',
         finishReason: 'stop',
-        usage: { promptTokens: NaN, completionTokens: NaN },
+        usage: { promptTokens: Number.NaN, completionTokens: Number.NaN },
       },
     ]);
   });

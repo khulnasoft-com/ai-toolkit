@@ -1,4 +1,4 @@
-import { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
+import type { LanguageModelV1FinishReason } from '@ai-toolkit/provider';
 
 export function mapCohereFinishReason(
   finishReason: string | null | undefined,
@@ -12,14 +12,10 @@ export function mapCohereFinishReason(
       return 'length';
 
     case 'ERROR':
-    case 'ERROR_LIMIT':
       return 'error';
 
-    case 'ERROR_TOXIC':
-      return 'content-filter';
-
-    case 'USER_CANCEL':
-      return 'other';
+    case 'TOOL_CALL':
+      return 'tool-calls';
 
     default:
       return 'unknown';

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, Mock } from 'vitest';
+import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest';
 import { createAmazonBedrock } from './bedrock-provider';
 import { BedrockChatLanguageModel } from './bedrock-chat-language-model';
 import { BedrockEmbeddingModel } from './bedrock-embedding-model';
@@ -61,6 +61,47 @@ describe('AmazonBedrockProvider', () => {
       const constructorCall = BedrockChatLanguageModelMock.mock.calls[0];
       expect(constructorCall[2].headers).toEqual(customHeaders);
       expect(constructorCall[2].baseUrl()).toBe('https://custom.url');
+    });
+
+    it('should accept a credentialProvider in options', () => {
+      const mockCredentialProvider = vi.fn().mockResolvedValue({
+        accessKeyId: 'dynamic-access-key',
+        secretAccessKey: 'dynamic-secret-key',
+        sessionToken: 'dynamic-session-token',
+      });
+
+      const provider = createAmazonBedrock({
+        credentialProvider: mockCredentialProvider,
+      });
+
+      provider('anthropic.claude-v2');
+
+      const constructorCall = BedrockChatLanguageModelMock.mock.calls[0];
+      expect(constructorCall[0]).toBe('anthropic.claude-v2');
+      expect(constructorCall[1]).toEqual({});
+      expect(constructorCall[2].headers).toEqual({});
+      expect(constructorCall[2].baseUrl()).toBe(
+        'https://bedrock-runtime.us-east-1.amazonaws.com',
+      );
+    });
+
+    it('should prioritize credentialProvider over static credentials', () => {
+      const mockCredentialProvider = vi.fn().mockResolvedValue({
+        accessKeyId: 'dynamic-access-key',
+        secretAccessKey: 'dynamic-secret-key',
+        sessionToken: 'dynamic-session-token',
+      });
+
+      const provider = createAmazonBedrock({
+        accessKeyId: 'static-access-key',
+        secretAccessKey: 'static-secret-key',
+        sessionToken: 'static-session-token',
+        credentialProvider: mockCredentialProvider,
+      });
+
+      provider('anthropic.claude-v2');
+      const constructorCall = BedrockChatLanguageModelMock.mock.calls[0];
+      expect(constructorCall[0]).toBe('anthropic.claude-v2');
     });
 
     it('should pass headers to embedding model', () => {

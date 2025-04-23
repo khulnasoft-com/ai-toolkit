@@ -5,7 +5,7 @@ import {
   createFeatureTestSuite,
   createLanguageModelWithCapabilities,
 } from './feature-test-suite';
-import { APICallError } from '@ai-toolkit/provider';
+import type { APICallError } from '@ai-toolkit/provider';
 
 const createChatModel = (modelId: string) =>
   createLanguageModelWithCapabilities(provider(modelId));

@@ -1,4 +1,4 @@
-import { anthropic } from '@ai-toolkit/anthropic';
+import { anthropic, AnthropicProviderOptions } from '@ai-toolkit/anthropic';
 import { streamText, tool } from 'ai-toolkit';
 import { z } from 'zod';
 
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
     providerOptions: {
       anthropic: {
         thinking: { type: 'enabled', budgetTokens: 12000 },
-      },
+      } satisfies AnthropicProviderOptions,
     },
   });
 

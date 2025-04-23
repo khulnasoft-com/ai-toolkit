@@ -1,12 +1,12 @@
-import { Validator, validatorSymbol } from '@ai-toolkit/provider-utils';
-import { JSONSchema7 } from 'json-schema';
-import { z } from 'zod';
+import { type Validator, validatorSymbol } from '@ai-toolkit/provider-utils';
+import type { JSONSchema7 } from 'json-schema';
+import type { z } from 'zod';
 import { zodSchema } from './zod-schema';
 
 /**
  * Used to mark schemas so we can support both Zod and custom schemas.
  */
-const schemaSymbol = Symbol.for('vercel.ai.schema');
+const schemaSymbol = Symbol.for('khulnasoft.com.schema');
 
 export type Schema<OBJECT = unknown> = Validator<OBJECT> & {
   /**

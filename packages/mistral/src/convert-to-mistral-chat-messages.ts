@@ -1,9 +1,9 @@
 import {
-  LanguageModelV1Prompt,
+  type LanguageModelV1Prompt,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
 import { convertUint8ArrayToBase64 } from '@ai-toolkit/provider-utils';
-import { MistralPrompt } from './mistral-chat-prompt';
+import type { MistralPrompt } from './mistral-chat-prompt';
 
 export function convertToMistralChatMessages(
   prompt: LanguageModelV1Prompt,
@@ -81,10 +81,6 @@ export function convertToMistralChatMessages(
               text += part.text;
               break;
             }
-            case 'redacted-reasoning':
-            case 'reasoning': {
-              break; // ignored
-            }
             case 'tool-call': {
               toolCalls.push({
                 id: part.toolCallId,
@@ -95,10 +91,6 @@ export function convertToMistralChatMessages(
                 },
               });
               break;
-            }
-            default: {
-              const _exhaustiveCheck: never = part;
-              throw new Error(`Unsupported part: ${_exhaustiveCheck}`);
             }
           }
         }

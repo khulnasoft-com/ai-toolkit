@@ -115,7 +115,9 @@ export async function continueConversation(
         parameters: z.object({
           repositoryName: z
             .string()
-            .describe('The name of the repository, example: vercel/ai-chatbot'),
+            .describe(
+              'The name of the repository, example: khulnasoft/ai-chatbot',
+            ),
         }),
         generate: async function* ({ repositoryName }) {
           yield <div>Cloning repository {repositoryName}...</div>; // [!code highlight:5]

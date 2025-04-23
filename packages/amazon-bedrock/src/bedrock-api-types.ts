@@ -1,4 +1,4 @@
-import { JSONObject } from '@ai-toolkit/provider';
+import type { JSONObject } from '@ai-toolkit/provider';
 
 export interface BedrockConverseInput {
   system?: BedrockSystemMessages;
@@ -115,7 +115,7 @@ export interface BedrockImageBlock {
 export interface BedrockToolResultBlock {
   toolResult: {
     toolUseId: string;
-    content: Array<{ text: string }>;
+    content: Array<BedrockTextBlock | BedrockImageBlock>;
   };
 }
 

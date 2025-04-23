@@ -81,7 +81,7 @@ import { LangfuseExporter } from 'langfuse-vercel';
 
 export function register() {
   registerOTel({
-    serviceName: 'langfuse-vercel-ai-nextjs-example',
+    serviceName: 'langfuse-khulnasoft-ai-nextjs-example',
     traceExporter: new LangfuseExporter(),
   });
 }
@@ -134,7 +134,7 @@ Done! All traces that contain AI TOOLKIT spans are automatically captured in Lan
 
 ## Example Application
 
-Check out the sample repository ([langfuse/langfuse-vercel-ai-nextjs-example](https://github.com/langfuse/langfuse-vercel-ai-nextjs-example)) based
+Check out the sample repository ([langfuse/langfuse-khulnasoft-ai-nextjs-example](https://github.com/langfuse/langfuse-khulnasoft-ai-nextjs-example)) based
 on the [next-openai](https://github.com/khulnasoft/ai-toolkit/tree/main/examples/next-openai) template to showcase the integration of Langfuse with Next.js and AI TOOLKIT.
 
 ## Configuration
@@ -243,7 +243,7 @@ new LangfuseExporter({ debug: true });
 
 ## Troubleshooting
 
-- If you deploy on Khulnasoft, Khulnasoft's OpenTelemetry Collector is only available on Pro and Enterprise Plans ([docs](https://khulnasoft.com/docs/observability/otel-overview)).
+- If you deploy on Khulnasoft, Khulnasoft's OpenTelemetry Collector is only available on Pro and Enterprise Plans ([docs](https://vercel.com/docs/observability/otel-overview)).
 - You need to be on `"ai-toolkit": "^3.3.0"` to use the telemetry feature. In case of any issues, please update to the latest version.
 - On NextJS, make sure that you only have a single instrumentation file.
 - If you use Sentry, make sure to either:

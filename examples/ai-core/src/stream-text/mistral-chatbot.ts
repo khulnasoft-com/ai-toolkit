@@ -1,5 +1,5 @@
 import { mistral } from '@ai-toolkit/mistral';
-import { CoreMessage, streamText, tool } from 'ai-toolkit';
+import { type CoreMessage, streamText, tool } from 'ai-toolkit';
 import 'dotenv/config';
 import * as readline from 'node:readline/promises';
 import { z } from 'zod';

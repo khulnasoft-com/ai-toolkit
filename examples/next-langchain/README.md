@@ -4,9 +4,9 @@ This example shows how to use the [AI TOOLKIT](https://sdk.khulnasoft.com/docs) 
 
 ## Deploy your own
 
-Deploy the example using [Khulnasoft](https://khulnasoft.com?utm_source=github&utm_medium=readme&utm_campaign=ai-toolkit-example):
+Deploy the example using [Khulnasoft](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=ai-toolkit-example):
 
-[![Deploy with Khulnasoft](https://khulnasoft.com/button)](https://khulnasoft.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai%2Ftree%2Fmain%2Fexamples%2Fnext-langchain&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys&project-name=ai-chat-langchain&repository-name=next-ai-chat-langchain)
+[![Deploy with Khulnasoft](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai%2Ftree%2Fmain%2Fexamples%2Fnext-langchain&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys&project-name=ai-chat-langchain&repository-name=next-ai-chat-langchain)
 
 ## How to use
 
@@ -37,7 +37,7 @@ To run the example locally you need to:
 To learn more about LangChain, OpenAI, Next.js, and the AI TOOLKIT take a look at the following resources:
 
 - [AI TOOLKIT docs](https://sdk.khulnasoft.com/docs) - learn mode about the AI TOOLKIT
-- [Khulnasoft AI Playground](https://play.vercel.ai) - compare and tune 20+ AI models side-by-side
+- [Khulnasoft AI Playground](https://play.khulnasoft.com) - compare and tune 20+ AI models side-by-side
 - [LangChain Documentation](https://js.langchain.com/docs) - learn about LangChain
 - [OpenAI Documentation](https://platform.openai.com/docs) - learn about OpenAI features and API.
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.

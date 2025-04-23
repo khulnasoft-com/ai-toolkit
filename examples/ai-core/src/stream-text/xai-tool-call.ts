@@ -1,9 +1,9 @@
 import { xai } from '@ai-toolkit/xai';
 import {
   streamText,
-  CoreMessage,
-  ToolCallPart,
-  ToolResultPart,
+  type CoreMessage,
+  type ToolCallPart,
+  type ToolResultPart,
 } from 'ai-toolkit';
 import 'dotenv/config';
 import { weatherTool } from '../tools/weather-tool';
@@ -14,7 +14,7 @@ async function main() {
   let toolResponseAvailable = false;
 
   const result = streamText({
-    model: xai('grok-2-1212'),
+    model: xai('grok-3-beta'),
     maxTokens: 512,
     tools: {
       weather: weatherTool,

@@ -1,7 +1,7 @@
 import { openai } from '@ai-toolkit/openai';
 import {
   generateText,
-  LanguageModelV1Middleware,
+  type LanguageModelV1Middleware,
   wrapLanguageModel,
 } from 'ai-toolkit';
 import 'dotenv/config';

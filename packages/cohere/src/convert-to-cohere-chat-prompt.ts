@@ -1,8 +1,11 @@
 import {
-  LanguageModelV1Prompt,
+  type LanguageModelV1Prompt,
   UnsupportedFunctionalityError,
 } from '@ai-toolkit/provider';
-import { CohereAssistantMessage, CohereChatPrompt } from './cohere-chat-prompt';
+import type {
+  CohereAssistantMessage,
+  CohereChatPrompt,
+} from './cohere-chat-prompt';
 
 export function convertToCohereChatPrompt(
   prompt: LanguageModelV1Prompt,
@@ -47,10 +50,6 @@ export function convertToCohereChatPrompt(
               text += part.text;
               break;
             }
-            case 'redacted-reasoning':
-            case 'reasoning': {
-              break; // ignored
-            }
             case 'tool-call': {
               toolCalls.push({
                 id: part.toolCallId,
@@ -61,10 +60,6 @@ export function convertToCohereChatPrompt(
                 },
               });
               break;
-            }
-            default: {
-              const _exhaustiveCheck: never = part;
-              throw new Error(`Unsupported part: ${_exhaustiveCheck}`);
             }
           }
         }
